@@ -1,0 +1,14 @@
+{
+  "name": "flixbus",
+  "version": "1.0.0",
+  "description": "Fetch flixbus data",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "Thomas Pasquali",
+  "license": "ISC",
+  "dependencies": {
+    "flix": "^5.0.2"
+  }
+}
