@@ -2,7 +2,7 @@
 flix.stations.all({ apiKey: '42b9ce3e3cmsh04d07062ba49f04p153e5ajsn738cd8121ff3' }).on('data', item => {
   console.log(item)
 }); */
-
+require('dotenv').config();
 const axios = require('axios');
 
 const options = {
@@ -18,7 +18,7 @@ const options = {
     currency: 'EUR'
   },
   headers: {
-    'X-RapidAPI-Key': '42b9ce3e3cmsh04d07062ba49f04p153e5ajsn738cd8121ff3',
+    'X-RapidAPI-Key': process.env['API-KEY'],
     'X-RapidAPI-Host': 'flixbus2.p.rapidapi.com'
   }
 };
