@@ -6,7 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/riccardo/ontologies/2023/9/untitled-ontology-5"/>
+    <owl:Ontology rdf:about="http://knowdive.disi.unitn.it"/>
     
 
 
@@ -21,19 +21,20 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_BusStop_address -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_BusStop_address">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Place"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://knowdive.disi.unitn.it/etype#has_BusStop_id -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_BusStop_id">
         <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#BusStop"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_BusStop_place -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_BusStop_place">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Place"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#TrainStation"/>
     </owl:DatatypeProperty>
     
 
@@ -110,19 +111,20 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_TrainStation_address -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_TrainStation_address">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Place"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://knowdive.disi.unitn.it/etype#has_TrainStation_id -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_TrainStation_id">
         <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#TrainStation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_TrainStation_place -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_TrainStation_place">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Place"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#TrainStation"/>
     </owl:DatatypeProperty>
     
 
@@ -225,7 +227,9 @@
 
     <!-- http://knowdive.disi.unitn.it/etype#BusTrip -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#BusTrip"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#BusTrip">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Trip"/>
+    </owl:Class>
     
 
 
@@ -243,7 +247,9 @@
 
     <!-- http://knowdive.disi.unitn.it/etype#TrainTrip -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#TrainTrip"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#TrainTrip">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Trip"/>
+    </owl:Class>
     
 
 
