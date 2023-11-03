@@ -25,17 +25,28 @@ class TrainsFTMSpider(scrapy.Spider):
       stop = stop.css('a')
       if stop is not None:
         stop_name = stop.css('::text').get()
-        if stop_name is not None and 'href' in stop.attrib:
-          yield response.follow(
-            f'https://it.wikipedia.org{stop.attrib["href"]}', 
-            callback=self.parse_train_stop_geo,
-            cb_kwargs=dict(stop_name=stop_name),
-          )
+        if stop_name is not None:
+          if 'href' in stop.attrib and 'redlink' not in stop.attrib["href"]:
+            yield response.follow(
+              f'https://it.wikipedia.org{stop.attrib["href"]}', 
+              callback=self.parse_train_stop_geo,
+              cb_kwargs=dict(stop_name=stop_name),
+            )
+          else:
+            yield Stop(
+              item_type='Stop',
+              stop_name=stop_name,
+              stop_lat='NaN',
+              stop_lon='NaN'
+            )
 
   def parse_train_stop_geo (self, response, stop_name):
     stop = response.css('a > span.geo-default')
-    lat = stop.css('span.latitude::text').get()
-    lon = stop.css('span.longitude::text').get()
+    lat = None
+    lon = None
+    if stop is not None:
+      lat = stop.css('span.latitude::text').get()
+      lon = stop.css('span.longitude::text').get()
     yield Stop(
       item_type='Stop',
       stop_name=stop_name,
