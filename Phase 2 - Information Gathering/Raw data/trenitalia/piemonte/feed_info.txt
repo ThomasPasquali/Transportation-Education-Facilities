@@ -1,0 +1,2 @@
+feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version
+CSI Piemonte,http://www.csipiemonte.it,it,20231101,20231209,20231101

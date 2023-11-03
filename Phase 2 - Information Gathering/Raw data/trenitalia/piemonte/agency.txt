@@ -1,0 +1,2 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
+ITRP-AG000174,TRENITALIA ,http://www.trenitalia.it,Europe/Rome,it,
