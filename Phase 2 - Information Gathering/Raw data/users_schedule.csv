@@ -1,0 +1,10 @@
+user_name,from,to,weekdays,arrive_before,leave_after,info
+Mario,Mollaro,Mezzolombardo,Monday to Friday,08:00:00 AM,01:00:00 PM,Train
+Jessica,Sanba,Trento Center,Monday to Saturday,08:00:00 AM,01:00:00 PM,Bus
+Luca,South of Trento,Trento Center,Monday to Saturday,08:00:00 AM,01:00:00 PM,Wheelchair
+Gian,Center of Trento,Rovereto,Monday to Wednesday,10:30:00 AM,02:30:00 PM,University student
+Gian,Center of Trento,Rovereto,Thursday to Friday,10:30:00 AM,04:30:00 PM,University student
+Gaia,Trento University,Uni library (Tue-Sat 9:30AM),Friday,08:30:00 PM,,Varied schedule
+Lucia,Verona,Povo,Monday to Sunday,08:30:00 AM,01:30:00 AM,Commuter
+Anna,Mori,Povo Middle-School,Monday to Friday,01:30:00 PM,07:00:00 PM,Janitor
+Gaia,Bologna Centrale,Trento,Friday,,05:00:00 PM,Return to Trento by Sunday night before 9PM
