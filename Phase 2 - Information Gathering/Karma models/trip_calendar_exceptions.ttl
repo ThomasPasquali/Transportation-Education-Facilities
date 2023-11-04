@@ -1,0 +1,267 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+_:node1hedj6rvbx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "trip_calendar_exceptions.csv" ;
+	km-dev:modelPublicationTime "1699115921386"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"has_Trip_calendar_exception_id\"}],[{\"columnName\":\"has_Trip_calendar_exception_date\"}],[{\"columnName\":\"has_Trip_calendar_exception_type\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"has_Trip_calendar_exception_id\"}],[{\"columnName\":\"has_Trip_calendar_exception_date\"}],[{\"columnName\":\"has_Trip_calendar_exception_type\"}]]" ;
+	km-dev:hasModelLabel "trip_calendar_exceptions.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Trip_calendar_exception_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions/TripCalendarExceptions1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Trip_calendar_exception_date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_TripCalendarExceptions_date\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions/TripCalendarExceptions1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Trip_calendar_exception_type\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_TripCalendarExceptions_type\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#TripCalendarExceptions/TripCalendarExceptions1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_type\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Trip_calendar_exception_type\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b a rr:TriplesMap .
+
+_:node1hedj6rvbx1 km-dev:hasTriplesMap km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b .
+
+km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx2 rr:tableName "trip_calendar_exceptions.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx1 km-dev:hasLogicalTable _:node1hedj6rvbx2 .
+
+km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b rr:logicalTable _:node1hedj6rvbx2 ;
+	rr:subjectMap _:node1hedj6rvbx3 .
+
+_:node1hedj6rvbx1 km-dev:hasSubjectMap _:node1hedj6rvbx3 .
+
+_:node1hedj6rvbx3 km-dev:isPartOfMapping _:node1hedj6rvbx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#TripCalendarExceptions1" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#TripCalendarExceptions> ;
+	rr:template "{has_Trip_calendar_exception_id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_1e918dbf-e75b-454c-b048-f85af90dd21d rr:predicate <http://knowdive.disi.unitn.it/etype#has_TripCalendarExceptions_date> .
+
+_:node1hedj6rvbx4 rr:column "has_Trip_calendar_exception_date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx1 km-dev:hasObjectMap _:node1hedj6rvbx4 .
+
+km-dev:PredicateObjectMap_1e918dbf-e75b-454c-b048-f85af90dd21d rr:objectMap _:node1hedj6rvbx4 .
+
+km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b rr:predicateObjectMap km-dev:PredicateObjectMap_1e918dbf-e75b-454c-b048-f85af90dd21d .
+
+km-dev:PredicateObjectMap_1e918dbf-e75b-454c-b048-f85af90dd21d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1e918dbf-e75b-454c-b048-f85af90dd21d .
+
+km-dev:PredicateObjectMap_a3300e62-4be5-4c5f-b468-267de27bbb6a rr:predicate <http://knowdive.disi.unitn.it/etype#has_TripCalendarExceptions_type> .
+
+_:node1hedj6rvbx5 rr:column "has_Trip_calendar_exception_type" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx1 km-dev:hasObjectMap _:node1hedj6rvbx5 .
+
+km-dev:PredicateObjectMap_a3300e62-4be5-4c5f-b468-267de27bbb6a rr:objectMap _:node1hedj6rvbx5 .
+
+km-dev:TriplesMap_fdb57f7a-8e0c-4a16-956e-72ff3682e20b rr:predicateObjectMap km-dev:PredicateObjectMap_a3300e62-4be5-4c5f-b468-267de27bbb6a .
+
+km-dev:PredicateObjectMap_a3300e62-4be5-4c5f-b468-267de27bbb6a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hedj6rvbx1 .
+
+_:node1hedj6rvbx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a3300e62-4be5-4c5f-b468-267de27bbb6a .

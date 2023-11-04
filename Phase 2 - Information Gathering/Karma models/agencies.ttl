@@ -1,0 +1,267 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1hedfcrc9x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "agencies.csv" ;
+	km-dev:modelPublicationTime "1699111923081"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"has_Agency_name\"}],[{\"columnName\":\"has_Agency_id\"}],[{\"columnName\":\"has_Agency_url\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"has_Agency_name\"}],[{\"columnName\":\"has_Agency_id\"}],[{\"columnName\":\"has_Agency_url\"}]]" ;
+	km-dev:hasModelLabel "agencies.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Agency_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#Agency\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#Agency1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#Agency\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#Agency1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#Agency/Agency1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Agency_name\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#Agency\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#Agency1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_Agency_name\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#Agency/Agency1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"has_Agency_url\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#Agency\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#Agency1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_Agency_url\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#Agency/Agency1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_url\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"has_Agency_url\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc a rr:TriplesMap .
+
+_:node1hedfcrc9x1 km-dev:hasTriplesMap km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc .
+
+km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x2 rr:tableName "agencies.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x1 km-dev:hasLogicalTable _:node1hedfcrc9x2 .
+
+km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc rr:logicalTable _:node1hedfcrc9x2 ;
+	rr:subjectMap _:node1hedfcrc9x3 .
+
+_:node1hedfcrc9x1 km-dev:hasSubjectMap _:node1hedfcrc9x3 .
+
+_:node1hedfcrc9x3 km-dev:isPartOfMapping _:node1hedfcrc9x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#Agency1" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#Agency> ;
+	rr:template "{has_Agency_id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_b05f000a-3bb8-45f2-ab6e-d3a2c72b6d32 rr:predicate <http://knowdive.disi.unitn.it/etype#has_Agency_url> .
+
+_:node1hedfcrc9x4 rr:column "has_Agency_url" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x1 km-dev:hasObjectMap _:node1hedfcrc9x4 .
+
+km-dev:PredicateObjectMap_b05f000a-3bb8-45f2-ab6e-d3a2c72b6d32 rr:objectMap _:node1hedfcrc9x4 .
+
+km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc rr:predicateObjectMap km-dev:PredicateObjectMap_b05f000a-3bb8-45f2-ab6e-d3a2c72b6d32 .
+
+km-dev:PredicateObjectMap_b05f000a-3bb8-45f2-ab6e-d3a2c72b6d32 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b05f000a-3bb8-45f2-ab6e-d3a2c72b6d32 .
+
+km-dev:PredicateObjectMap_8733112c-c6d3-4781-9c85-267ec339a7cd rr:predicate <http://knowdive.disi.unitn.it/etype#has_Agency_name> .
+
+_:node1hedfcrc9x5 rr:column "has_Agency_name" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x1 km-dev:hasObjectMap _:node1hedfcrc9x5 .
+
+km-dev:PredicateObjectMap_8733112c-c6d3-4781-9c85-267ec339a7cd rr:objectMap _:node1hedfcrc9x5 .
+
+km-dev:TriplesMap_a032843c-6cd2-4e58-8873-4472df8d98bc rr:predicateObjectMap km-dev:PredicateObjectMap_8733112c-c6d3-4781-9c85-267ec339a7cd .
+
+km-dev:PredicateObjectMap_8733112c-c6d3-4781-9c85-267ec339a7cd a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hedfcrc9x1 .
+
+_:node1hedfcrc9x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8733112c-c6d3-4781-9c85-267ec339a7cd .
