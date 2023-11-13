@@ -2,18 +2,33 @@ import scrapy
 from E656_scraper.items import Train, TripStop
 
 FTM_CALENDARS_TRAIN_NUMBERS = [
-  ['302', '240', '4', '6', 'TT304', '8', '306', '10', '12', '14', '308', '16', '18', '44', '20', '310', '24', '26', '42', '28', '30', '312', '32', '34', '46', '314'],
-  ['50', '52', '54', '56', '58', '60', '62', '64']
+  [
+    # Andata: Trento-Mezzana
+    '302', '240', '4', '6', 'TT304', '8', '306', '10', '12', '14', '308', '16', '18', '44', '20', '310', '24', '26', '42', '28', '30', '312', '32', '34', '46', '314',
+    # Ritorno: Mezzana-Trento
+    '301', '1', '303', '3', '305', '5', '7', 'TT307', '9', '11', '15', '319', '17', '309', '19', '311', '21', '23', '25', '27', '29', '31', '33', '35'
+  ],
+  [
+    # Andata: Trento-Mezzana
+    '50', '52', '54', '56', '58', '60', '62', '64',
+    # Ritorno: Mezzana-Trento
+    '51', '53', '55', '57', '59', '61', '63', '65'
+  ]
 ]
 FTM_CALENDARS = [
   { 'id': '123450001', 'weekdays': '1111110', 'start_date': '20230911', 'end_date': '20240621' },
   { 'id': '123450002', 'weekdays': '0000001', 'start_date': '20230911', 'end_date': '20240621' }
 ]
 
-class TrainsFTMSpider(scrapy.Spider):
+class TrainsSpider(scrapy.Spider):
   name = 'FTMTrains'
   allowed_domains = ['www.e656.net']
-  start_urls = ['https://www.e656.net/orario/stazione-tte/trento_ftm.html']
+  start_urls = [
+    'https://www.e656.net/orario/stazione-tte/trento_ftm.html',
+    'https://www.e656.net/orario/stazione-tte/male.html',
+    'https://www.e656.net/orario/stazione-tte/mezzana.html',
+    'https://www.e656.net/orario/stazione-tte/mezzolombardo.html'
+  ]
 
   def parse(self, response):
     trains = response.css('table.train-list tr')
@@ -43,7 +58,7 @@ class TrainsFTMSpider(scrapy.Spider):
   def parse_train_stops (self, response, train_name):
     stops = response.css('table > tbody > tr')
 
-    for stop in stops:
+    for stop in stops[1:]:
       yield TripStop(
         item_type='TripStop',
         train_name=train_name,

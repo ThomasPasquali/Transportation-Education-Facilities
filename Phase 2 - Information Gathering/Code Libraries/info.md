@@ -10,14 +10,24 @@ Folders contain JavaScript scripts used to test the respective APIs (WITHOUT SUC
 
 ## E656 scraper
 
-To scrap FTM *Routes* and *Trips*, from `Code Libraries/E656_scraper` run:
+To scrape FTM *Routes* and *Trips*, from `Code Libraries/E656_scraper` run:
 ```bash
 scrapy crawl FTMTrains -O ftm_routes_trips.json
 ```
 
-To scrap FTM *Stops*, from `Code Libraries/E656_scraper` run:
+To scrape FTM *Stops*, from `Code Libraries/E656_scraper` run:
 ```bash
 scrapy crawl FTMStops -O ftm_stops.json
+```
+
+To scrape *Trento station trains*, from `Code Libraries/E656_scraper` run:
+```bash
+scrapy crawl Trains -O trento_trains.json
+```
+
+To scrape *train stops*, from `Code Libraries/E656_scraper` run:
+```bash
+scrapy crawl Stops -O stops.json
 ```
 
 **Note**: data needs to be leater cleaned and converted to GTFS.

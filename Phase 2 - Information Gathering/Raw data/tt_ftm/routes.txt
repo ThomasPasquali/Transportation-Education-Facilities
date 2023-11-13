@@ -1,0 +1,2 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_type
+ftm_route_1,1,FTM,Trento-Male',2

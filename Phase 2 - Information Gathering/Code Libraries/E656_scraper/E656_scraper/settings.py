@@ -25,10 +25,21 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
+
+
+# Add a random delay between 1 and 3 seconds
+DOWNLOAD_DELAY = 1.0
+DOWNLOAD_DELAY = 3.0
+
+# Randomize the download delay to a value between 70% and 130% of DOWNLOAD_DELAY
+RANDOMIZE_DOWNLOAD_DELAY = True
+
+# Enable autothrottle to adjust the delay dynamically based on server responses
+AUTOTHROTTLE_ENABLED = True
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
