@@ -23,3 +23,13 @@ reside,reside,GID-16016,state or condition of having one's legal residence in a 
 specifies occurrence,specifies occurrence,GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
 specifies availability,specifies availability,GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
 involvement,involvement,GID-16019,"the active participation, engagement, or inclusion of an individual in a particular activity, situation, or undertaking"
+work,work,GID-2962,activity directed toward making or doing something
+special needs,special needs,GID-16020,"unique and specific requirements or assistance that individuals may require due to physical, cognitive, emotional, or developmental differences"
+occupation,occupation,GID-2999,any activity that occupies a person's attention
+name,name,GID-16021,the unique and identifying label assigned to an individual within a social or cultural context
+arrive before,arrive before,GID-16022,"the specific temporal parameter indicating the designated time by which an individual, object, or event is expected to reach a particular location or point in time."
+leave after,leave after,GID-16023,"the predefined temporal parameter indicating the designated time after which an individual, object, or event is permitted or expected to depart from a specific location or conclude a particular activity"
+start date,start date,GID-16024,the date at which something is supposed to begin
+end date,end date,GID-16025,the date at which something is supposed to end
+weekdays,weekdays,GID-16026,the collective term denoting the standard working days within a traditional weekly cycle
+date,date,GID-16027,"specific point on the temporal continuum, typically expressed through a combination of numerical values representing the day, month, and year within a calendrical system"
