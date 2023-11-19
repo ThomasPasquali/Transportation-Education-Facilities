@@ -1,26 +1,25 @@
-Initial concept,Concepts,ID,Description
-educational organization,educational facility,GID-118022,a facility relating to the process of education
-agency,provider,GID-57474,someone whose business is to supply a particular service or commodity
-route,bus route,GID-45936,the route regularly followed by a passenger bus
-route,train route,GID-16009,the route regularly followed by a passenger train
-stop,bus stop,GID-45937,a place on a bus route where buses stop to discharge and take on passengers
-stop,train stop,GID-16010,a place on a train route where trains stop to discharge and take on passengers
-trip stop,journey stop,GID-16003,programmed action of stopping during a journey with a duration
-trip,journey,GID-1560,the act of traveling from one place to another
-commitment,shift,GID-1704,the act of moving from one place to another
-user/person,end user,GID-53816,the ultimate user for which something is intended
-calendar,weekly schedule,GID-16001,a weekly organized plan with a start date and an end date
-calendar exception,schedule exception,GID-16002,an instance that does not conform to a schedule
-domicile,domicile,GID-17703,housing that someone is living in
-residence,residence,GID-46085,any address at which you dwell more than temporarily
-,,,
-operates,operates,GID-16011,the action of functioning or carrying out tasks within an organization
-composed,composed,GID-89151,made up of individual elements
-characterized,characterized,GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
-localize,localize,GID-113623,identify the location or place of
-from or to,from or to,GID-16014,"the directional relationship between two locations, indicating the origin or destination point in a given context"
-domiciled,domiciled,GID-16015,state or condition of having a temporary established dwelling in a specific place
-residence,residence,GID-16016,state or condition of having one's legal residence in a specific place
-specifies occurrence,specifies occurrence,GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
-specifies availability,specifies availability,GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
-involvement,involvement,GID-16019,"the active participation, engagement, or inclusion of an individual in a particular activity, situation, or undertaking"
+concept labels,description
+educational facility_GID-118022,a facility relating to the process of education
+provider_GID-57474,someone whose business is to supply a particular service or commodity
+bus route_GID-45936,the route regularly followed by a passenger bus
+train route_GID-16009,the route regularly followed by a passenger train
+bus stop_GID-45937,a place on a bus route where buses stop to discharge and take on passengers
+train stop_GID-16010,a place on a train route where trains stop to discharge and take on passengers
+journey stop_GID-16003,programmed action of stopping during a journey with a duration
+journey_GID-1560,the act of traveling from one place to another
+shift_GID-1704,the act of moving from one place to another
+end user_GID-53816,the ultimate user for which something is intended
+weekly schedule_GID-16001,a weekly organized plan with a start date and an end date
+schedule exception_GID-16002,an instance that does not conform to a schedule
+domicile_GID-17703,housing that someone is living in
+residence_GID-46085,any address at which you dwell more than temporarily
+operates_GID-16011,the action of functioning or carrying out tasks within an organization
+composed_GID-89151,made up of individual elements
+characterized_GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
+localize_GID-113623,identify the location or place of
+from or to_GID-16014,"the directional relationship between two locations, indicating the origin or destination point in a given context"
+domiciled_GID-16015,state or condition of having a temporary established dwelling in a specific place
+reside_GID-16016,state or condition of having one's legal residence in a specific place
+specifies occurrence_GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
+specifies availability_GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
+involvement_GID-16019,"the active participation, engagement, or inclusion of an individual in a particular activity, situation, or undertaking"
