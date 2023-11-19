@@ -15,7 +15,7 @@ To scrape FTM *Routes* and *Trips*, from `Code Libraries/E656_scraper` run:
 scrapy crawl FTMTrains -O ftm_routes_trips.json
 ```
 
-To scrape FTM *Stops*, from `Code Libraries/E656_scraper` run:
+To scrape FTM *Stops*, from `Code Libraries/E656_scraper` (Wikipedia) run:
 ```bash
 scrapy crawl FTMStops -O ftm_stops.json
 ```

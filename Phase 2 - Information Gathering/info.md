@@ -16,6 +16,8 @@ cd Code\ Libraries/E656_scraper/
 # Scraping (for more details refer to "Code Libraries/info.md")
 scrapy crawl FTMTrains -O ftm_routes_trips.json
 scrapy crawl FTMStops -O ftm_stops.json
+scrapy crawl Trains -O trento_trains.json
+scrapy crawl Stops -O stops.json
 
 cd ..
 

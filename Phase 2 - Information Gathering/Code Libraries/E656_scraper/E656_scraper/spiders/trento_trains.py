@@ -7,13 +7,14 @@ class TrainsSpider(scrapy.Spider):
   start_urls = [
     'https://www.e656.net/orario/stazione/trento/treni-dalle-00-alle-06.html',
     'https://www.e656.net/orario/stazione/trento/treni-dalle-06-alle-12.html',
-    # 'https://www.e656.net/orario/stazione/trento/treni-dalle-12-alle-15.html',
-    # 'https://www.e656.net/orario/stazione/trento/treni-dalle-15-alle-18.html',
-    # 'https://www.e656.net/orario/stazione/trento/treni-dalle-18-alle-24.html',
+    'https://www.e656.net/orario/stazione/trento/treni-dalle-12-alle-15.html',
+    'https://www.e656.net/orario/stazione/trento/treni-dalle-15-alle-18.html',
+    'https://www.e656.net/orario/stazione/trento/treni-dalle-18-alle-24.html',
   ]
 
   def parse(self, response):
     trains = response.css('table tbody tr')
+    print(f'Got {len(trains)} trains!!!')
     for train in trains:
       if not 'ng-show' in train.attrib:
         train_info = train.css('td')
@@ -29,14 +30,17 @@ class TrainsSpider(scrapy.Spider):
           cb_kwargs=dict(train=t)
         )
         yield t
-        # break
 
   def parse_train_stops (self, response, train):
     tmp = response.css('table')
-    calendar_info = tmp[0].css('tbody')
-    stops_info = tmp[1].css('tbody tr')
 
-    # TODO wait for element to render
+    if len(tmp) > 1:
+      stops_info = tmp[1].css('tbody tr')
+    else:
+      stops_info = tmp[0].css('tbody tr')
+
+    # calendar_info = tmp[0].css('tbody')
+    # TODO wait for element to render MADE WITH ANGULAR AND RENDERED AFTER
     # print('???????????????????', stops_info.get())
     # for c_info in calendar_info:
     #   c_info = c_info.css('td')
@@ -44,10 +48,15 @@ class TrainsSpider(scrapy.Spider):
     
     for s_info in stops_info:
       s_info = s_info.css('td')
+      arrival_time = s_info[1].css('::text').get()
+      if len(s_info) > 3:
+        departure_time = s_info[2].css('::text').get()
+      else:
+        departure_time = arrival_time
       yield TripStop(
         item_type='TripStop',
         train_name=train['name'],
         stop=s_info[0].css('::text').get(),
-        arrival_time=s_info[1].css('::text').get(),
-        departure_time=s_info[2].css('::text').get()
+        arrival_time=arrival_time,
+        departure_time=departure_time
       )

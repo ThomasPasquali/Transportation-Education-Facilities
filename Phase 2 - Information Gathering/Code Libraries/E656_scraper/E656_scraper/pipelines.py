@@ -12,7 +12,7 @@ class E656ScraperPipeline:
   def process_item(self, item, spider):
     i = ItemAdapter(item)
     for field in i.field_names():
-      print('PIPELINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', field, i.get(field))
+      # print('PIPELINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE', field, i.get(field))
       if i.get(field) is not None and i.get(field).strip:
         i[field] = i.get(field).strip()
     return item
