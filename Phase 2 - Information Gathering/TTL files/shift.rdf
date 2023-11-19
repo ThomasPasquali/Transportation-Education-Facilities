@@ -21,47 +21,20 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Shift_arriveBefore -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_shift_arrive_before_GID-16022 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Shift_arriveBefore">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Shift"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_shift_arrive_before_GID-16022">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Shift_from -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_shift_leave_after_GID-16023 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Shift_from">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Shift"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_Shift_id -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Shift_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Shift"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_Shift_leaveAfter -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Shift_leaveAfter">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Shift"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_shift_leave_after_GID-16023">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_Shift_to -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Shift_to">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Shift"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -77,9 +50,9 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#Shift -->
+    <!-- http://knowdive.disi.unitn.it/etype#shift_GID-1704 -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Shift"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
 </rdf:RDF>
 
 

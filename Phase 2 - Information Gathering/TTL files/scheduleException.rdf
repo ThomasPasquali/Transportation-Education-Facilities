@@ -21,28 +21,19 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_ScheduleEx_date -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_schedule_exception_date_GID-16027 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_ScheduleEx_date">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#ScheduleException"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_schedule_exception_date_GID-16027">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_ScheduleEx_id -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_schedule_exception_type_GID-31834 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_ScheduleEx_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#ScheduleException"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_ScheduleEx_type -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_ScheduleEx_type">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#ScheduleException"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_schedule_exception_type_GID-31834">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
@@ -59,9 +50,9 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#ScheduleException -->
+    <!-- http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002 -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#ScheduleException"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
 </rdf:RDF>
 
 

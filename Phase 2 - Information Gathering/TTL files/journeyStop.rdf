@@ -24,7 +24,7 @@
     <!-- http://knowdive.disi.unitn.it/etype#has_JourneyStop_arrivalTime -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_JourneyStop_arrivalTime">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#JourneyStop"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
@@ -33,17 +33,8 @@
     <!-- http://knowdive.disi.unitn.it/etype#has_JourneyStop_departureTime -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_JourneyStop_departureTime">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#JourneyStop"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_JourneyStop_id -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_JourneyStop_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#JourneyStop"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -51,7 +42,7 @@
     <!-- http://knowdive.disi.unitn.it/etype#has_JourneyStop_stopSequence -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_JourneyStop_stopSequence">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#JourneyStop"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
@@ -68,9 +59,9 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#JourneyStop -->
+    <!-- http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003 -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#JourneyStop"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
 </rdf:RDF>
 
 

@@ -21,80 +21,19 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_EduFacility_address -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_legal_name -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_EduFacility_address">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_legal_name">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_EduFacility_id -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_EduFacility_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_EduFacility_name -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_EduFacility_name">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_EduFacility_type -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_EduFacility_type">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#EducationalFacility -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#HighSchool -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#HighSchool">
-        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-    </owl:Class>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#MiddleSchool -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#MiddleSchool">
-        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-    </owl:Class>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#University -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#University">
-        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#EducationalFacility"/>
-    </owl:Class>
 </rdf:RDF>
 
 

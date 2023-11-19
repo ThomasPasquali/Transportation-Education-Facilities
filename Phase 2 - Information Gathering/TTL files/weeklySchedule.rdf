@@ -21,37 +21,28 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_WeeklySch_endDate -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_WeeklySch_endDate">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#WeeklySchedule"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_WeeklySch_id -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_WeeklySch_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#WeeklySchedule"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_WeeklySch_startDate -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_WeeklySch_startDate">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#WeeklySchedule"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_WeeklySch_weekdays -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_week_days_GID-16026 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_WeeklySch_weekdays">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#WeeklySchedule"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_week_days_GID-16026">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -68,9 +59,9 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#WeeklySchedule -->
+    <!-- http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001 -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#WeeklySchedule"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
 </rdf:RDF>
 
 

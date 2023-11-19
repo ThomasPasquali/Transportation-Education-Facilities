@@ -21,19 +21,10 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Provider_id -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Provider_id">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Provider"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://knowdive.disi.unitn.it/etype#has_Provider_name -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Provider_name">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Provider"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#provider_GID-57474"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -42,7 +33,7 @@
     <!-- http://knowdive.disi.unitn.it/etype#has_Provider_url -->
 
     <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Provider_url">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Provider"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#provider_GID-57474"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -59,9 +50,9 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#Provider -->
+    <!-- http://knowdive.disi.unitn.it/etype#provider_GID-57474 -->
 
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Provider"/>
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#provider_GID-57474"/>
 </rdf:RDF>
 
 
