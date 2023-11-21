@@ -17,6 +17,7 @@ operates,operates,GID-16011,the action of functioning or carrying out tasks with
 composed,composed,GID-89151,made up of individual elements
 characterized,characterized,GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
 localize,localize,GID-113623,identify the location or place of
+at,at,GID-16040,"a spatial point of reference, indicating a specific location, in relation to which an action, state, or event occurs"
 from or to,from or to,GID-16014,"the directional relationship between two locations, indicating the origin or destination point in a given context"
 domiciled,domiciled,GID-16015,state or condition of having a temporary established dwelling in a specific place
 reside,reside,GID-16016,state or condition of having one's legal residence in a specific place
@@ -33,3 +34,14 @@ start date,start date,GID-16024,the date at which something is supposed to begin
 end date,end date,GID-16025,the date at which something is supposed to end
 weekdays,weekdays,GID-16026,the collective term denoting the standard working days within a traditional weekly cycle
 date,date,GID-16027,"specific point on the temporal continuum, typically expressed through a combination of numerical values representing the day, month, and year within a calendrical system"
+name,name,GID-16031,the unique and identifying label assigned to a provider
+type,type,GID-31834,a subdivision of a particular kind of thing
+long name,long name,GID-16034,"a nomenclature, title, or designation that exceeds the customary length or character count typically associated with names or labels"
+short name,short name,GID-16032," a concise and brief nomenclature, label, or identifier used to represent an entity, concept, or object"
+headsign,headsign,GID-16035,"a distinct indicator or label, typically displayed on transportation vehicles such as buses or trains, that conveys the destination, route, or final destination of the vehicle. It serves as a concise and easily recognizable identifier for passengers, providing essential information about the vehicle's intended direction or endpoint"
+direction,direction,GID-16036,"the orientation, course, or path along which movement or progress occurs"
+accessibility,accessibility,GID-16037,"the inclusive quality or characteristic of a system, environment, or information that enables easy, equitable, and unimpeded use and interaction by individuals of diverse abilities, backgrounds, or circumstances"
+arrival time,arrival time,GID-80845,the time at which a public conveyance is scheduled to arrive at a given destination
+departure time,departure time,GID-80846,the time at which a public conveyance is scheduled to depart from a given point of origin
+stop sequence,stop sequence,GID-16038,"the systematic and ordered arrangement of stops or locations along a route, path, or journey"
+name,name,GID-16039,a distinctive label or identifier assigned to a specific location or point along a transportation route
