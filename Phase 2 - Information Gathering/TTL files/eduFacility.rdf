@@ -21,17 +21,17 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_legal_name -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_legal_name">
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834 -->
+    <!-- http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834">
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
 </rdf:RDF>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-19" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/journey.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-24" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/scheduleException.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-25" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/weeklySchedule.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-21" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/stop.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-17" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/shift.rdf"/>
+    <uri id="Imports Wizard Entry" name="http://www.semanticweb.org/lixiaoyue/ontologies/2023/2/untitled-ontology-26" uri="file:/C:/Users/Riccardo/Downloads/Trentino%20OSM%20LWOntology.owl"/>
+    <uri id="Imports Wizard Entry" name="http://vocab.gtfs.org/terms#" uri="file:/C:/Users/Riccardo/Downloads/GTFS.UAN.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-25" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/scheduleException.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-24" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/route.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-23" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/provider.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-22" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/position.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-21" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/position.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-18" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/journeyStop.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-17" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/journey.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-16" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/endUser.rdf"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-15" uri="file:/D:/KGE2023/TransportationAndEducationFacilities_KGE2023/Phase%202%20-%20Information%20Gathering/TTL%20files/eduFacility.rdf"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1700557436342" name="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-36/" uri="teleontology.rdf"/>
+    </group>
+</catalog>

@@ -21,47 +21,19 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Stop_address -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_stop_name_GID-16039 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Stop_address">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#stop"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_stop_name_GID-16039">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Stop_name -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_stop_type_GID-31834 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Stop_name">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#stop"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_stop_type_GID-31834">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_Stop_type -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Stop_type">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#stop"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#stop -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#stop"/>
 </rdf:RDF>
 
 

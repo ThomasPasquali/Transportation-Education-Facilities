@@ -21,56 +21,27 @@
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Route_longName -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_long_name_GID-16034 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Route_longName">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_long_name_GID-16034">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Route_provider -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_short_name_GID-16032 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Route_provider">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_short_name_GID-16032">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://knowdive.disi.unitn.it/etype#has_Route_shortName -->
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_type_GID-31834 -->
 
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Route_shortName">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_type_GID-31834">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#has_Route_type -->
-
-    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Route_type">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://knowdive.disi.unitn.it/etype#route -->
-
-    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#route"/>
 </rdf:RDF>
 
 
