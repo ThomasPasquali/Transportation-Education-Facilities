@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-38/"
+     xml:base="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-38/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/riccardo/ontologies/2023/10/untitled-ontology-38"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#at_GID-16040 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#at_GID-16040">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#characterized_GID-16013 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#characterized_GID-16013">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#train_route_GID-16009"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#composed_GID-89151 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#composed_GID-89151">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#domiciled_GID-16015 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#domiciled_GID-16015">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#domicile_GID-17703"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#from_or_to_GID-16014 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#from_or_to_GID-16014">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#domicile_GID-17703"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#residence_GID-46085"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#involvement_GID-16019 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#involvement_GID-16019">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#localize_GID-113623 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#localize_GID-113623">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#position_GID-27990"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#domicile_GID-17703"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#residence_GID-46085"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#operates_GID-16011 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#operates_GID-16011">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#provider_GID-57474"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#train_route_GID-16009"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#reside_GID-16016 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#reside_GID-16016">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#residence_GID-46085"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#specifies_avaiability_GID-16018 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#specifies_avaiability_GID-16018">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#specifies_occurence_GID-16017 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#specifies_occurence_GID-16017">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#work_GID-2962 -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#work_GID-2962">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_end_user_name_GID-16021 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_end_user_name_GID-16021">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_end_user_occupation_GID-2999 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_end_user_occupation_GID-2999">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_end_user_special_needs_GID-16020 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_end_user_special_needs_GID-16020">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#end_user_GID-53816"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_accessibility_GID-16037 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_accessibility_GID-16037">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_direction_GID-16036 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_direction_GID-16036">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_headsign_GID-16035 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_headsign_GID-16035">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_GID-1560"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_stop_arrival_time_GID-80845 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_stop_arrival_time_GID-80845">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_stop_departure_time_GID-80846 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_stop_departure_time_GID-80846">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_journey_stop_stop_sequence_GID-16038 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_journey_stop_stop_sequence_GID-16038">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_provider_name_GID-16031 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_provider_name_GID-16031">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#provider_GID-57474"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_long_name_GID-16034 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_long_name_GID-16034">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_route_GID-16009"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_short_name_GID-16032 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_short_name_GID-16032">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_route_GID-16009"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_route_type_GID-31834 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_route_type_GID-31834">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_route_GID-16009"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_schedule_exception_date_GID-16027 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_schedule_exception_date_GID-16027">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_schedule_exception_type_GID-31834 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_schedule_exception_type_GID-31834">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_shift_arrive_before_GID-16022 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_shift_arrive_before_GID-16022">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_shift_leave_after_GID-16023 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_shift_leave_after_GID-16023">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#shift_GID-1704"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_stop_name_GID-16039 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_stop_name_GID-16039">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_stop_type_GID-31834 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_stop_type_GID-31834">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_weekly_schedule_week_days_GID-16026 -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_weekly_schedule_week_days_GID-16026">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_has_position_address -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#schema_has_position_address">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#position_GID-27990"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_has_position_latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#schema_has_position_latitude">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#position_GID-27990"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_has_position_longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#schema_has_position_longitude">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#position_GID-27990"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#agency -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#agency">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#agent -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#agent"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#bus_route_GID-45936 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#bus_route_GID-45936">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#domicile_GID-17703 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#domicile_GID-17703">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_residence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_educational_organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#end_user_GID-53816 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#end_user_GID-53816">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#event -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#event">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#person_life"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#journey_GID-1560 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#journey_GID-1560">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#trip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#trip_stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#person -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#person">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#person_life"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#person_life -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#person_life"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#position_GID-27990 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#position_GID-27990">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_geo_coordinates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#provider_GID-57474 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#provider_GID-57474">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#agency"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#residence_GID-46085 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#residence_GID-46085">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_residence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#route -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#route"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schedule -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schedule">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#person_life"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schedule_exception_GID-16002">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schedule"/>
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#service_rule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_civic_structure -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_civic_structure">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_educational_organization -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_educational_organization">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_civic_structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_geo_coordinates -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_geo_coordinates">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_structured_value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_intangible -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_intangible"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_place -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_place"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_residence -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_residence">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#schema_structured_value -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#schema_structured_value">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schema_intangible"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#service_rule -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#service_rule"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#shift_GID-1704 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#shift_GID-1704">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#stop -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#stop"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#train_route_GID-16009 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#train_route_GID-16009">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#route"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#train_stop_GID-16010 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#stop"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#trip -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#trip"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#trip_stop -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#trip_stop"/>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#schedule"/>
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#service_rule"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
