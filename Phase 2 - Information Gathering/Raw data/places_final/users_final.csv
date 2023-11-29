@@ -1,0 +1,10 @@
+name,age,domicile_location,residence_location,work_location,edu_type,occupation,special_needs
+Mario,13,u1,u1,u2,MS,Stud.,
+Jessica,16,u3,u3,u4,HS,Stud.,
+Luca,18,u5,u5,u6,HS,Stud.,Access.
+Gian,20,u7,u7,u8,U,Stud.,
+Gaia,22,u9,u10,u11,U,Stud.,
+Carla,22,u9,u12,u13,U,Stud.,Space
+Fausto,32,u14,u14,u15,U,Prof.,
+Lucia,43,u16,u16,u17,U,Prof.,TimeOpt.
+Anna,52,u18,u18,u19,MS,Janitor,

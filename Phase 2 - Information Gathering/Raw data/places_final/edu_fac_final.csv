@@ -1,0 +1,123 @@
+type,name,address
+middleschool,Ala Cesare Battisti,e1
+middleschool,Albiano,e2
+middleschool,Aldeno,e3
+middleschool,Altopiano Vigolana-Vigolo Vatt.,e4
+middleschool,Andalo Cesare Battisti,e5
+middleschool,Arco NicolÃ² d',e6
+middleschool,Gardascuola Padre Monti,e7
+middleschool,Avio Dante Alighieri,e8
+middleschool,Baselga di PinÃ¨ Don G. Tarter,e9
+middleschool,Borgo d'Anaunia - Fondo,e10
+middleschool,Borgo Ora e Veglia,e11
+middleschool,Brentonico Catoni,e12
+middleschool,Campitello di Fassa Soraruf,e13
+middleschool,Canal San Bovo,e14
+middleschool,Castel Ivano Strigno Brentari,e15
+middleschool,Castello Tesino,e16
+middleschool,Cavalese Giovanni Segantini,e17
+middleschool,Cavedine Cristoforo Madruzzo,e18
+middleschool,Cembra Lisignago - Cembra,e19
+middleschool,Civezzano Giulio Alessandrini,e20
+middleschool,Cles Vigilio Inama,e21
+middleschool,Comano Terme-Ponte Archeprati,e22
+middleschool,Denno Vittorio Vielmetti,e23
+middleschool,Dro Nuova Europa,e24
+middleschool,Folgaria Pia Rella,e25
+middleschool,Giovo - Verla,e26
+middleschool,Grigno Fante Silvano,e27
+middleschool,Lavarone Giovanni Prati,e28
+middleschool,Lavis Aldo Stainer,e29
+middleschool,Ledro - Bezzecca Garibaldi,e30
+middleschool,Levico Terme G.B. De Gasparis,e31
+middleschool,MalÃ¨ Giovanni Ciccolini,e32
+middleschool,Istituto Salesiano Santa Croce,e33
+middleschool,Mezzocorona Eusebio Chini,e34
+middleschool,Mezzolombardo Eccher Dall'Eco,e35
+middleschool,Moena Don Giovanni Iori,e36
+middleschool,Mori Bartolomeo Malfatti,e37
+middleschool,Novella - RevÃ²,e38
+middleschool,Ossana Cesare Zanella,e39
+middleschool,Pergine Ciro Andreatta,e40
+middleschool,Pergine Tullio Garbari,e41
+middleschool,Pieve di Bono-Prezzo,e42
+middleschool,Pinzolo Leonardo da Vinci,e43
+middleschool,Madonna di Campiglio,e44
+middleschool,Predaia - Taio Barbacovi,e45
+middleschool,Predaia - Coredo,e46
+middleschool,Predazzo Marzari Pencati,e47
+middleschool,Primiero Smc - Fiera Negrelli,e48
+middleschool,Riva del Garda Damiano Chiesa,e49
+middleschool,Riva del Garda Scipio Sighele,e50
+middleschool,Roncegno Marco Pola,e51
+middleschool,Rovereto Alcide Degasperi,e52
+middleschool,Rovereto Damiano Chiesa,e53
+middleschool,Rovereto - Lizzana Halbherr,e54
+middleschool,Rovereto Negrelli,e55
+middleschool,Collegio Arcivescovile Dame Inglesi,e56
+middleschool,La Vela,e57
+middleschool,San Giovanni di Fassa-Pozza,e58
+middleschool,Segonzano,e59
+middleschool,Sella Giudicarie - Roncone,e60
+middleschool,Spiazzobaschenis De Averaria,e61
+middleschool,Spormaggiore,e62
+middleschool,Storo Giacomo Leopardi,e63
+middleschool,Telve Don Lorenzo Milani,e64
+middleschool,Tesero Giovanni Alberti,e65
+middleschool,Tione Legione Trentina,e66
+middleschool,Trento-Povo Giovanni Pascoli,e67
+middleschool,Trento-Cognoladell'Argentario,e68
+middleschool,Trento - Mattarello Fogazzaro,e69
+middleschool,Trento - Gardolo Pedrolli,e70
+middleschool,Trento Giacomo Bresadola,e71
+middleschool,Trento Bronzetti-Segantini,e72
+middleschool,Trento Othmar Winkler,e73
+middleschool,Trento Alessandro Manzoni,e74
+middleschool,Collegio Arcivescovile Celestino Endrici,e75
+middleschool,Istituto Salesiano Maria Ausiliatrice,e76
+middleschool,Istituto Sacro Cuore,e77
+middleschool,Associazione Pedagogica Rudolf Steiner,e78
+middleschool,Vallelaghi-Vezzano Bellesini,e79
+middleschool,Villa Lagarina Anna Frank,e80
+middleschool,Ville d'Anuania - Tuenno,e81
+middleschool,Volano - Alta Vallagarina,e82
+highschool,Liceo Arti Vittoria Bonporti Depero,e83
+highschool,Liceo Arti Vittoria Bonporti Depero,e84
+highschool,Alcide Degasperi,e85
+highschool,LA Rosa Bianca-Weisse Rose,e86
+highschool,Bertrand Russell,e87
+highschool,Martino Martini,e88
+highschool,Marie Curie,e89
+highschool,Fiera di Primiero,e90
+highschool,Liceo Steam International,e91
+highschool,Giuseppe Soraperra,e92
+highschool,Lorenzo Guetti,e93
+highschool,Galileo Galilei,e94
+highschool,Leonardo da Vinci,e95
+highschool,Linguistico Sophie Magdalena Scholl Tn,e96
+highschool,Degasperi,e97
+highschool,Fabio Filzi,e98
+highschool,Antonio Rosmini,e99
+highschool,Andrea Maffei,e100
+highschool,Antonio Rosmini,e101
+highschool,Giovanni Prati,e102
+highschool,Arcivescovile-Dame Inglesi,e103
+highschool,Giacomo Floriani,e104
+highschool,Guglielmo Marconi,e105
+highschool,Guglielmo Marconi Rovereto Serale,e106
+highschool,Istituto Provinciale Agrario,e107
+highschool,M. Buonarroti,e108
+highschool,Marie Curie,e109
+highschool,Don Lorenzo Milani,e110
+university,Dipartimento di Biologia Cellulare; Computazionale e Integrata - CIBIO,e111
+university,Dipartimento di Economia e Management,e112
+university,Dipartimento di Fisica,e113
+university,Dipartimento di Ingegneria Civile Ambientale e Meccanica,e114
+university,Dipartimento di Lettere e Filosofia,e115
+university,Dipartimento di Matematica,e116
+university,Dipartimento di Psicologia e Scienze Cognitive,e117
+university,Dipartimento di Sociologia e Ricerca Sociale,e118
+university,Facoltà di Giurisprudenza,e119
+university,Centro Agricoltura; Alimenti; Ambiente - C3A,e120
+university,Centro Interdipartimentale di Scienze Mediche - CISMED,e121
+university,Centro Interdipartimentale Mente/Cervello - CIMEC,e122
