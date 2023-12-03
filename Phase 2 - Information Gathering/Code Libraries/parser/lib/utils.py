@@ -1,4 +1,21 @@
 import requests
+import pandas as pd
+from colorama import Fore, init
+
+init(autoreset=True)
+
+def warn (s: str):
+  print(f"{Fore.YELLOW}{s}")
+
+def err (s: str):
+  print(f"{Fore.RED}{s}")
+
+def info (s: str):
+  print(f"{Fore.BLUE}{s}")
+
+def add_id_prefix (df: pd.DataFrame, prefix: str, col='id'):
+  df[col] = df[col].map(lambda id: prefix + str(id))
+  return df
 
 __OSM_BASE_URL = "https://nominatim.openstreetmap.org/search"
 
