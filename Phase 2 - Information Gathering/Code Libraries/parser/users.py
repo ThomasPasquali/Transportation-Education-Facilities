@@ -36,10 +36,10 @@ if edu is not None and len(edu) > 0:
   users['work'] = users['work_location'].map(edu_address_id_map)
 else:
   users['work'] = None
-  err('Could not link work locations, please generate educational facilities tmp datasets!')
+  err('Could not link work locations, please generate educational facilities tmp dataset!')
 
 print('\n\nUSERS\n', users, '\n\nPOSITIONS\n', positions)
 
 write_tmp_dataset(ETYPE.USER, users)
-append_to_tmp_dataset(ETYPE.POSITION, positions)
+append_to_tmp_dataset(ETYPE.POSITION, positions, False)
 

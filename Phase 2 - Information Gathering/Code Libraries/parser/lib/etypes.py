@@ -14,18 +14,31 @@ __RAW_BASE_PATH = '../../Raw data/'
 __TMP_DF_DIR = 'tmp_df/'
 
 class ETYPE(Enum):
+  # Transportation
+  STOP = {
+    'name': 'stop',
+    'filename': 'transport/stops',
+    'columns': ['name', 'type'],
+    'relations': ['localize']
+  }
+
+  # End users
   USER = {
     'name': 'user',
     'filename': 'users/users',
     'columns': ['name', 'occupation', 'special_needs'],
     'relations': ['domiciled', 'reside', 'work']
   }
+
+  # Education
   EDU_FAC = {
     'name': 'educational_facility',
     'filename': 'edu/educational_facilities',
     'columns': ['type', 'name'],
-    'relations': ['nearest_stops']
+    'relations': ['localize', 'nearest_stops']
   }
+
+  # Common
   POSITION = {
     'name': 'position',
     'filename': 'positions',
@@ -41,15 +54,15 @@ class ETYPE(Enum):
 ##                            ##
 ################################
 
-def __get_raw_file_path (etype: ETYPE):
-  return f'{__RAW_BASE_PATH}{etype.value["filename"]}.csv'
+def __get_raw_file_path (etype: ETYPE, custom_path=None):
+  return f'{__RAW_BASE_PATH}{custom_path if custom_path is not None else etype.value["filename"]}.csv'
 
 def __get_tmp_file_path (etype: ETYPE):
   return f'{__TMP_DF_DIR}{etype.value["filename"]}.csv'
 
-def read_raw_dataset (etype: ETYPE):
+def read_raw_dataset (etype: ETYPE, custom_path=None):
   try:
-    return pd.read_csv(__get_raw_file_path(etype))
+    return pd.read_csv(__get_raw_file_path(etype, custom_path))
   except FileNotFoundError:
     info(f"Raw file '{os.path.abspath(__get_raw_file_path(etype))}' not found.")
 
@@ -87,7 +100,7 @@ def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame):
 
   df.to_csv(path, index=False)
 
-def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True):
+def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True): # FIXME find something more smart than skip_if_exists
   df = fix_id_col(df)
   df = clean_columns(etype, df)
 
