@@ -1,2 +1,3 @@
-# ProjectRepositoryTemplate
-This is a template fort all the KGE projects repository. In general the structure of this repository has to be applied to every iTelos project.
+# KGE 2023 - Trentino Transportation and Education Facilities
+
+This repository contains all resources and scripts used or produced during the project developement.
