@@ -10,7 +10,7 @@ from lib.utils import address_to_lat_lon, err, warn, info, add_id_prefix
 ##                            ##
 ################################
 
-__RAW_BASE_PATH = '../../Raw data/'
+RAW_BASE_PATH = '../../Raw data/'
 __TMP_DF_DIR = 'tmp_df/'
 
 class ETYPE(Enum):
@@ -29,6 +29,12 @@ class ETYPE(Enum):
     'columns': ['name', 'occupation', 'special_needs'],
     'relations': ['domiciled', 'reside', 'work']
   }
+  SHIFT = {
+    'name': 'shift',
+    'filename': 'users/shifts',
+    'columns': ['arrive_before', 'leave_after'],
+    'relations': ['from', 'to', 'occurence']
+  }
 
   # Education
   EDU_FAC = {
@@ -45,6 +51,18 @@ class ETYPE(Enum):
     'columns': ['address', 'latitude', 'longitude'],
     'relations': []
   }
+  WEEKLY_SCHEDULE = {
+    'name': 'weekly_schedule',
+    'filename': 'calendar',
+    'columns': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'start_date', 'end_date'],
+    'relations': []
+  }
+  SCHEDULE_EXCEPTION = {
+    'name': 'schedule_exception',
+    'filename': 'calendar_dates',
+    'columns': ['date', 'type'],
+    'relations': []
+  }
 
 
 
@@ -54,15 +72,15 @@ class ETYPE(Enum):
 ##                            ##
 ################################
 
-def __get_raw_file_path (etype: ETYPE, custom_path=None):
-  return f'{__RAW_BASE_PATH}{custom_path if custom_path is not None else etype.value["filename"]}.csv'
+def __get_raw_file_path (etype: ETYPE, file_extention='.csv', custom_path=None):
+  return f'{RAW_BASE_PATH}{custom_path if custom_path is not None else etype.value["filename"]}{file_extention}'
 
 def __get_tmp_file_path (etype: ETYPE):
   return f'{__TMP_DF_DIR}{etype.value["filename"]}.csv'
 
-def read_raw_dataset (etype: ETYPE, custom_path=None):
+def read_raw_dataset (etype: ETYPE, file_extention='.csv', custom_path=None):
   try:
-    return pd.read_csv(__get_raw_file_path(etype, custom_path))
+    return pd.read_csv(__get_raw_file_path(etype, file_extention, custom_path))
   except FileNotFoundError:
     info(f"Raw file '{os.path.abspath(__get_raw_file_path(etype))}' not found.")
 
@@ -73,22 +91,26 @@ def read_tmp_dataset (etype: ETYPE):
     info(f"Raw file '{os.path.abspath(__get_tmp_file_path(etype))}' not found.")
 
 def clean_columns (etype: ETYPE, df: pd.DataFrame):
-  to_keep = etype.value['columns'] + etype.value['relations'] + ['id']
+  to_keep = ['id'] + etype.value['columns'] + etype.value['relations']
   cols = df.columns.to_list()
+  print(cols)
   for c in to_keep:
     if c not in cols:
       err(f'Missing required column "{c}" for etype "{etype}"')
       exit(1)
-  return df.drop(columns=[c for c in cols if c not in to_keep])
+  df = df.drop(columns=[c for c in cols if c not in to_keep])
+  cols = df.columns.to_list()
+  cols.remove('id')
+  print(['id'] + cols)
+  df = df[['id'] + cols]
+  return df
 
 def fix_id_col (df: pd.DataFrame):
-  print(df, df.columns.to_list())
   if 'id' not in df.columns.to_list():
     df = df.reset_index()
     if 'id' not in df.columns.to_list() and 'index' in df.columns.to_list():
       df = df.rename(columns={'index': 'id'})
     df['id'] = df['id'].astype(str)
-    print(df, df.columns.to_list())
   return df
 
 def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame):
@@ -99,6 +121,7 @@ def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame):
   os.makedirs(os.path.dirname(path), exist_ok=True)
 
   df.to_csv(path, index=False)
+  return df
 
 def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True): # FIXME find something more smart than skip_if_exists
   df = fix_id_col(df)

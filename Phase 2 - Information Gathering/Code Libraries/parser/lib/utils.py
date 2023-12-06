@@ -67,7 +67,7 @@ def check_duplicates (df, cols, exits=True):
   """
   dup = df.loc[df[cols].duplicated()]
   if len(dup) > 0:
-    print('ERROR: duplicate cols values!!')
+    print('ERROR: duplicate cols values!!\n', dup)
     if exits:
       exit(1)
     else:

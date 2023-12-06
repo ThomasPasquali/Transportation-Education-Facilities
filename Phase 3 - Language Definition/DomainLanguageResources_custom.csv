@@ -21,8 +21,8 @@ at,at,GID-16040,"a spatial point of reference, indicating a specific location, i
 from or to,from or to,GID-16014,"the directional relationship between two locations, indicating the origin or destination point in a given context"
 domiciled,domiciled,GID-16015,state or condition of having a temporary established dwelling in a specific place
 reside,reside,GID-16016,state or condition of having one's legal residence in a specific place
-specifies occurrence,specifies occurrence,GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
-specifies availability,specifies availability,GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
+occurrence,occurrence,GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
+availability,availability,GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
 involvement,involvement,GID-16019,"the active participation, engagement, or inclusion of an individual in a particular activity, situation, or undertaking"
 work,work,GID-2962,activity directed toward making or doing something
 special needs,special needs,GID-16020,"unique and specific requirements or assistance that individuals may require due to physical, cognitive, emotional, or developmental differences"

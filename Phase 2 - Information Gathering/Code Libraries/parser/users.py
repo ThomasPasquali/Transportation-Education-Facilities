@@ -38,7 +38,19 @@ else:
   users['work'] = None
   err('Could not link work locations, please generate educational facilities tmp dataset!')
 
-print('\n\nUSERS\n', users, '\n\nPOSITIONS\n', positions)
+# Schedules
+shifts = read_raw_dataset(ETYPE.SHIFT)
+schedules = read_raw_dataset(ETYPE.WEEKLY_SCHEDULE)
+schedules_exceptions = read_raw_dataset(ETYPE.SCHEDULE_EXCEPTION)
+
+
+print(
+  '\n\nUSERS\n', users,
+  '\n\nPOSITIONS\n', positions,
+  '\n\nWEEKLY SCHEDULE\n', schedules,
+  '\n\nSCHEDULE EXCEPTION\n', schedules_exceptions,
+  '\n\SHIFTS\n', shifts
+  )
 
 write_tmp_dataset(ETYPE.USER, users)
 append_to_tmp_dataset(ETYPE.POSITION, positions, False)
