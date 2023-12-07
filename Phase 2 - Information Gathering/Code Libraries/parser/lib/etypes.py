@@ -94,7 +94,6 @@ def read_tmp_dataset (etype: ETYPE):
 def clean_columns (etype: ETYPE, df: pd.DataFrame):
   to_keep = ['id'] + etype.value['columns'] + etype.value['relations']
   cols = df.columns.to_list()
-  print(cols)
   for c in to_keep:
     if c not in cols:
       err(f'Missing required column "{c}" for etype "{etype}"')
@@ -102,7 +101,6 @@ def clean_columns (etype: ETYPE, df: pd.DataFrame):
   df = df.drop(columns=[c for c in cols if c not in to_keep])
   cols = df.columns.to_list()
   cols.remove('id')
-  print(['id'] + cols)
   df = df[['id'] + cols]
   return df
 
@@ -124,7 +122,7 @@ def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame):
   df.to_csv(path, index=False)
   return df
 
-def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True): # FIXME find something more smart than skip_if_exists
+def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True):
   df = fix_id_col(df)
   df = clean_columns(etype, df)
 
@@ -133,6 +131,7 @@ def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True):
     if skip_if_exists:
       return
     df = pd.concat([curr_df, df])
+    df = df.drop_duplicates(subset='id', keep='first')
 
   path = __get_tmp_file_path(etype)
   os.makedirs(os.path.dirname(path), exist_ok=True)

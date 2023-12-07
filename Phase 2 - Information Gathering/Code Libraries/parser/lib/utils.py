@@ -1,7 +1,8 @@
 import requests
 import pandas as pd
+from math import radians, sin, cos, sqrt, atan2
+
 from colorama import Fore, init
-import math 
 
 init(autoreset=True)
 
@@ -75,8 +76,25 @@ def check_duplicates (df, cols, exits=True):
       return dup
   return True
 
-def lat_lot_diff_to_meters (diff):
-  return diff * 111.139
+def haversine_distance(lat1, lon1, lat2, lon2):
+    # Radius of the Earth in meters
+    R = 6371000.0
 
-def positions_near_enough (p1, p2, trashold = 500):
-  return lat_lot_diff_to_meters(math.sqrt((p1['latitude'] - p2['latitude'])**2 + (p1['longitude'] - p2['longitude'])**2)) < trashold
+    # Convert latitude and longitude from degrees to radians
+    lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+
+    # Calculate differences in latitude and longitude
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    # Haversine formula
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    # Calculate the distance
+    distance = R * c
+
+    return distance
+
+def positions_near_enough (p1, p2, THRESHOLD = 500):
+  return THRESHOLD > haversine_distance(float(p1['latitude']), float(p1['longitude']), float(p2['latitude']), float(p2['longitude']))
