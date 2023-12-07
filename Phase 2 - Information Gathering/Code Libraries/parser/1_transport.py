@@ -131,7 +131,7 @@ journeys_stops = pd.DataFrame(columns=get_complete_columns_list(ETYPE.JOURNEY_ST
 
 for folder in FOLDERS:
   df_routes = DFS[f'{folder}_routes'].copy()
-  
+
   agency_id = 0
   route_type = 'bus'
   if folder.startswith('tt_'): # Trentino trasporti dataset
@@ -149,12 +149,14 @@ for folder in FOLDERS:
   # Assign agency and type
   df_routes = df_routes.assign(agency_id=agency_id)
   df_routes = df_routes.assign(type=route_type)
+  print(df_routes)
 
   df_routes.rename(columns={'route_id': 'id', 'agency_id': 'operated', 'route_short_name': 'short_name', 'route_long_name': 'long_name'}, inplace=True)
-  df_routes.drop(columns=['route_type', 'route_color', 'route_text_color', 'route_desc', 'route_url', 'bikes_allowed', 'route_sort_order'], inplace=True, errors='ignore')
   for col in ['id', 'short_name']:
     if col in df_routes:
       df_routes[col] = df_routes[col].astype(str)
+  df_routes = add_id_prefix(df_routes, f'route_{folder}_', 'id')
+  df_routes = df_routes[routes.columns]
 
   df_trips = DFS[f'{folder}_trips'].copy()
   df_trips.rename(columns={'trip_id': 'id', 'route_id': 'characterized', 'service_id': 'avaiability', 'trip_headsign': 'headsign', 'direction_id': 'direction', 'wheelchair_accessible': 'accessibility'}, inplace=True)
@@ -169,27 +171,25 @@ for folder in FOLDERS:
   if 'direction' in df_trips:
     df_trips['direction'] = df_trips['direction'].astype(float)
   df_trips['avaiability'] = df_trips['avaiability'].astype(str)
-  df_trips.drop(columns=['shape_id', 'trip_short_name', 'route_short_name', 'block_id', 'trip_bikes_allowed', 'bikes_allowed', 'train_category', 'ticketing_trip_id', 'ticketing_type'], inplace=True, errors='ignore')
+  df_trips = add_id_prefix(df_trips, f'trip_{folder}_', 'id')
+  df_trips = df_trips[journeys.columns]
 
   df_trips_stops = DFS[f'{folder}_stop_times'].copy()
   for k in ['trip_id', 'stop_id']:
     if k in df_trips_stops:
       df_trips_stops[k] = df_trips_stops[k].astype(str)
   df_trips_stops.rename(columns={'trip_id': 'of', 'stop_id': 'at'}, inplace=True)
-  df_trips_stops.drop(columns=['timepoint', 'stop_headsign', 'route_short_name', 'pickup_type', 'drop_off_type', 'shape_dist_traveled'], inplace=True, errors='ignore')
   df_trips_stops['id'] = None
+  df_trips_stops = df_trips_stops[journeys_stops.columns]
 
-  print(journeys_stops.columns, df_trips_stops.columns)
-  print(df_trips_stops)
   routes = pd.concat([routes.astype(df_routes.dtypes), df_routes])
   journeys = pd.concat([journeys.astype(df_trips.dtypes), df_trips])
   journeys_stops = pd.concat([journeys_stops.astype(df_trips_stops.dtypes), df_trips_stops])
 
 check_duplicates(routes, 'id')
 check_duplicates(journeys, 'id')
-check_duplicates(journeys_stops, 'id')
 
 routes = write_tmp_dataset(ETYPE.ROUTE, routes)
 journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
 journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
-print('\n\ROUTES\n', routes, '\n\JOURNEYS\n', journeys, '\n\JOURNEY STOPS\n', journeys_stops)
+print('\n\nROUTES\n', routes, '\n\nJOURNEYS\n', journeys, '\n\nJOURNEY STOPS\n', journeys_stops)
