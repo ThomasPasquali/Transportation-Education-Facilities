@@ -47,12 +47,12 @@ ws = pd.DataFrame(columns=ETYPE.WEEKLY_SCHEDULE.value['columns'])
 for folder in FOLDERS:
   df = DFS[f'{folder}_calendar'].copy()
   df.rename(columns={'service_id': 'id'}, inplace=True)
-  df['id'] = df['id'].astype(str)
+  df = add_id_prefix(df, f'ws_{folder}_', 'id')
   ws = pd.concat([ws, df])
-  check_duplicates(ws, 'id')
 
+check_duplicates(ws, 'id')
 ws = write_tmp_dataset(ETYPE.WEEKLY_SCHEDULE, ws)
-print('\n\nWEEKLY SCHEDULE\n', ws)
+print('\n\nWEEKLY SCHEDULES\n', ws)
 
 
 
@@ -61,9 +61,18 @@ print('\n\nWEEKLY SCHEDULE\n', ws)
 ##   Calendar date (Schedule Exceptions)   ##
 ##                                         ##
 #############################################
-# TODO
 
+se = pd.DataFrame(columns=get_complete_columns_list(ETYPE.SCHEDULE_EXCEPTION))
 
+for folder in FOLDERS:
+  df = DFS[f'{folder}_calendar_dates'].copy()
+  df.rename(columns={'service_id': 'id', 'exception_type': 'type'}, inplace=True)
+  df = add_id_prefix(df, f'se_{folder}_', 'id')
+  se = pd.concat([se, df])
+
+check_duplicates(se, 'id')
+ws = write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
+print('\n\SCHEDULE EXCEPTIONS\n', se)
 
 
 ###################################
@@ -98,4 +107,4 @@ for folder in FOLDERS:
 
 stops = write_tmp_dataset(ETYPE.STOP, stops)
 positions = write_tmp_dataset(ETYPE.POSITION, positions)
-print('\n\nSTOP\n', stops, '\n\nPOSITION\n', positions)
+print('\n\nSTOPS\n', stops, '\n\nPOSITIONS\n', positions)

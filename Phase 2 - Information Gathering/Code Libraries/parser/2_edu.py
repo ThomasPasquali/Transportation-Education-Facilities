@@ -5,7 +5,6 @@ from lib.etypes import ETYPE, read_raw_dataset, read_tmp_dataset, exctract_and_f
 from lib.utils import add_id_prefix, err, warn, info, positions_near_enough
 
 edu_fac = read_raw_dataset(ETYPE.EDU_FAC)
-edu_fac = edu_fac.iloc[1:10] # FIXME
 edu_fac = add_id_prefix(edu_fac, 'pos_edu_fac_')
 edu_fac.rename({'name': 'legal_name'}, inplace=True)
 
