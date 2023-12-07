@@ -10,10 +10,10 @@ users = add_id_prefix(users, 'u_')
 # Read tmp positions dataset
 positions = read_tmp_dataset(ETYPE.POSITION)
 if positions is not None:
-  positions = positions.loc[positions['id'].astype(str).str.contains('u_dom_|u_res_')]
+  user_positions = positions.loc[positions['id'].astype(str).str.contains('u_dom_|u_res_')]
 
 # Fetch positions if needed
-if positions is None or len(positions) <= 0:
+if user_positions is None or len(user_positions) <= len(users):
   print('Fetching positions...') 
   positions = pd.concat([
     exctract_and_fetch_positions(users, 'domicile_location', 'u_dom_'),
@@ -30,9 +30,9 @@ users['domiciled'] = users['domicile_location'].map(pos_address_id_map)
 users['reside'] = users['residence_location'].map(pos_address_id_map)
 
 # Read tmp edu dataset
-edu = read_tmp_dataset(ETYPE.EDU_FAC)
-if edu is not None and len(edu) > 0:
-  edu_address_id_map = dict(zip(edu['address'], edu['id']))
+edu_pos = read_tmp_dataset(ETYPE.POSITION) 
+if edu_pos is not None and len(edu_pos) > 0:
+  edu_address_id_map = dict(zip(edu_pos['address'], edu_pos['id']))
   users['work'] = users['work_location'].map(edu_address_id_map)
 else:
   users['work'] = None
@@ -40,8 +40,8 @@ else:
 
 # Schedules
 shifts = read_raw_dataset(ETYPE.SHIFT)
-schedules = read_raw_dataset(ETYPE.WEEKLY_SCHEDULE)
-schedules_exceptions = read_raw_dataset(ETYPE.SCHEDULE_EXCEPTION)
+schedules = read_raw_dataset(ETYPE.WEEKLY_SCHEDULE, custom_path='users/calendar')
+schedules_exceptions = read_raw_dataset(ETYPE.SCHEDULE_EXCEPTION, custom_path='users/calendar_dates')
 
 
 print(
@@ -53,5 +53,9 @@ print(
   )
 
 write_tmp_dataset(ETYPE.USER, users)
+write_tmp_dataset(ETYPE.SHIFT, shifts)
 append_to_tmp_dataset(ETYPE.POSITION, positions, False)
+append_to_tmp_dataset(ETYPE.WEEKLY_SCHEDULE, schedules, False)
+append_to_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, schedules_exceptions, False)
+
 

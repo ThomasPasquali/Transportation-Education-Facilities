@@ -5,18 +5,18 @@ from lib.etypes import ETYPE, read_raw_dataset, read_tmp_dataset, exctract_and_f
 from lib.utils import add_id_prefix, err, warn, info, positions_near_enough
 
 edu_fac = read_raw_dataset(ETYPE.EDU_FAC)
-edu_fac = add_id_prefix(edu_fac, 'pos_edu_fac_')
+edu_fac = add_id_prefix(edu_fac, 'edu_fac_')
 edu_fac.rename({'name': 'legal_name'}, inplace=True)
 
 # Read tmp positions dataset
 positions = read_tmp_dataset(ETYPE.POSITION)
 if positions is not None and len(positions) > 0:
-  edu_positions = positions.loc[positions['id'].str.contains('edu_')]
+  edu_positions = positions.loc[positions['id'].str.contains('pos_edu_fac_')]
 
 # Fetch positions if needed
 if edu_positions is None or len(edu_positions) < len(edu_fac):
   print('Fetching positions...')
-  edu_positions = exctract_and_fetch_positions(edu_fac, 'address', 'edu_')
+  edu_positions = exctract_and_fetch_positions(edu_fac, 'address', 'pos_edu_fac_')
 
 # Liks edu_fac positions
 pos_address_id_map = dict(zip(edu_positions['address'], edu_positions['id']))
