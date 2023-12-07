@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from colorama import Fore, init
+import math 
 
 init(autoreset=True)
 
@@ -73,3 +74,9 @@ def check_duplicates (df, cols, exits=True):
     else:
       return dup
   return True
+
+def lat_lot_diff_to_meters (diff):
+  return diff * 111.139
+
+def positions_near_enough (p1, p2, trashold = 500):
+  return lat_lot_diff_to_meters(math.sqrt((p1['latitude'] - p2['latitude'])**2 + (p1['longitude'] - p2['longitude'])**2)) < trashold
