@@ -25,7 +25,7 @@ class ETYPE(Enum):
     'name': 'route',
     'filename': 'transport/routes',
     'columns': ['long_name', 'short_name', 'type'],
-    'relations': ['operated'] # TODO fix teleontology and language!!!
+    'relations': ['operated']
   }
   JOURNEY = {
     'name': 'journey',
@@ -37,7 +37,7 @@ class ETYPE(Enum):
     'name': 'journey_stop',
     'filename': 'transport/journeys_stops',
     'columns': ['arrival_time', 'departure_time', 'stop_sequence'],
-    'relations': ['of', 'at'] # TODO 'of' fix teleontology and language!!!
+    'relations': ['of', 'at']
   }
 
   # End users

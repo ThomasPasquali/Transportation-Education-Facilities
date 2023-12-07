@@ -13,8 +13,8 @@ calendar,weekly schedule,GID-16001,a weekly organized plan with a start date and
 calendar exception,schedule exception,GID-16002,an instance that does not conform to a schedule
 domicile,domicile,GID-17703,housing that someone is living in
 residence,residence,GID-46085,any address at which you dwell more than temporarily
-operates,operates,GID-16011,the action of functioning or carrying out tasks within an organization
-composed,composed,GID-89151,made up of individual elements
+operated,operated,GID-16011,the action of functioning or carrying out tasks within an organization
+of,of,GID-16040,a partion of
 characterized,characterized,GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
 localize,localize,GID-113623,identify the location or place of
 at,at,GID-16040,"a spatial point of reference, indicating a specific location, in relation to which an action, state, or event occurs"

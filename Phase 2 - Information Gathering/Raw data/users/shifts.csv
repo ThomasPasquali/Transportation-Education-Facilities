@@ -1,27 +1,27 @@
 ﻿id,from,to,arrive_before,leave_after,occurence 
-shift_1,Via della Lovara 9 38012 Mollaro TN,Via Alpini 17 38017  Mezzolombardo  TN,08:00:00,,u_ws_1
-shift_2,Via Alpini 17 38017  Mezzolombardo  TN,Via della Lovara 9 38012 Mollaro TN,,13:00:00,u_ws_1
-shift_3,Via della Lovara 9 38012 Mollaro TN,Via Alpini 17 38017  Mezzolombardo  TN,08:00:00,,u_ws_2
-shift_4,Via Alpini 17 38017  Mezzolombardo  TN,Via della Lovara 9 38012 Mollaro TN,,16:00:00,u_ws_2
-shift_5,Via alla Cascata 2 38123 Povo TN,Via Zambra 3 38121  Trento  TN,08:00:00,,u_ws_3
-shift_6,Via Zambra 3 38121  Trento  TN,Via alla Cascata 2 38123 Povo TN,,13:00:00,u_ws_3
-shift_7,Via Luigi Einaudi 60 38122 Trento TN,Via Cristoforo Madruzzo 24 38122  Trento  TN,08:00:00,,u_ws_3
-shift_8,Via Cristoforo Madruzzo 24 38122  Trento  TN,Via Luigi Einaudi 60 38122 Trento TN,,13:00:00,u_ws_3
-shift_9,Via Giuseppe Mazzini 35 38122 Trento TN,Corso Bettini 84 Rovereto 38068 TN,10:30:00,,u_ws_4
-shift_10,Corso Bettini 84 Rovereto 38068 TN,Via Giuseppe Mazzini 35 38122 Trento TN,,14:30:00,u_ws_4
-shift_11,Via Giuseppe Mazzini 35 38122 Trento TN,Corso Bettini 84 Rovereto 38068 TN,10:30:00,,u_ws_5
-shift_12,Corso Bettini 84 Rovereto 38068 TN,Via Giuseppe Mazzini 35 38122 Trento TN,,16:30:00,u_ws_5
-shift_13,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,07:15:00,,u_ws_6
-shift_14,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,13:00:00,u_ws_6
-shift_15,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,09:30:00,,u_ws_7
-shift_16,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,13:00:00,u_ws_7
-shift_17,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,09:30:00,,u_ws_8
-shift_18,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,20:30:00,u_ws_8
-shift_19,Via Sommarive 9 Povo 38123 TN,Corso Inghilterra 27 Torino 10138 TO,13:00:00,,u_ws_ex_1
-shift_20,Calle dei Bergamaschi 568 30135 Venezia VE,Via Sommarive 14 38123 Povo TN,09:00:00,,u_ws_ex2
-shift_21,Case Ferrovieri Porta Nuova 37138 Verona VR,Via Vigilio Inama 5 Trento 38122 TN,08:30:00,,u_ws_9
-shift_22,Via Vigilio Inama 5 Trento 38122 TN,Case Ferrovieri Porta Nuova 37138 Verona VR,,13:30:00,u_ws_9
-shift_23,Via Gustavo Modena 32 38065 Mori TN,Via Santissima Trinita' 38 38122  Trento  TN,13:30:00,,u_ws_10
-shift_24,Via Santissima Trinita' 38 38122  Trento  TN,Via Gustavo Modena 32 38065 Mori TN,,19:00:00,u_ws_10
-shift_25,Via della Malpensada 140 38123 Trento TN,Via Giovanni Amendola 15 Bologna 40121 BO,,17:00:00,u_ws_11
-shift_26,Via Giovanni Amendola 15 Bologna 40121 BO,Via della Malpensada 140 38123 Trento TN,21:00:00,,u_ws_12
+shift_1,Via della Lovara 9 38012 Mollaro TN,Via Alpini 17 38017  Mezzolombardo  TN,08:00:00,,user_ws_1
+shift_2,Via Alpini 17 38017  Mezzolombardo  TN,Via della Lovara 9 38012 Mollaro TN,,13:00:00,user_ws_1
+shift_3,Via della Lovara 9 38012 Mollaro TN,Via Alpini 17 38017  Mezzolombardo  TN,08:00:00,,user_ws_2
+shift_4,Via Alpini 17 38017  Mezzolombardo  TN,Via della Lovara 9 38012 Mollaro TN,,16:00:00,user_ws_2
+shift_5,Via alla Cascata 2 38123 Povo TN,Via Zambra 3 38121  Trento  TN,08:00:00,,user_ws_3
+shift_6,Via Zambra 3 38121  Trento  TN,Via alla Cascata 2 38123 Povo TN,,13:00:00,user_ws_3
+shift_7,Via Luigi Einaudi 60 38122 Trento TN,Via Cristoforo Madruzzo 24 38122  Trento  TN,08:00:00,,user_ws_3
+shift_8,Via Cristoforo Madruzzo 24 38122  Trento  TN,Via Luigi Einaudi 60 38122 Trento TN,,13:00:00,user_ws_3
+shift_9,Via Giuseppe Mazzini 35 38122 Trento TN,Corso Bettini 84 Rovereto 38068 TN,10:30:00,,user_ws_4
+shift_10,Corso Bettini 84 Rovereto 38068 TN,Via Giuseppe Mazzini 35 38122 Trento TN,,14:30:00,user_ws_4
+shift_11,Via Giuseppe Mazzini 35 38122 Trento TN,Corso Bettini 84 Rovereto 38068 TN,10:30:00,,user_ws_5
+shift_12,Corso Bettini 84 Rovereto 38068 TN,Via Giuseppe Mazzini 35 38122 Trento TN,,16:30:00,user_ws_5
+shift_13,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,07:15:00,,user_ws_6
+shift_14,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,13:00:00,user_ws_6
+shift_15,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,09:30:00,,user_ws_7
+shift_16,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,13:00:00,user_ws_7
+shift_17,Via della Malpensada 140 38123 Trento TN,Via Giuseppe Verdi 26 38122 Trento,09:30:00,,user_ws_8
+shift_18,Via Giuseppe Verdi 26 38122 Trento,Via della Malpensada 140 38123 Trento TN,,20:30:00,user_ws_8
+shift_19,Via Sommarive 9 Povo 38123 TN,Corso Inghilterra 27 Torino 10138 TO,13:00:00,,user_ws_ex_1
+shift_20,Calle dei Bergamaschi 568 30135 Venezia VE,Via Sommarive 14 38123 Povo TN,09:00:00,,user_ws_ex2
+shift_21,Case Ferrovieri Porta Nuova 37138 Verona VR,Via Vigilio Inama 5 Trento 38122 TN,08:30:00,,user_ws_9
+shift_22,Via Vigilio Inama 5 Trento 38122 TN,Case Ferrovieri Porta Nuova 37138 Verona VR,,13:30:00,user_ws_9
+shift_23,Via Gustavo Modena 32 38065 Mori TN,Via Santissima Trinita' 38 38122  Trento  TN,13:30:00,,user_ws_10
+shift_24,Via Santissima Trinita' 38 38122  Trento  TN,Via Gustavo Modena 32 38065 Mori TN,,19:00:00,user_ws_10
+shift_25,Via della Malpensada 140 38123 Trento TN,Via Giovanni Amendola 15 Bologna 40121 BO,,17:00:00,user_ws_11
+shift_26,Via Giovanni Amendola 15 Bologna 40121 BO,Via della Malpensada 140 38123 Trento TN,21:00:00,,user_ws_12
