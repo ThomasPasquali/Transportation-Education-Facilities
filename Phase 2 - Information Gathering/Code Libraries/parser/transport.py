@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from lib.etypes import RAW_BASE_PATH, ETYPE, read_raw_dataset, append_to_tmp_dataset, exctract_and_fetch_positions, read_tmp_dataset, write_tmp_dataset
+from lib.etypes import RAW_BASE_PATH, ETYPE, read_raw_dataset, append_to_tmp_dataset, exctract_and_fetch_positions, read_tmp_dataset, write_tmp_dataset, get_complete_columns_list
 from lib.utils import check_duplicates, err, warn, info, add_id_prefix
 
 # Base folders for GTFS datasets
@@ -53,3 +53,49 @@ for folder in FOLDERS:
 
 ws = write_tmp_dataset(ETYPE.WEEKLY_SCHEDULE, ws)
 print('\n\nWEEKLY SCHEDULE\n', ws)
+
+
+
+#############################################
+##                                         ##
+##   Calendar date (Schedule Exceptions)   ##
+##                                         ##
+#############################################
+# TODO
+
+
+
+
+###################################
+##                               ##
+##             Stops             ##
+##                               ##
+###################################
+
+positions = pd.DataFrame(columns=get_complete_columns_list(ETYPE.POSITION))
+stops = pd.DataFrame(columns=get_complete_columns_list(ETYPE.STOP))
+
+for folder in FOLDERS:
+  df = DFS[f'{folder}_stops'].copy()
+  df.rename(columns={'stop_id': 'id'}, inplace=True)
+  df['localize'] = df['id'].astype(str)
+  df = add_id_prefix(df, f'pos_stop_{folder}_', 'localize')
+  df = add_id_prefix(df, f'stop_{folder}_', 'id')
+
+  stop_type = 'bus'
+  if folder.startswith('trenitalia'):
+    stop_type = 'train'
+  df_stops = df[['id', 'stop_name', 'localize']].copy()
+  df_stops.rename(columns={'stop_name': 'name'}, inplace=True)
+  df_stops = df_stops.assign(type=stop_type)
+
+  df_pos = df[['localize', 'stop_lat', 'stop_lon']].copy()
+  df_pos.rename(columns={'localize': 'id', 'stop_lat': 'latitude', 'stop_lon': 'longitude'}, inplace=True)
+  df_pos['address'] = None
+
+  positions = pd.concat([positions.astype(df_pos.dtypes), df_pos])
+  stops = pd.concat([stops.astype(df_stops.dtypes), df_stops])
+
+stops = write_tmp_dataset(ETYPE.STOP, stops)
+positions = write_tmp_dataset(ETYPE.POSITION, positions)
+print('\n\nSTOP\n', stops, '\n\nPOSITION\n', positions)

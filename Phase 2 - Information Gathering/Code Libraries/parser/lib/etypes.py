@@ -64,7 +64,8 @@ class ETYPE(Enum):
     'relations': []
   }
 
-
+def get_complete_columns_list(etype: ETYPE):
+  return ['id'] + etype.value['columns'] + etype.value['relations']
 
 ################################
 ##                            ##
