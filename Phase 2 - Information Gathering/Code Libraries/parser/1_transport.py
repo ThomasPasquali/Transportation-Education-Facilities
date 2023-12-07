@@ -70,9 +70,9 @@ for folder in FOLDERS:
   df = add_id_prefix(df, f'se_{folder}_', 'id')
   se = pd.concat([se, df])
 
-check_duplicates(se, 'id')
-ws = write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
-print('\n\SCHEDULE EXCEPTIONS\n', se)
+# HERE THERE ARE DUPLICATES check_duplicates(se, 'id')
+se = write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
+print('\n\nSCHEDULE EXCEPTIONS\n', se)
 
 
 ###################################
@@ -105,6 +105,91 @@ for folder in FOLDERS:
   positions = pd.concat([positions.astype(df_pos.dtypes), df_pos])
   stops = pd.concat([stops.astype(df_stops.dtypes), df_stops])
 
+check_duplicates(stops, 'id')
+check_duplicates(positions, 'id')
 stops = write_tmp_dataset(ETYPE.STOP, stops)
 positions = write_tmp_dataset(ETYPE.POSITION, positions)
 print('\n\nSTOPS\n', stops, '\n\nPOSITIONS\n', positions)
+
+
+
+#############################################
+##                                         ##
+##       Routes / Trips / TripsStops       ##
+##     Routes / Journeys / JourneyStop     ##
+##                                         ##
+#############################################
+
+# ROUTES_COLS = ['provider', 'short_name', 'long_name', 'type']
+routes = pd.DataFrame(columns=get_complete_columns_list(ETYPE.ROUTE))
+
+# TRIPS_COLS = ['route', 'headsign', 'direction', 'calendar', 'accessibility']
+journeys = pd.DataFrame(columns=get_complete_columns_list(ETYPE.JOURNEY))
+
+# TRIPS_STOPS_COLS = ['trip', 'arrival_time', 'departure_time', 'stop', 'stop_sequence']
+journeys_stops = pd.DataFrame(columns=get_complete_columns_list(ETYPE.JOURNEY_STOP))
+
+for folder in FOLDERS:
+  df_routes = DFS[f'{folder}_routes'].copy()
+  
+  agency_id = 0
+  route_type = 'bus'
+  if folder.startswith('tt_'): # Trentino trasporti dataset
+    # Filter only busses (exclude funivia serdagna and potentially others)
+    df_routes = (df_routes.loc[df_routes['route_type'] == 3])
+    agency_id = 1
+  elif folder.startswith('trenitalia'):
+    agency_id = 2
+    route_type = 'train'
+  elif folder.startswith('flixbus'):
+    agency_id = 3
+  else:
+    raise 'Agency not found for folder: ' + folder
+  
+  # Assign agency and type
+  df_routes = df_routes.assign(agency_id=agency_id)
+  df_routes = df_routes.assign(type=route_type)
+
+  df_routes.rename(columns={'route_id': 'id', 'agency_id': 'operated', 'route_short_name': 'short_name', 'route_long_name': 'long_name'}, inplace=True)
+  df_routes.drop(columns=['route_type', 'route_color', 'route_text_color', 'route_desc', 'route_url', 'bikes_allowed', 'route_sort_order'], inplace=True, errors='ignore')
+  for col in ['id', 'short_name']:
+    if col in df_routes:
+      df_routes[col] = df_routes[col].astype(str)
+
+  df_trips = DFS[f'{folder}_trips'].copy()
+  df_trips.rename(columns={'trip_id': 'id', 'route_id': 'characterized', 'service_id': 'avaiability', 'trip_headsign': 'headsign', 'direction_id': 'direction', 'wheelchair_accessible': 'accessibility'}, inplace=True)
+  df_trips['id'] = df_trips['id'].astype(str)
+  if 'accessibility' in df_trips:
+    df_trips['accessibility'] = df_trips['accessibility'].apply(lambda x: '0' if np.isnan(x) else '1')
+    df_trips['accessibility'] = df_trips['accessibility'].astype(str)
+  else:
+    df_trips = df_trips.assign(accessibility='NaN')
+  if 'headsign' in df_trips:
+    df_trips['headsign'] = df_trips['headsign'].astype(str)
+  if 'direction' in df_trips:
+    df_trips['direction'] = df_trips['direction'].astype(float)
+  df_trips['avaiability'] = df_trips['avaiability'].astype(str)
+  df_trips.drop(columns=['shape_id', 'trip_short_name', 'route_short_name', 'block_id', 'trip_bikes_allowed', 'bikes_allowed', 'train_category', 'ticketing_trip_id', 'ticketing_type'], inplace=True, errors='ignore')
+
+  df_trips_stops = DFS[f'{folder}_stop_times'].copy()
+  for k in ['trip_id', 'stop_id']:
+    if k in df_trips_stops:
+      df_trips_stops[k] = df_trips_stops[k].astype(str)
+  df_trips_stops.rename(columns={'trip_id': 'of', 'stop_id': 'at'}, inplace=True)
+  df_trips_stops.drop(columns=['timepoint', 'stop_headsign', 'route_short_name', 'pickup_type', 'drop_off_type', 'shape_dist_traveled'], inplace=True, errors='ignore')
+  df_trips_stops['id'] = None
+
+  print(journeys_stops.columns, df_trips_stops.columns)
+  print(df_trips_stops)
+  routes = pd.concat([routes.astype(df_routes.dtypes), df_routes])
+  journeys = pd.concat([journeys.astype(df_trips.dtypes), df_trips])
+  journeys_stops = pd.concat([journeys_stops.astype(df_trips_stops.dtypes), df_trips_stops])
+
+check_duplicates(routes, 'id')
+check_duplicates(journeys, 'id')
+check_duplicates(journeys_stops, 'id')
+
+routes = write_tmp_dataset(ETYPE.ROUTE, routes)
+journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
+journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
+print('\n\ROUTES\n', routes, '\n\JOURNEYS\n', journeys, '\n\JOURNEY STOPS\n', journeys_stops)

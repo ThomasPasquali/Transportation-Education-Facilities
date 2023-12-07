@@ -21,6 +21,24 @@ class ETYPE(Enum):
     'columns': ['name', 'type'],
     'relations': ['localize']
   }
+  ROUTE = {
+    'name': 'route',
+    'filename': 'transport/routes',
+    'columns': ['long_name', 'short_name', 'type'],
+    'relations': ['operated'] # TODO fix teleontology and language!!!
+  }
+  JOURNEY = {
+    'name': 'journey',
+    'filename': 'transport/journeys',
+    'columns': ['headsign', 'direction', 'accessibility'],
+    'relations': ['characterized', 'avaiability']
+  }
+  JOURNEY_STOP = {
+    'name': 'journey_stop',
+    'filename': 'transport/journeys_stops',
+    'columns': ['arrival_time', 'departure_time', 'stop_sequence'],
+    'relations': ['of', 'at'] # TODO 'of' fix teleontology and language!!!
+  }
 
   # End users
   USER = {
@@ -66,6 +84,8 @@ class ETYPE(Enum):
 
 def get_complete_columns_list(etype: ETYPE):
   return ['id'] + etype.value['columns'] + etype.value['relations']
+
+
 
 ################################
 ##                            ##
