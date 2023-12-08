@@ -112,7 +112,7 @@ def read_tmp_dataset (etype: ETYPE):
     info(f"Raw file '{os.path.abspath(__get_tmp_file_path(etype))}' not found.")
 
 def clean_columns (etype: ETYPE, df: pd.DataFrame):
-  to_keep = ['id'] + etype.value['columns'] + etype.value['relations']
+  to_keep = get_complete_columns_list(etype)
   cols = df.columns.to_list()
   for c in to_keep:
     if c not in cols:
@@ -157,6 +157,7 @@ def append_to_tmp_dataset (etype: ETYPE, df: pd.DataFrame, skip_if_exists=True):
   os.makedirs(os.path.dirname(path), exist_ok=True)
 
   df.to_csv(path, index=False)
+  return df
 
 
 

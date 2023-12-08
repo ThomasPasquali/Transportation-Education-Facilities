@@ -88,12 +88,14 @@ for folder in FOLDERS:
   df = DFS[f'{folder}_stops'].copy()
   df.rename(columns={'stop_id': 'id'}, inplace=True)
   df['localize'] = df['id'].astype(str)
-  df = add_id_prefix(df, f'pos_stop_{folder}_', 'localize')
-  df = add_id_prefix(df, f'stop_{folder}_', 'id')
 
   stop_type = 'bus'
   if folder.startswith('trenitalia'):
     stop_type = 'train'
+
+  df = add_id_prefix(df, f'pos_stop_{stop_type}_{folder}_', 'localize')
+  df = add_id_prefix(df, f'stop_{stop_type}_{folder}_', 'id')
+
   df_stops = df[['id', 'stop_name', 'localize']].copy()
   df_stops.rename(columns={'stop_name': 'name'}, inplace=True)
   df_stops = df_stops.assign(type=stop_type)
@@ -109,7 +111,10 @@ check_duplicates(stops, 'id')
 check_duplicates(positions, 'id')
 stops = write_tmp_dataset(ETYPE.STOP, stops)
 positions = write_tmp_dataset(ETYPE.POSITION, positions)
-print('\n\nSTOPS\n', stops, '\n\nPOSITIONS\n', positions)
+print(
+  '\n\nSTOPS\n', stops,
+  '\n\nSTOP POSITIONS\n', positions
+)
 
 
 
@@ -120,13 +125,8 @@ print('\n\nSTOPS\n', stops, '\n\nPOSITIONS\n', positions)
 ##                                         ##
 #############################################
 
-# ROUTES_COLS = ['provider', 'short_name', 'long_name', 'type']
 routes = pd.DataFrame(columns=get_complete_columns_list(ETYPE.ROUTE))
-
-# TRIPS_COLS = ['route', 'headsign', 'direction', 'calendar', 'accessibility']
 journeys = pd.DataFrame(columns=get_complete_columns_list(ETYPE.JOURNEY))
-
-# TRIPS_STOPS_COLS = ['trip', 'arrival_time', 'departure_time', 'stop', 'stop_sequence']
 journeys_stops = pd.DataFrame(columns=get_complete_columns_list(ETYPE.JOURNEY_STOP))
 
 for folder in FOLDERS:
@@ -149,7 +149,6 @@ for folder in FOLDERS:
   # Assign agency and type
   df_routes = df_routes.assign(agency_id=agency_id)
   df_routes = df_routes.assign(type=route_type)
-  print(df_routes)
 
   df_routes.rename(columns={'route_id': 'id', 'agency_id': 'operated', 'route_short_name': 'short_name', 'route_long_name': 'long_name'}, inplace=True)
   for col in ['id', 'short_name']:
@@ -179,7 +178,8 @@ for folder in FOLDERS:
     if k in df_trips_stops:
       df_trips_stops[k] = df_trips_stops[k].astype(str)
   df_trips_stops.rename(columns={'trip_id': 'of', 'stop_id': 'at'}, inplace=True)
-  df_trips_stops['id'] = None
+  df_trips_stops['id'] = df_trips_stops.index + 1
+  df_trips_stops = add_id_prefix(df_trips_stops, f'trip_stop_{folder}_')
   df_trips_stops = df_trips_stops[journeys_stops.columns]
 
   routes = pd.concat([routes.astype(df_routes.dtypes), df_routes])
@@ -192,4 +192,9 @@ check_duplicates(journeys, 'id')
 routes = write_tmp_dataset(ETYPE.ROUTE, routes)
 journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
 journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
-print('\n\nROUTES\n', routes, '\n\nJOURNEYS\n', journeys, '\n\nJOURNEY STOPS\n', journeys_stops)
+
+print(
+  '\n\nROUTES\n', routes,
+  '\n\nJOURNEYS\n', journeys,
+  '\n\nJOURNEY STOPS\n', journeys_stops
+)
