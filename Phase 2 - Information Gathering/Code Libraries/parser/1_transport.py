@@ -178,6 +178,8 @@ for folder in FOLDERS:
     if k in df_trips_stops:
       df_trips_stops[k] = df_trips_stops[k].astype(str)
   df_trips_stops.rename(columns={'trip_id': 'of', 'stop_id': 'at'}, inplace=True)
+  df_trips_stops = add_id_prefix(df_trips_stops, f'stop_{route_type}_{folder}_', 'at')
+  df_trips_stops = add_id_prefix(df_trips_stops, f'trip_{folder}_', 'of')
   df_trips_stops['id'] = df_trips_stops.index + 1
   df_trips_stops = add_id_prefix(df_trips_stops, f'trip_stop_{folder}_')
   df_trips_stops = df_trips_stops[journeys_stops.columns]
