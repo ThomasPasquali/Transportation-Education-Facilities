@@ -6,7 +6,7 @@ from lib.utils import add_id_prefix, err, warn, info, positions_near_enough
 
 edu_fac = read_raw_dataset(ETYPE.EDU_FAC)
 edu_fac = add_id_prefix(edu_fac, 'edu_fac_')
-edu_fac.rename({'name': 'legal_name'}, inplace=True)
+edu_fac.rename(columns={'name': 'legal_name'}, inplace=True)
 
 # Read tmp positions dataset
 positions = read_tmp_dataset(ETYPE.POSITION)

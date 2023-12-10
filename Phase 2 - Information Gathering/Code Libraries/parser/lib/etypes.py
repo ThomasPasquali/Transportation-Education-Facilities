@@ -51,14 +51,14 @@ class ETYPE(Enum):
     'name': 'shift',
     'filename': 'users/shifts',
     'columns': ['arrive_before', 'leave_after'],
-    'relations': ['from', 'to', 'occurence']
+    'relations': ['from', 'to', 'occurence', 'involvement']
   }
 
   # Education
   EDU_FAC = {
     'name': 'educational_facility',
     'filename': 'edu/educational_facilities',
-    'columns': ['type', 'name'],
+    'columns': ['type', 'legal_name'],
     'relations': ['localize', 'nearest_stops']
   }
 

@@ -14,7 +14,7 @@ schedule exception_GID-16002,an instance that does not conform to a schedule
 domicile_GID-17703,housing that someone is living in
 residence_GID-46085,any address at which you dwell more than temporarily
 operated_GID-16011,the action of functioning or carrying out tasks within an organization
-of_GID-16040,a partion of
+of_GID-16041,a partion of
 characterized_GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
 localize_GID-113623,identify the location or place of
 at_GID-16040,"a spatial point of reference, indicating a specific location, in relation to which an action, state, or event occurs"
@@ -45,3 +45,11 @@ arrival time_GID-80845,the time at which a public conveyance is scheduled to arr
 departure time_GID-80846,the time at which a public conveyance is scheduled to depart from a given point of origin
 stop sequence_GID-16038,"the systematic and ordered arrangement of stops or locations along a route, path, or journey"
 name_GID-16039,a distinctive label or identifier assigned to a specific location or point along a transportation route
+nearest_GID-116831,(superlative of 'near' or 'close') within the shortest distance
+monday_GID-80758,the second day of the week; the first working day
+tuesday_GID-80759,the third day of the week; the second working day
+wednesday_GID-80760,the fourth day of the week; the third working day
+thursday_GID-80761,the fifth day of the week; the fourth working day
+friday_GID-80762,the sixth day of the week; the fifth working day
+saturday_GID-80763,the seventh and last day of the week; observed as the Sabbath by Jews and some Christians
+sunday_GID-80757,first day of the week; observed as a day of rest and worship by most Christians
