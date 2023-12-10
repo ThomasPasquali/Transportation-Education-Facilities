@@ -110,6 +110,8 @@ for folder in FOLDERS:
 check_duplicates(stops, 'id')
 check_duplicates(positions, 'id')
 stops = write_tmp_dataset(ETYPE.STOP, stops)
+write_tmp_dataset(ETYPE.STOP, stops.loc[stops['type'] == 'bus'], '_bus.csv')
+write_tmp_dataset(ETYPE.STOP, stops.loc[stops['type'] == 'train'], '_train.csv')
 positions = write_tmp_dataset(ETYPE.POSITION, positions)
 print(
   '\n\nSTOPS\n', stops,
@@ -191,7 +193,8 @@ for folder in FOLDERS:
 check_duplicates(routes, 'id')
 check_duplicates(journeys, 'id')
 
-routes = write_tmp_dataset(ETYPE.ROUTE, routes)
+write_tmp_dataset(ETYPE.ROUTE, routes.loc[routes['type'] == 'bus'], '_bus.csv')
+write_tmp_dataset(ETYPE.ROUTE, routes.loc[routes['type'] == 'train'], '_train.csv')
 journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
 journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
 

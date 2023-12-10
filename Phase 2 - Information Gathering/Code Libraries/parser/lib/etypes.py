@@ -96,8 +96,8 @@ def get_complete_columns_list(etype: ETYPE):
 def __get_raw_file_path (etype: ETYPE, file_extention='.csv', custom_path=None):
   return f'{RAW_BASE_PATH}{custom_path if custom_path is not None else etype.value["filename"]}{file_extention}'
 
-def __get_tmp_file_path (etype: ETYPE):
-  return f'{__TMP_DF_DIR}{etype.value["filename"]}.csv'
+def __get_tmp_file_path (etype: ETYPE, file_extention='.csv'):
+  return f'{__TMP_DF_DIR}{etype.value["filename"]}{file_extention}'
 
 def read_raw_dataset (etype: ETYPE, file_extention='.csv', custom_path=None):
   try:
@@ -132,11 +132,11 @@ def fix_id_col (df: pd.DataFrame):
     df['id'] = df['id'].astype(str)
   return df
 
-def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame):
+def write_tmp_dataset (etype: ETYPE, df: pd.DataFrame, file_extention='.csv'):
   df = fix_id_col(df)
   df = clean_columns(etype, df)
 
-  path = __get_tmp_file_path(etype)
+  path = __get_tmp_file_path(etype,file_extention=file_extention)
   os.makedirs(os.path.dirname(path), exist_ok=True)
 
   df.to_csv(path, index=False)
