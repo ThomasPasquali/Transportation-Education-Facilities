@@ -1,0 +1,637 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1hhae6qv7x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "journeys_stops.csv" ;
+	km-dev:modelPublicationTime "1702231239655"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"id\"}],[{\"columnName\":\"arrival_time\"}],[{\"columnName\":\"of\"}],[{\"columnName\":\"at\"}],[{\"columnName\":\"departure_time\"}],[{\"columnName\":\"stop_sequence\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"id\"}],[{\"columnName\":\"arrival_time\"}],[{\"columnName\":\"of\"}],[{\"columnName\":\"at\"}],[{\"columnName\":\"departure_time\"}],[{\"columnName\":\"stop_sequence\"}]]" ;
+	km-dev:hasModelLabel "journeys_stops.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003/journey_stop_GID-160031 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"arrival_time\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_journey_stop_arrival_time_GID-80845\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003/journey_stop_GID-160031\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"arrival_time\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"arrival_time\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"departure_time\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_journey_stop_departure_time_GID-80846\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003/journey_stop_GID-160031\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"departure_time\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"departure_time\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"stop_sequence\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_journey_stop_stop_sequence_GID-16038\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003/journey_stop_GID-160031\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"stop_sequence\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"stop_sequence\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"of\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#journey_GID-1560\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#journey_GID-15601\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#journey_GID-1560\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#journey_GID-15601\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#journey_GID-1560/journey_GID-15601 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"of\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"of\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"at\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-459371\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-459371\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937/bus_stop_GID-459371 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"at\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"at\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://knowdive.disi.unitn.it/etype#journey_GID-15601\",
+                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#of_GID-16041\",
+                    \"edgeTargetUri\": \"http://knowdive.disi.unitn.it/etype#journey_GID-1560\",
+                    \"edgeSourceId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"edgeSourceUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-459371\",
+                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#at_GID-16040\",
+                    \"edgeTargetUri\": \"http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937\",
+                    \"edgeSourceId\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031\",
+                    \"edgeSourceUri\": \"http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 a rr:TriplesMap .
+
+_:node1hhae6qv7x1 km-dev:hasTriplesMap km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x2 rr:tableName "journeys_stops.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasLogicalTable _:node1hhae6qv7x2 .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:logicalTable _:node1hhae6qv7x2 ;
+	rr:subjectMap _:node1hhae6qv7x3 .
+
+_:node1hhae6qv7x1 km-dev:hasSubjectMap _:node1hhae6qv7x3 .
+
+_:node1hhae6qv7x3 km-dev:isPartOfMapping _:node1hhae6qv7x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#journey_stop_GID-160031" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003> ;
+	rr:template "{id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_97f8d15c-5294-451d-a402-c222879f1b46 rr:predicate <http://knowdive.disi.unitn.it/etype#has_journey_stop_arrival_time_GID-80845> .
+
+_:node1hhae6qv7x4 rr:column "arrival_time" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasObjectMap _:node1hhae6qv7x4 .
+
+km-dev:PredicateObjectMap_97f8d15c-5294-451d-a402-c222879f1b46 rr:objectMap _:node1hhae6qv7x4 .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:predicateObjectMap km-dev:PredicateObjectMap_97f8d15c-5294-451d-a402-c222879f1b46 .
+
+km-dev:PredicateObjectMap_97f8d15c-5294-451d-a402-c222879f1b46 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_97f8d15c-5294-451d-a402-c222879f1b46 .
+
+km-dev:PredicateObjectMap_cfb3424c-2631-47f1-98ec-972b60e46f70 rr:predicate <http://knowdive.disi.unitn.it/etype#has_journey_stop_departure_time_GID-80846> .
+
+_:node1hhae6qv7x5 rr:column "departure_time" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasObjectMap _:node1hhae6qv7x5 .
+
+km-dev:PredicateObjectMap_cfb3424c-2631-47f1-98ec-972b60e46f70 rr:objectMap _:node1hhae6qv7x5 .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:predicateObjectMap km-dev:PredicateObjectMap_cfb3424c-2631-47f1-98ec-972b60e46f70 .
+
+km-dev:PredicateObjectMap_cfb3424c-2631-47f1-98ec-972b60e46f70 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_cfb3424c-2631-47f1-98ec-972b60e46f70 .
+
+km-dev:PredicateObjectMap_01485669-66fc-4378-bc6d-ac0563d3639c rr:predicate <http://knowdive.disi.unitn.it/etype#has_journey_stop_stop_sequence_GID-16038> .
+
+_:node1hhae6qv7x6 rr:column "stop_sequence" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasObjectMap _:node1hhae6qv7x6 .
+
+km-dev:PredicateObjectMap_01485669-66fc-4378-bc6d-ac0563d3639c rr:objectMap _:node1hhae6qv7x6 .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:predicateObjectMap km-dev:PredicateObjectMap_01485669-66fc-4378-bc6d-ac0563d3639c .
+
+km-dev:PredicateObjectMap_01485669-66fc-4378-bc6d-ac0563d3639c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_01485669-66fc-4378-bc6d-ac0563d3639c .
+
+km-dev:PredicateObjectMap_5cdbdaa3-3e80-4f04-bfa2-45b28e520d84 rr:predicate <http://knowdive.disi.unitn.it/etype#of_GID-16041> .
+
+km-dev:RefObjectMap_c40f8df4-37f0-4a2d-9b78-dd35a051a2be a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_4b319cde-2f0b-4dcd-8330-6f08989b9eec ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasObjectMap km-dev:RefObjectMap_c40f8df4-37f0-4a2d-9b78-dd35a051a2be .
+
+km-dev:PredicateObjectMap_5cdbdaa3-3e80-4f04-bfa2-45b28e520d84 rr:objectMap km-dev:RefObjectMap_c40f8df4-37f0-4a2d-9b78-dd35a051a2be .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:predicateObjectMap km-dev:PredicateObjectMap_5cdbdaa3-3e80-4f04-bfa2-45b28e520d84 .
+
+km-dev:PredicateObjectMap_5cdbdaa3-3e80-4f04-bfa2-45b28e520d84 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5cdbdaa3-3e80-4f04-bfa2-45b28e520d84 .
+
+km-dev:PredicateObjectMap_70104b40-d0eb-4a1d-bf84-6ed37d938692 rr:predicate <http://knowdive.disi.unitn.it/etype#at_GID-16040> .
+
+km-dev:RefObjectMap_be447120-4fa9-4288-a97d-9e77031555ed a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_aaf23479-60f4-4b3f-8349-c42fc261fa06 ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasObjectMap km-dev:RefObjectMap_be447120-4fa9-4288-a97d-9e77031555ed .
+
+km-dev:PredicateObjectMap_70104b40-d0eb-4a1d-bf84-6ed37d938692 rr:objectMap km-dev:RefObjectMap_be447120-4fa9-4288-a97d-9e77031555ed .
+
+km-dev:TriplesMap_0a831c0a-9d97-4736-8238-dede5790dd95 rr:predicateObjectMap km-dev:PredicateObjectMap_70104b40-d0eb-4a1d-bf84-6ed37d938692 .
+
+km-dev:PredicateObjectMap_70104b40-d0eb-4a1d-bf84-6ed37d938692 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_70104b40-d0eb-4a1d-bf84-6ed37d938692 .
+
+km-dev:TriplesMap_4b319cde-2f0b-4dcd-8330-6f08989b9eec a rr:TriplesMap .
+
+_:node1hhae6qv7x1 km-dev:hasTriplesMap km-dev:TriplesMap_4b319cde-2f0b-4dcd-8330-6f08989b9eec .
+
+km-dev:TriplesMap_4b319cde-2f0b-4dcd-8330-6f08989b9eec km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x7 rr:tableName "journeys_stops.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasLogicalTable _:node1hhae6qv7x7 .
+
+km-dev:TriplesMap_4b319cde-2f0b-4dcd-8330-6f08989b9eec rr:logicalTable _:node1hhae6qv7x7 ;
+	rr:subjectMap _:node1hhae6qv7x8 .
+
+_:node1hhae6qv7x1 km-dev:hasSubjectMap _:node1hhae6qv7x8 .
+
+_:node1hhae6qv7x8 km-dev:isPartOfMapping _:node1hhae6qv7x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#journey_GID-15601" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#journey_GID-1560> ;
+	rr:template "{of}" .
+
+km-dev:TriplesMap_aaf23479-60f4-4b3f-8349-c42fc261fa06 a rr:TriplesMap .
+
+_:node1hhae6qv7x1 km-dev:hasTriplesMap km-dev:TriplesMap_aaf23479-60f4-4b3f-8349-c42fc261fa06 .
+
+km-dev:TriplesMap_aaf23479-60f4-4b3f-8349-c42fc261fa06 km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x9 rr:tableName "journeys_stops.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hhae6qv7x1 .
+
+_:node1hhae6qv7x1 km-dev:hasLogicalTable _:node1hhae6qv7x9 .
+
+km-dev:TriplesMap_aaf23479-60f4-4b3f-8349-c42fc261fa06 rr:logicalTable _:node1hhae6qv7x9 ;
+	rr:subjectMap _:node1hhae6qv7x10 .
+
+_:node1hhae6qv7x1 km-dev:hasSubjectMap _:node1hhae6qv7x10 .
+
+_:node1hhae6qv7x10 km-dev:isPartOfMapping _:node1hhae6qv7x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#bus_stop_GID-459371" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937> ;
+	rr:template "{at}" .

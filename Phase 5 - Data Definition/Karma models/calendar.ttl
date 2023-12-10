@@ -1,0 +1,799 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1hhag5b96x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "calendar.csv" ;
+	km-dev:modelPublicationTime "1702233287973"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"wednesday\"}],[{\"columnName\":\"tuesday\"}],[{\"columnName\":\"monday\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"end_date\"}],[{\"columnName\":\"start_date\"}],[{\"columnName\":\"sunday\"}],[{\"columnName\":\"saturday\"}],[{\"columnName\":\"friday\"}],[{\"columnName\":\"thursday\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"wednesday\"}],[{\"columnName\":\"tuesday\"}],[{\"columnName\":\"monday\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"end_date\"}],[{\"columnName\":\"start_date\"}],[{\"columnName\":\"sunday\"}],[{\"columnName\":\"saturday\"}],[{\"columnName\":\"friday\"}],[{\"columnName\":\"thursday\"}]]" ;
+	km-dev:hasModelLabel "calendar.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"monday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_monday_GID-80758\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"monday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"monday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"tuesday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_tuesday_GID-80759\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tuesday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tuesday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"wednesday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_wednesday_GID-80760\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wednesday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"wednesday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"thursday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_thursday_GID-80761\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"thursday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"thursday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"friday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_friday_GID-80762\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"friday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"friday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"saturday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_saturday_GID-80763\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"saturday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"saturday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"sunday\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_sunday_GID-80757\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"sunday\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"sunday\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"start_date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"start_date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"start_date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"end_date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001/weekly_schedule_GID-160011\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"end_date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"end_date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 a rr:TriplesMap .
+
+_:node1hhag5b96x1 km-dev:hasTriplesMap km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x2 rr:tableName "calendar.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasLogicalTable _:node1hhag5b96x2 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:logicalTable _:node1hhag5b96x2 ;
+	rr:subjectMap _:node1hhag5b96x3 .
+
+_:node1hhag5b96x1 km-dev:hasSubjectMap _:node1hhag5b96x3 .
+
+_:node1hhag5b96x3 km-dev:isPartOfMapping _:node1hhag5b96x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-160011" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#weekly_schedule_GID-16001> ;
+	rr:template "{id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_6af8bb83-84c4-4073-8b88-6b00fc6b1486 rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_thursday_GID-80761> .
+
+_:node1hhag5b96x4 rr:column "thursday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x4 .
+
+km-dev:PredicateObjectMap_6af8bb83-84c4-4073-8b88-6b00fc6b1486 rr:objectMap _:node1hhag5b96x4 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_6af8bb83-84c4-4073-8b88-6b00fc6b1486 .
+
+km-dev:PredicateObjectMap_6af8bb83-84c4-4073-8b88-6b00fc6b1486 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6af8bb83-84c4-4073-8b88-6b00fc6b1486 .
+
+km-dev:PredicateObjectMap_4c14c801-6b10-4395-ab15-f7d5a350d309 rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_sunday_GID-80757> .
+
+_:node1hhag5b96x5 rr:column "sunday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x5 .
+
+km-dev:PredicateObjectMap_4c14c801-6b10-4395-ab15-f7d5a350d309 rr:objectMap _:node1hhag5b96x5 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_4c14c801-6b10-4395-ab15-f7d5a350d309 .
+
+km-dev:PredicateObjectMap_4c14c801-6b10-4395-ab15-f7d5a350d309 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_4c14c801-6b10-4395-ab15-f7d5a350d309 .
+
+km-dev:PredicateObjectMap_dccaa809-7de2-4078-9494-77a700da70cd rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_saturday_GID-80763> .
+
+_:node1hhag5b96x6 rr:column "saturday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x6 .
+
+km-dev:PredicateObjectMap_dccaa809-7de2-4078-9494-77a700da70cd rr:objectMap _:node1hhag5b96x6 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_dccaa809-7de2-4078-9494-77a700da70cd .
+
+km-dev:PredicateObjectMap_dccaa809-7de2-4078-9494-77a700da70cd a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_dccaa809-7de2-4078-9494-77a700da70cd .
+
+km-dev:PredicateObjectMap_cf938545-2f9a-4f3a-8de1-d133598501fb rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_tuesday_GID-80759> .
+
+_:node1hhag5b96x7 rr:column "tuesday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x7 .
+
+km-dev:PredicateObjectMap_cf938545-2f9a-4f3a-8de1-d133598501fb rr:objectMap _:node1hhag5b96x7 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_cf938545-2f9a-4f3a-8de1-d133598501fb .
+
+km-dev:PredicateObjectMap_cf938545-2f9a-4f3a-8de1-d133598501fb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_cf938545-2f9a-4f3a-8de1-d133598501fb .
+
+km-dev:PredicateObjectMap_ebbbdc4e-bc83-4cac-ae02-59a5cc95703d rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_monday_GID-80758> .
+
+_:node1hhag5b96x8 rr:column "monday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x8 .
+
+km-dev:PredicateObjectMap_ebbbdc4e-bc83-4cac-ae02-59a5cc95703d rr:objectMap _:node1hhag5b96x8 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_ebbbdc4e-bc83-4cac-ae02-59a5cc95703d .
+
+km-dev:PredicateObjectMap_ebbbdc4e-bc83-4cac-ae02-59a5cc95703d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ebbbdc4e-bc83-4cac-ae02-59a5cc95703d .
+
+km-dev:PredicateObjectMap_bfbcf601-e586-4cd9-976e-2048ab76fe53 rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_friday_GID-80762> .
+
+_:node1hhag5b96x9 rr:column "friday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x9 .
+
+km-dev:PredicateObjectMap_bfbcf601-e586-4cd9-976e-2048ab76fe53 rr:objectMap _:node1hhag5b96x9 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_bfbcf601-e586-4cd9-976e-2048ab76fe53 .
+
+km-dev:PredicateObjectMap_bfbcf601-e586-4cd9-976e-2048ab76fe53 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bfbcf601-e586-4cd9-976e-2048ab76fe53 .
+
+km-dev:PredicateObjectMap_66e3cf6d-4078-4985-900e-c1e102331009 rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_wednesday_GID-80760> .
+
+_:node1hhag5b96x10 rr:column "wednesday" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x10 .
+
+km-dev:PredicateObjectMap_66e3cf6d-4078-4985-900e-c1e102331009 rr:objectMap _:node1hhag5b96x10 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_66e3cf6d-4078-4985-900e-c1e102331009 .
+
+km-dev:PredicateObjectMap_66e3cf6d-4078-4985-900e-c1e102331009 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_66e3cf6d-4078-4985-900e-c1e102331009 .
+
+km-dev:PredicateObjectMap_544fe811-8f3f-4445-b75e-57946fc6beda rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_start_date_GID-16024> .
+
+_:node1hhag5b96x11 rr:column "start_date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x11 .
+
+km-dev:PredicateObjectMap_544fe811-8f3f-4445-b75e-57946fc6beda rr:objectMap _:node1hhag5b96x11 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_544fe811-8f3f-4445-b75e-57946fc6beda .
+
+km-dev:PredicateObjectMap_544fe811-8f3f-4445-b75e-57946fc6beda a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_544fe811-8f3f-4445-b75e-57946fc6beda .
+
+km-dev:PredicateObjectMap_5a67114d-e8dd-4de5-9fd4-9bf2a527b38f rr:predicate <http://knowdive.disi.unitn.it/etype#has_weekly_schedule_end_date_GID-16025> .
+
+_:node1hhag5b96x12 rr:column "end_date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasObjectMap _:node1hhag5b96x12 .
+
+km-dev:PredicateObjectMap_5a67114d-e8dd-4de5-9fd4-9bf2a527b38f rr:objectMap _:node1hhag5b96x12 .
+
+km-dev:TriplesMap_b9bd63d2-44d6-4830-850e-fb385d578902 rr:predicateObjectMap km-dev:PredicateObjectMap_5a67114d-e8dd-4de5-9fd4-9bf2a527b38f .
+
+km-dev:PredicateObjectMap_5a67114d-e8dd-4de5-9fd4-9bf2a527b38f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hhag5b96x1 .
+
+_:node1hhag5b96x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5a67114d-e8dd-4de5-9fd4-9bf2a527b38f .

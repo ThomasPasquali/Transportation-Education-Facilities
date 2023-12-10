@@ -24,9 +24,9 @@
     <!-- http://knowdive.disi.unitn.it/etype#at_GID-16040 -->
 
     <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#at_GID-16040">
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
-        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
-        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#journey_stop_GID-16003"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#bus_stop_GID-45937"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#train_stop_GID-16010"/>
     </owl:ObjectProperty>
     
 
