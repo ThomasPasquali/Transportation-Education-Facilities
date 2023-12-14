@@ -35,6 +35,14 @@ DFS = {}
 for name, path in FILENAMES.items():
   DFS[name] = pd.read_csv(path)
 
+#######################
+##                   ##
+##  Agency (static)  ##
+##                   ##
+#######################
+
+providers = read_raw_dataset(ETYPE.PROVIDER)
+write_tmp_dataset(ETYPE.PROVIDER, providers)
 
 ###################################
 ##                               ##
@@ -70,8 +78,9 @@ for folder in FOLDERS:
   df = add_id_prefix(df, f'se_{folder}_', 'id')
   se = pd.concat([se, df])
 
-# HERE THERE ARE DUPLICATES check_duplicates(se, 'id')
-se = write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
+se['id_non_unique'] = se['id']
+se['id'] = se['id'] + '_' + se.groupby('id').cumcount().add(1).astype(str)
+write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
 print('\n\nSCHEDULE EXCEPTIONS\n', se)
 
 
@@ -112,6 +121,7 @@ check_duplicates(positions, 'id')
 stops = write_tmp_dataset(ETYPE.STOP, stops)
 write_tmp_dataset(ETYPE.STOP, stops.loc[stops['type'] == 'bus'], '_bus.csv')
 write_tmp_dataset(ETYPE.STOP, stops.loc[stops['type'] == 'train'], '_train.csv')
+write_tmp_dataset(ETYPE.STOP, stops)
 positions = write_tmp_dataset(ETYPE.POSITION, positions)
 print(
   '\n\nSTOPS\n', stops,
@@ -171,7 +181,20 @@ for folder in FOLDERS:
     df_trips['headsign'] = df_trips['headsign'].astype(str)
   if 'direction' in df_trips:
     df_trips['direction'] = df_trips['direction'].astype(float)
+
   df_trips['avaiability'] = df_trips['avaiability'].astype(str)
+  schedule_exceptions = add_id_prefix(df_trips, f'se_{folder}_', 'avaiability').merge(se, left_on='avaiability', right_on='id_non_unique', how='left')
+  def j(x):
+    # print(len([v for v in x.values if str(v) != 'nan']))
+    # if len([v for v in x.values if str(v) != 'nan']) > 300:
+    #   print(x.values[1])
+    return '|'.join([v for v in x.values if str(v) != 'nan'])
+  schedule_exceptions = schedule_exceptions.groupby('avaiability').agg({'id_y': j})
+  schedule_exceptions = schedule_exceptions['id_y'].to_dict()
+  
+  df_trips['avaiability_schedule_exception'] = df_trips['avaiability'].apply(lambda x: schedule_exceptions[x])
+  df_trips['avaiability_schedule'] = add_id_prefix(df_trips, f'ws_{folder}_', 'avaiability')['avaiability']
+
   df_trips = add_id_prefix(df_trips, f'trip_{folder}_', 'id')
   df_trips = df_trips[journeys.columns]
 
@@ -190,11 +213,13 @@ for folder in FOLDERS:
   journeys = pd.concat([journeys.astype(df_trips.dtypes), df_trips])
   journeys_stops = pd.concat([journeys_stops.astype(df_trips_stops.dtypes), df_trips_stops])
 
+
 check_duplicates(routes, 'id')
 check_duplicates(journeys, 'id')
 
 write_tmp_dataset(ETYPE.ROUTE, routes.loc[routes['type'] == 'bus'], '_bus.csv')
 write_tmp_dataset(ETYPE.ROUTE, routes.loc[routes['type'] == 'train'], '_train.csv')
+write_tmp_dataset(ETYPE.ROUTE, routes)
 journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
 journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
 

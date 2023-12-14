@@ -15,29 +15,40 @@ __TMP_DF_DIR = 'tmp_df/'
 
 class ETYPE(Enum):
   # Transportation
+  PROVIDER = {
+    'name': 'provider',
+    'filename': 'transport/providers',
+    'columns': ['name'],
+    'relations': [],
+    'relations_etype': []
+  }
   STOP = {
     'name': 'stop',
     'filename': 'transport/stops',
     'columns': ['name', 'type'],
-    'relations': ['localize']
+    'relations': ['localize'],
+    'relations_etype': ['position']
   }
   ROUTE = {
     'name': 'route',
     'filename': 'transport/routes',
     'columns': ['long_name', 'short_name', 'type'],
-    'relations': ['operated']
+    'relations': ['operated'],
+    'relations_etype': ['provider']
   }
   JOURNEY = {
     'name': 'journey',
     'filename': 'transport/journeys',
     'columns': ['headsign', 'direction', 'accessibility'],
-    'relations': ['characterized', 'avaiability']
+    'relations': ['characterized', 'avaiability_schedule', 'avaiability_schedule_exception'],
+    'relations_etype': ['route', 'weekly_schedule', 'schedule_exception']
   }
   JOURNEY_STOP = {
     'name': 'journey_stop',
     'filename': 'transport/journeys_stops',
     'columns': ['arrival_time', 'departure_time', 'stop_sequence'],
-    'relations': ['of', 'at']
+    'relations': ['of', 'at'],
+    'relations_etype': ['journey', 'stop']
   }
 
   # End users
@@ -45,13 +56,15 @@ class ETYPE(Enum):
     'name': 'user',
     'filename': 'users/users',
     'columns': ['name', 'occupation', 'special_needs'],
-    'relations': ['domiciled', 'reside', 'work']
+    'relations': ['domiciled', 'reside', 'work'],
+    'relations_etype': ['position', 'position', 'position']
   }
   SHIFT = {
     'name': 'shift',
     'filename': 'users/shifts',
     'columns': ['arrive_before', 'leave_after'],
-    'relations': ['from', 'to', 'occurence', 'involvement']
+    'relations': ['from', 'to', 'occurence_schedule', 'occurence_schedule_exception', 'involvement'],
+    'relations_etype': ['position', 'position', 'weekly_schedule', 'schedule_exception', 'user']
   }
 
   # Education
@@ -59,7 +72,8 @@ class ETYPE(Enum):
     'name': 'educational_facility',
     'filename': 'edu/educational_facilities',
     'columns': ['type', 'legal_name'],
-    'relations': ['localize', 'nearest_stops']
+    'relations': ['localize'], # 'nearest_stops'
+    'relations_etype': ['position']
   }
 
   # Common
