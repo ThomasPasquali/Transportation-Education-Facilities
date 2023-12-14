@@ -16,13 +16,16 @@ residence_GID-46085,any address at which you dwell more than temporarily
 operated_GID-16011,the action of functioning or carrying out tasks within an organization
 of_GID-16041,a partion of
 characterized_GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
-localize_GID-113623,identify the location or place of
-at_GID-16040,"a spatial point of reference, indicating a specific location, in relation to which an action, state, or event occurs"
-from or to_GID-16014,"the directional relationship between two locations, indicating the origin or destination point in a given context"
+localize_GID-113623,identify the position or place of
+at_GID-16040,"a spatial point of reference, indicating a specific position, in relation to which an action, state, or event occurs"
+from_GID-16044,the point of origin or source position
+to_GID-16045,the destination or target position
 domiciled_GID-16015,state or condition of having a temporary established dwelling in a specific place
 reside_GID-16016,state or condition of having one's legal residence in a specific place
-occurrence_GID-16017,"the explicit definition or indication of the happening, existence, or manifestation of a particular event, incident, or phenomenon"
-availability_GID-16018,"the explicit indication or definition of the presence, accessibility, or readiness of a resource, service, or entity."
+avaiability schedule_GID-16042,"a predetermined plan or timetable that outlines the periods during which a particular resource, service, or system is accessible, operational, or available for use"
+avaiability schedule exception_GID-16043,"a situation where there is a deviation or special circumstance affecting the regular availability schedule of a resource, service, or system"
+occurrence schedule_GID-16046,"timetable, plan, or systematic arrangement that outlines the timing or schedule of events, incidents, or instances of something happening"
+occurrence schedule exception_GID-16047," a deviation or irregularity from the established timetable or plan outlining when specific events, incidents, or activities are expected to happen"
 involvement_GID-16019,"the active participation, engagement, or inclusion of an individual in a particular activity, situation, or undertaking"
 work_GID-2962,activity directed toward making or doing something
 special needs_GID-16020,"unique and specific requirements or assistance that individuals may require due to physical, cognitive, emotional, or developmental differences"
