@@ -1,0 +1,122 @@
+Etype - Etype,Property names
+provider - provider,name
+provider - stop,
+provider - route,
+provider - journey,
+provider - journey_stop,
+provider - user,
+provider - shift,
+provider - educational_facility,
+provider - position,
+provider - weekly_schedule,
+provider - schedule_exception,
+stop - provider,
+stop - stop,name | type
+stop - route,
+stop - journey,
+stop - journey_stop,
+stop - user,
+stop - shift,
+stop - educational_facility,
+stop - position,localize
+stop - weekly_schedule,
+stop - schedule_exception,
+route - provider,operated
+route - stop,
+route - route,long_name | short_name | type
+route - journey,
+route - journey_stop,
+route - user,
+route - shift,
+route - educational_facility,
+route - position,
+route - weekly_schedule,
+route - schedule_exception,
+journey - provider,
+journey - stop,
+journey - route,characterized
+journey - journey,headsign | direction | accessibility
+journey - journey_stop,
+journey - user,
+journey - shift,
+journey - educational_facility,
+journey - position,
+journey - weekly_schedule,avaiability_schedule
+journey - schedule_exception,avaiability_schedule_exception
+journey_stop - provider,
+journey_stop - stop,at
+journey_stop - route,
+journey_stop - journey,of
+journey_stop - journey_stop,arrival_time | departure_time | stop_sequence
+journey_stop - user,
+journey_stop - shift,
+journey_stop - educational_facility,
+journey_stop - position,
+journey_stop - weekly_schedule,
+journey_stop - schedule_exception,
+user - provider,
+user - stop,
+user - route,
+user - journey,
+user - journey_stop,
+user - user,name | occupation | special_needs
+user - shift,
+user - educational_facility,
+user - position,domiciled | reside | work
+user - weekly_schedule,
+user - schedule_exception,
+shift - provider,
+shift - stop,
+shift - route,
+shift - journey,
+shift - journey_stop,
+shift - user,involvement
+shift - shift,arrive_before | leave_after
+shift - educational_facility,
+shift - position,from | to
+shift - weekly_schedule,occurence_schedule
+shift - schedule_exception,occurence_schedule_exception
+educational_facility - provider,
+educational_facility - stop,
+educational_facility - route,
+educational_facility - journey,
+educational_facility - journey_stop,
+educational_facility - user,
+educational_facility - shift,
+educational_facility - educational_facility,type | legal_name
+educational_facility - position,localize
+educational_facility - weekly_schedule,
+educational_facility - schedule_exception,
+position - provider,
+position - stop,
+position - route,
+position - journey,
+position - journey_stop,
+position - user,
+position - shift,
+position - educational_facility,
+position - position,address | latitude | longitude
+position - weekly_schedule,
+position - schedule_exception,
+weekly_schedule - provider,
+weekly_schedule - stop,
+weekly_schedule - route,
+weekly_schedule - journey,
+weekly_schedule - journey_stop,
+weekly_schedule - user,
+weekly_schedule - shift,
+weekly_schedule - educational_facility,
+weekly_schedule - position,
+weekly_schedule - weekly_schedule,monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date
+weekly_schedule - schedule_exception,
+schedule_exception - provider,
+schedule_exception - stop,
+schedule_exception - route,
+schedule_exception - journey,
+schedule_exception - journey_stop,
+schedule_exception - user,
+schedule_exception - shift,
+schedule_exception - educational_facility,
+schedule_exception - position,
+schedule_exception - weekly_schedule,
+schedule_exception - schedule_exception,date | type

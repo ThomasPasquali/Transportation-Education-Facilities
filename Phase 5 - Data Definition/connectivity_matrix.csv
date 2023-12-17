@@ -1,0 +1,12 @@
+,provider,stop,route,journey,journey_stop,user,shift,educational_facility,position,weekly_schedule,schedule_exception
+provider,0.00 tot: 0.00,,,,,,,,,,
+stop,,0.00 | 0.00 tot: 0.00,,,,,,,0.00 tot: 0.00,,
+route,0.00 tot: 0.00,,0.00 | 0.00 | 0.00 tot: 0.00,,,,,,,,
+journey,,,0.00 tot: 0.00,0.80 | 0.02 | 0.13 tot: 0.32,,,,,,0.00 tot: 0.00,0.71 tot: 0.71
+journey_stop,,0.00 tot: 0.00,,0.00 tot: 0.00,0.00 | 0.00 | 0.00 tot: 0.00,,,,,,
+user,,,,,,0.00 | 0.00 | 0.89 tot: 0.30,,,0.00 | 0.00 | 0.00 tot: 0.00,,
+shift,,,,,,0.00 tot: 0.00,0.46 | 0.54 tot: 0.50,,0.04 | 0.00 tot: 0.02,0.08 tot: 0.08,0.92 tot: 0.92
+educational_facility,,,,,,,,0.00 | 0.00 tot: 0.00,0.00 tot: 0.00,,
+position,,,,,,,,,0.98 | 0.00 | 0.00 tot: 0.33,,
+weekly_schedule,,,,,,,,,,0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 tot: 0.00,
+schedule_exception,,,,,,,,,,,0.00 | 0.00 tot: 0.00
