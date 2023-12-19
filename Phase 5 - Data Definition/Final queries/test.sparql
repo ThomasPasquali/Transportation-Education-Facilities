@@ -1,0 +1,6 @@
+PREFIX rdf: <http://knowdive.disi.unitn.it/etype#>
+PREFIX type: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+
+SELECT * WHERE { 
+	?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rdf:end_user_GID-53816;
+} LIMIT 2
