@@ -234,6 +234,8 @@ write_tmp_dataset(ETYPE.ROUTE, routes.loc[routes['type'] == 'train'], '_train.cs
 write_tmp_dataset(ETYPE.ROUTE, routes)
 journeys = write_tmp_dataset(ETYPE.JOURNEY, journeys)
 journeys_stops = write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops)
+write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops.loc[journeys_stops['at'].str.contains('bus_')], '_bus.csv')
+write_tmp_dataset(ETYPE.JOURNEY_STOP, journeys_stops.loc[journeys_stops['at'].str.contains('train_')], '_train.csv')
 
 print(
   '\n\nROUTES\n', routes,
