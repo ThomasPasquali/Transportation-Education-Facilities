@@ -18,6 +18,18 @@ FOLDERS = [
   # 'trenitalia/toscana'
 ]
 
+FOLDERS_ALIASES = {
+  'tt_extraurban': 'tt_eu',
+  'tt_urban': 'tt_u',
+
+  'flixbus': 'fb',
+
+  'scraped': 'tn',
+
+  'trenitalia/lombardia': 'lomb',
+  'trenitalia/piemonte': 'piem'
+}
+
 GTFS_FILES = [
   'calendar',
   'calendar_dates',
@@ -73,15 +85,38 @@ print('\n\nWEEKLY SCHEDULES\n', ws)
 #############################################
 
 se = pd.DataFrame(columns=get_complete_columns_list(ETYPE.SCHEDULE_EXCEPTION))
+se_id_map = {}
 
 for folder in FOLDERS:
   df = DFS[f'{folder}_calendar_dates'].copy()
-  df.rename(columns={'service_id': 'id', 'exception_type': 'type'}, inplace=True)
-  df = add_id_prefix(df, f'se_{folder}_', 'id')
+  df.rename(columns={'exception_type': 'type'}, inplace=True) # 'service_id': 'id'
+  df.rename_axis('id', inplace=True)
+  df = df.reset_index()
+  df = add_id_prefix(df, f'se_{FOLDERS_ALIASES[folder]}_', 'id')
+  df['service_id'] = df['service_id'].astype(str)
+
+  # def j(x):
+    # print(len([v for v in x.values if str(v) != 'nan']))
+    # if len([v for v in x.values if str(v) != 'nan']) > 300:
+    #   print(x.values[1])
+    # return '|'.join([str(v) for v in x.values if str(v) != 'nan'])
+    
+  tmp = df.groupby('service_id')['id'].apply(lambda x: '|'.join(map(str, x))).to_dict()
+
+  se_id_map = {**se_id_map, **tmp}
   se = pd.concat([se, df])
 
-se['id_non_unique'] = se['id']
-se['id'] = se['id'] + '_' + se.groupby('id').cumcount().add(1).astype(str)
+  # print('AAAAAAAAAAAAAAAAAAAAA\n')
+  # print(tmp)
+  # for name, group in df.groupby('service_id')['id']:
+  #   print(f"\nGroup: {name}")
+  #   print(group.describe())
+  # exit(0)
+
+se_id_map = {str(key): value for key, value in se_id_map.items()}
+print(se_id_map)
+# se['id_non_unique'] = se['id']
+# se['id'] = se['id'] + '_' + se.groupby('id').cumcount().add(1).astype(str)
 write_tmp_dataset(ETYPE.SCHEDULE_EXCEPTION, se)
 print('\n\nSCHEDULE EXCEPTIONS\n', se)
 
@@ -176,6 +211,7 @@ for folder in FOLDERS:
 
   df_trips = DFS[f'{folder}_trips'].copy()
   df_trips.rename(columns={'trip_id': 'id', 'route_id': 'characterized', 'service_id': 'avaiability', 'trip_headsign': 'headsign', 'direction_id': 'direction', 'wheelchair_accessible': 'accessibility'}, inplace=True)
+  df_trips = add_id_prefix(df_trips, f'route_{folder}_', 'characterized')
   df_trips['id'] = df_trips['id'].astype(str)
   if 'accessibility' in df_trips:
     df_trips['accessibility'] = df_trips['accessibility'].apply(lambda x: '0' if np.isnan(x) else '1')
@@ -195,16 +231,12 @@ for folder in FOLDERS:
     df_trips['direction'] = df_trips['direction'].astype(int).astype(str)
 
   df_trips['avaiability'] = df_trips['avaiability'].astype(str)
-  schedule_exceptions = add_id_prefix(df_trips, f'se_{folder}_', 'avaiability').merge(se, left_on='avaiability', right_on='id_non_unique', how='left')
-  def j(x):
-    # print(len([v for v in x.values if str(v) != 'nan']))
-    # if len([v for v in x.values if str(v) != 'nan']) > 300:
-    #   print(x.values[1])
-    return '|'.join([v for v in x.values if str(v) != 'nan'])
-  schedule_exceptions = schedule_exceptions.groupby('avaiability').agg({'id_y': j})
-  schedule_exceptions = schedule_exceptions['id_y'].to_dict()
+
+  # for i, r in df_trips.iterrows():
+  #   print(r['avaiability'], type(r['avaiability']), folder)
+  #   print(' ----> ', se_id_map[r['avaiability']])
   
-  df_trips['avaiability_schedule_exception'] = df_trips['avaiability'].apply(lambda x: schedule_exceptions[x])
+  df_trips['avaiability_schedule_exception'] = df_trips['avaiability'].map(se_id_map)
   df_trips['avaiability_schedule'] = add_id_prefix(df_trips, f'ws_{folder}_', 'avaiability')['avaiability']
 
   df_trips = add_id_prefix(df_trips, f'trip_{folder}_', 'id')
