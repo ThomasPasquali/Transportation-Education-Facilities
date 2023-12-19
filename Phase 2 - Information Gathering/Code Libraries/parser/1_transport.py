@@ -11,6 +11,8 @@ FOLDERS = [
 
   'flixbus',
 
+  'scraped',
+
   'trenitalia/lombardia',
   'trenitalia/piemonte'
   # 'trenitalia/toscana'
@@ -156,10 +158,13 @@ for folder in FOLDERS:
   elif folder.startswith('flixbus'):
     agency_id = 3
   else:
-    raise 'Agency not found for folder: ' + folder
+    route_type = 'train'
+    print(f'Agency not found for folder: {folder}')
   
   # Assign agency and type
-  df_routes = df_routes.assign(agency_id=agency_id)
+  if agency_id > 0:
+    df_routes = df_routes.assign(agency_id=agency_id)
+
   df_routes = df_routes.assign(type=route_type)
 
   df_routes.rename(columns={'route_id': 'id', 'agency_id': 'operated', 'route_short_name': 'short_name', 'route_long_name': 'long_name'}, inplace=True)
@@ -179,8 +184,15 @@ for folder in FOLDERS:
     df_trips = df_trips.assign(accessibility='NaN')
   if 'headsign' in df_trips:
     df_trips['headsign'] = df_trips['headsign'].astype(str)
+
+  if folder == 'trenitalia/piemonte' or folder == 'flixbus':
+    df_trips['direction'] = df_trips['direction'].apply(lambda x: x if not np.isnan(x) else 0)
+    
+  # print(folder)
+  # print(len(df_trips['direction']))
+  # print(len(df_trips['direction'].dropna()))
   if 'direction' in df_trips:
-    df_trips['direction'] = df_trips['direction'].astype(float)
+    df_trips['direction'] = df_trips['direction'].astype(int).astype(str)
 
   df_trips['avaiability'] = df_trips['avaiability'].astype(str)
   schedule_exceptions = add_id_prefix(df_trips, f'se_{folder}_', 'avaiability').merge(se, left_on='avaiability', right_on='id_non_unique', how='left')

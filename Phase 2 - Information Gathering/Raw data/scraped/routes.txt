@@ -1,0 +1,7 @@
+route_id,agency_id,route_short_name,route_long_name,route_type
+ftm,1,FTM,Ferrovia Trento Male,2
+valsugana,1,Valsugana,Ferrovia Valsugana,2
+vr-bz,2,Verona-Bolzano,Ferrovia Verona-Bolzano,2
+vr-tn,2,Verona-Trento,Ferrovia Verona-Trento,2
+rov-bz,2,Rovereto-Bolzano,Ferrovia Rovereto-Bolzano,2
+tn-ala,2,Trento-Ala,Ferrovia Trento-Ala,2

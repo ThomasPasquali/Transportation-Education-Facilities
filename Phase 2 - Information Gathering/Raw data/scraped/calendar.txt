@@ -1,0 +1,4 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+123450001,1,1,1,1,1,1,0,20230911,20240621
+123450002,0,0,0,0,0,0,1,20230911,20240621
+543210001,1,1,1,1,1,1,1,20230911,20240621

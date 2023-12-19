@@ -1,3 +1,0 @@
-id,weekdays,start_date,end_date
-ftm_calendar_1,1111110,20230911,20240621
-ftm_calendar_2,0000001,20230911,20240621
