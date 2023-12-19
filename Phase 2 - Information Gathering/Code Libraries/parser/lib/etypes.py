@@ -72,7 +72,7 @@ class ETYPE(Enum):
     'name': 'educational_facility',
     'filename': 'edu/educational_facilities',
     'columns': ['type', 'legal_name'],
-    'relations': ['localize'], # 'nearest_stops'
+    'relations': ['localize', 'nearest_stops'],
     'relations_etype': ['position']
   }
 
