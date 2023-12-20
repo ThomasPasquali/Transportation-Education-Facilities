@@ -1,6 +1,24 @@
-PREFIX rdf: <http://knowdive.disi.unitn.it/etype#>
-PREFIX type: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+PREFIX ofn: <http://www.ontotext.com/sparql/functions/>
+PREFIX data: <http://localhost:8080/source/>
+PREFIX prop: <http://knowdive.disi.unitn.it/etype#>
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+PREFIX time: <http://www.w3.org/TR/xmlschema11-2/#>
 
-SELECT * WHERE { 
-	?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rdf:end_user_GID-53816;
-} LIMIT 2
+select * where { 
+   	# data:stop_bus_tt_extraurban_2586 prop:bus_stop_GID-45937 ?stop.
+    
+    ?journey_from_stop prop:at_GID-16040 data:stop_bus_tt_extraurban_2586;
+                       prop:has_journey_stop_departure_time_GID-80846 ?journey_departure_time.
+    
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?journey_departure_time)) as ?j_d_date).
+    BIND ("2000-01-01T07:00:00"^^xsd:dateTime as ?leave_after).
+    BIND (ofn:minutesBetween(?j_d_date, ?leave_after) as ?diff).
+    
+    ?journey_from_stop prop:of_GID-16041 ?journey.
+    ?journey prop:characterized_GID-16013 ?route.
+    
+    OPTIONAL { ?route prop:has_route_long_name_GID-16034 ?route_long_name }.
+    OPTIONAL { ?route prop:has_route_short_name_GID-16032 ?route_short_name }.
+    
+    FILTER (?j_d_date >= ?leave_after && ?diff < 30)
+} limit 100 

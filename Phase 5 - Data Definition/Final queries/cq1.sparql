@@ -1,0 +1,34 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX prop: <http://knowdive.disi.unitn.it/etype#>
+PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
+PREFIX ofn: <http://www.ontotext.com/sparql/functions/>
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+
+SELECT * WHERE { 
+	?user prop:has_end_user_name_GID-16021 "Mario".
+    
+    ?shift prop:involvement_GID-16019 ?user;
+    		prop:occurence_schedule_GID-16046 ?schedule.
+           
+    OPTIONAL { ?shift prop:has_shift_arrive_before_GID-16022 ?arrive_before }.
+    OPTIONAL { ?shift prop:has_shift_leave_after_GID-16023 ?leave_after }.
+    
+    ?shift prop:from_GID-16044 ?from_position;
+           prop:to_GID-16045 ?to_position.
+    
+    ?from_position prop:schema_has_position_latitude ?from_lat;
+                   prop:schema_has_position_longitude ?from_lon.
+    
+    ?bus_stop prop:localize_GID-113623 ?stop_position. # UNCOMMENT TO GET ONLY ONE RESULT
+    ?from_stop_position prop:schema_has_position_latitude ?from_stop_lat;
+                   prop:schema_has_position_longitude ?from_stop_lon.
+    
+    # FILTER (omgeo:distance(?from_lat, ?from_lon, ?from_stop_lat, ?from_stop_lon) < 0.3)
+    
+   	# ?journey_from_stop prop:at_GID-16040 ?from_stop_position.
+     #             prop:has_journey_stop_departure_time_GID-80846 ?journey_departure_time.
+    
+    # BIND (ofn:minutesBetween(?journey_departure_time, ?leave_after) as ?diff)
+    
+    # FILTER (?leave_after != "" && ?journey_departure_time >= ?leave_after)
+} LIMIT 100
