@@ -96,5 +96,5 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
-def positions_near_enough (p1, p2, THRESHOLD = 500):
+def positions_near_enough (p1, p2, THRESHOLD = 400):
   return THRESHOLD > haversine_distance(float(p1['latitude']), float(p1['longitude']), float(p2['latitude']), float(p2['longitude']))

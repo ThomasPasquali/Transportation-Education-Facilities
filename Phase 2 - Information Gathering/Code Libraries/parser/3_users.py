@@ -23,13 +23,30 @@ if user_positions is None or len(user_positions) <= len(users):
   positions = read_tmp_dataset(ETYPE.POSITION)
 
 # Remove duplicates (FIXME change duplciates id prefix?)
-positions.drop_duplicates(subset='address', inplace=True)
-check_duplicates(positions, ['address'])
+# positions.drop_duplicates(subset='address', inplace=True)
+# check_duplicates(positions, ['address'])
 
 # Link positions to users
 pos_address_id_map = dict(zip(positions['address'], positions['id']))
 users['domiciled'] = users['domicile_location'].map(pos_address_id_map)
 users['reside'] = users['residence_location'].map(pos_address_id_map)
+
+stops_position = positions.loc[positions['id'].str.contains('pos_stop')]
+if stops_position is not None and len(stops_position) > 0:
+  stops_position.set_index('id', inplace=True)
+  positions.set_index('id', inplace=True)
+
+  def find_nearest_stops(pos):
+    pos = positions.loc[pos]
+    near_stops = stops_position.loc[stops_position.apply(lambda s: positions_near_enough(pos, s), axis=1)]
+    return '|'.join(near_stops.index) if len(near_stops) > 0 else ""
+
+  for c in ['domiciled', 'reside']:
+    users['nearest_stops_' + c] = users[c].apply(find_nearest_stops)
+
+  positions.reset_index(inplace=True)
+else:
+  err('Could not link from/to locations, please generate educational facilities and stops tmp dataset!')
 
 # Read tmp positions dataset
 positions = read_tmp_dataset(ETYPE.POSITION)
@@ -45,25 +62,8 @@ else:
 shifts = read_raw_dataset(ETYPE.SHIFT)
 schedules = read_raw_dataset(ETYPE.WEEKLY_SCHEDULE, custom_path='users/calendar')
 schedules_exceptions = read_raw_dataset(ETYPE.SCHEDULE_EXCEPTION, custom_path='users/calendar_dates')
-
-stops_position = positions.loc[positions['id'].str.contains('pos_stop')]
-
-if stops_position is not None and len(stops_position) > 0:
-  positions.set_index('id', inplace=True)
-
-  def find_nearest_stops(address):
-    pos = positions.loc[pos_address_id_map[address]]
-    near_stops = stops_position.loc[stops_position.apply(lambda s: positions_near_enough(pos, s), axis=1)]
-    print(pos)
-    print(near_stops)
-    return near_stops.iloc[0]['id'] if len(near_stops) > 0 else ""
-
-  for c in ['from', 'to']:
-    shifts[c] = shifts[c].apply(find_nearest_stops)
-
-  positions.reset_index(inplace=True)
-else:
-  err('Could not link from/to locations, please generate educational facilities and stops tmp dataset!')
+for c in ['from', 'to']:
+  shifts[c] = shifts[c].map(pos_address_id_map)
 
 
 users = write_tmp_dataset(ETYPE.USER, users)

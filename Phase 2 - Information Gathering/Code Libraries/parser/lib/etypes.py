@@ -56,7 +56,7 @@ class ETYPE(Enum):
     'name': 'user',
     'filename': 'users/users',
     'columns': ['name', 'occupation', 'special_needs'],
-    'relations': ['domiciled', 'reside', 'work'],
+    'relations': ['domiciled', 'reside', 'work', 'nearest_stops_domiciled', 'nearest_stops_reside'],
     'relations_etype': ['position', 'position', 'position']
   }
   SHIFT = {
