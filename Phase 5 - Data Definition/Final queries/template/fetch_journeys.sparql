@@ -1,0 +1,94 @@
+SELECT DISTINCT ?stop_from_name ?stop_to_name ?route_name (xsd:int(?walk_from * 100) as ?walk_from_m) (xsd:int(?walk_to * 100) as ?walk_to_m) ?departure_time ?arrival_time ?wait_time
+WHERE {
+    ## Hyperparams
+    BIND ("0.5"^^xsd:float as ?max_stop_dist)
+    BIND ("30"^^xsd:long as ?max_wait_time)
+
+    ## Parameters
+    BIND ("13:00:00"as ?arrive_before)
+    # BIND ("" as ?leave_after)
+    VALUES ?shift {
+        data:shift_7
+    }
+    
+    
+    ## Shift positions from / to
+    ?shift prop:from_GID-16044 ?shift_pos_from;
+           prop:to_GID-16045 ?shift_pos_to.
+    
+    { ## Find "from" nearest stops
+        ?shift_pos_from prop:schema_has_position_latitude ?shift_pos_from_lat;
+                        prop:schema_has_position_longitude ?shift_pos_from_lon.
+
+        # TODO use nearest stops if possible
+        ?stop_from a prop:bus_stop_GID-45937.
+        ?stop_from prop:localize_GID-113623 ?stop_from_pos.
+        ?stop_from_pos prop:schema_has_position_latitude ?stop_from_lat;
+                       prop:schema_has_position_longitude ?stop_from_lon.
+        BIND (omgeo:distance(?shift_pos_from_lat, ?shift_pos_from_lon, ?stop_from_lat, ?stop_from_lon) as ?walk_from)
+        FILTER (?walk_from <= ?max_stop_dist)
+    }
+    
+    { ## Find "to" nearest stops
+        ?shift_pos_to prop:schema_has_position_latitude ?shift_pos_to_lat;
+                      prop:schema_has_position_longitude ?shift_pos_to_lon.
+
+        # TODO use nearest stops if possible
+        ?stop_to a prop:bus_stop_GID-45937.
+        ?stop_to prop:localize_GID-113623 ?stop_to_pos.
+        ?stop_to_pos prop:schema_has_position_latitude ?stop_to_lat;
+                     prop:schema_has_position_longitude ?stop_to_lon.
+        BIND (omgeo:distance(?shift_pos_to_lat, ?shift_pos_to_lon, ?stop_to_lat, ?stop_to_lon) as ?walk_to)
+        FILTER (?walk_to <= ?max_stop_dist)
+    }
+    
+    { ## Find journeys that stop at stop_from
+        ?j_stop_from prop:at_GID-16040 ?stop_from.
+        ?j_stop_from prop:of_GID-16041 ?j.
+
+        ?j prop:has_journey_direction_GID-16036 ?j_direction.
+        FILTER regex(str(?j), "_urban")
+        FILTER (?j_direction = "1")
+    }
+    
+    { ## Filter journeys that stop at stop_from only to those that also stop at stop_to
+        ?j_stop_to prop:of_GID-16041 ?j.
+    	?j_stop_to prop:at_GID-16040 ?stop_to.
+    }
+    
+    # TODO filter by journey schedules (+exceptions)
+    
+   	## Extract times
+    ?j_stop_from prop:has_journey_stop_departure_time_GID-80846 ?departure_time.
+    ?j_stop_to prop:has_journey_stop_arrival_time_GID-80845 ?arrival_time.
+    
+    ## Support variables 
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?departure_time)) as ?departure_date).
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?leave_after)) as ?leave_after_date).
+    
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?arrival_time)) as ?arrival_date).
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?arrive_before)) as ?arrive_before_date).
+    
+    # IF BOUND arrive_before 	=> wait time = diff(arrival, arrive_before)
+    # ELSE						=> wait time = diff(departure, leave_after)
+    BIND (IF(BOUND(?arrive_before),
+            ofn:minutesBetween(?arrival_date, ?arrive_before_date),
+            ofn:minutesBetween(?departure_date, ?leave_after_date)
+        ) as ?wait_time)
+    
+    # BOUND arrive_before => journey_arrival BEFORE arrive_before
+    FILTER (!BOUND(?arrive_before) || (?arrival_date <= ?arrive_before_date))
+    # BOUND leave_after => journey_departure AFTER leave_after
+    FILTER (!BOUND(?leave_after) || (?departure_date >= ?leave_after_date))
+    
+    # Exclude if wait time is more than the limit
+    FILTER (?wait_time <= ?max_wait_time)
+    
+    ## Projection variables
+    ?stop_from prop:has_stop_name_GID-16039 ?stop_from_name.
+    ?stop_to prop:has_stop_name_GID-16039 ?stop_to_name.
+    ?j prop:characterized_GID-16013 ?route.
+    ?route prop:has_route_short_name_GID-16032 ?route_name.
+}
+ORDER BY ?wait_time
+LIMIT 20
