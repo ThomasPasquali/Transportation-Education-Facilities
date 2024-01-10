@@ -1,0 +1,37 @@
+SELECT ?user ?shift
+WHERE {
+    ?user prop:has_end_user_name_GID-16021 "Mario".
+
+    BIND ("2023-10-31T07:00:00+01:00"^^xsd:dateTime as ?curr_datetime)
+    BIND (ofn:daysBetween(?curr_datetime, "1967-01-01T10:00:00+01:00"^^xsd:dateTime) AS ?days)
+    BIND (floor(?days - (7 * floor(?days / 7))) AS ?curr_weekday)
+
+    ?shift prop:involvement_GID-16019 ?user.
+	
+	 OPTIONAL { ?shift prop:occurence_schedule_GID-16046 ?ws.
+                ?ws prop:has_weekly_schedule_monday_GID-80758 ?monday;
+                    prop:has_weekly_schedule_tuesday_GID-80759 ?tuesday;
+                    prop:has_weekly_schedule_wednesday_GID-80760 ?wednesday.
+        			#TO DO ADD CONDITION FOR EVERY DAY 
+    }.
+    OPTIONAL { 	?shift prop:occurence_schedule_exception_GID-16047 ?ex. 
+                ?ex prop:has_schedule_exception_date_GID-16027 ?date_ex;
+                    prop:has_schedule_exception_type_GID-31834 ?type_ex.
+    }.
+    
+    OPTIONAL { ?shift prop:has_shift_arrive_before_GID-16022 ?arrive_before }.
+    OPTIONAL { ?shift prop:has_shift_leave_after_GID-16023 ?leave_after }.
+
+    BIND (ofn:minutesBetween(
+    	xsd:dateTime(CONCAT("2023-10-31T", IF(BOUND(?arrive_before),?arrive_before,?leave_after), "+01:00")),
+        ?curr_datetime
+    ) as ?t) 
+	
+    FILTER ( IF(BOUND(?ex), 
+            ?type_ex = "1" && ?date_ex = spif:dateFormat(?curr_datetime, "yyyyMMdd") && !BOUND(?ws),
+            (?curr_weekday = "0"^^xsd:decimal && ?monday = "1") || 
+            (?curr_weekday = "1"^^xsd:decimal && ?tuesday = "1")
+            #TO DO ADD CONDITION FOR EVERY DAY 
+        )
+    )
+} ORDER BY DESC(?ex) ?t LIMIT 1
