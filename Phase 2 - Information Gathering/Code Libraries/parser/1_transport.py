@@ -136,7 +136,7 @@ for folder in FOLDERS:
   df['localize'] = df['id'].astype(str)
 
   stop_type = 'bus'
-  if folder.startswith('trenitalia'):
+  if folder.startswith('trenitalia') or folder.startswith('scraped'):
     stop_type = 'train'
 
   df = add_id_prefix(df, f'pos_stop_{stop_type}_{folder}_', 'localize')
