@@ -4,19 +4,20 @@ PREFIX ofn: <http://www.ontotext.com/sparql/functions/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX spif: <http://spinrdf.org/spif#>
 
-SELECT DISTINCT ?stop_from_name ?stop_to_name ?route_name  ?departure_time ?arrival_time ?wait_time ?walk_from_m ?walk_to_m ?j_duration ?score ?j_ws
+SELECT DISTINCT ?shift ?stop_from_name ?stop_to_name ?route_name  ?departure_time ?arrival_time ?wait_time ?walk_from_m ?walk_to_m ?j_duration ?score ?accessibility
 WHERE {
     ## Hyperparams
+    BIND ("false"^^xsd:boolean as ?wheelchair_need)
     BIND ("0.5"^^xsd:float as ?max_stop_dist)
-    BIND ("303"^^xsd:long as ?max_wait_time)
+    BIND ("30"^^xsd:long as ?max_wait_time)
     BIND ("(_urban)" as ?stops_filter) 	# Can be commented
-    BIND ("0" as ?direction) 			# Comodity MAY BE WRONG!!!!
+    BIND ("1" as ?direction) 			# Comodity MAY BE WRONG!!!!
     
     {
         SELECT ?user ?shift ?arrive_before ?leave_after ?curr_datetime ?curr_weekday
         WHERE {
             ## Parameters (these are here because of SPARQL subqueries evaluation order)
-            BIND ("2023-10-31T07:00:00"^^xsd:dateTime as ?curr_datetime)
+            BIND ("2024-01-30T07:00:00"^^xsd:dateTime as ?curr_datetime)
             # BIND ("2023-12-25T07:00:00"^^xsd:dateTime as ?curr_datetime)
             BIND ("Luca" as ?username)
 
@@ -83,28 +84,48 @@ WHERE {
                         prop:schema_has_position_longitude ?shift_pos_from_lon.
 
         # TODO use nearest stops if possible
-        ?stop_from a prop:bus_stop_GID-45937.
-        ?stop_from prop:localize_GID-113623 ?stop_from_pos.
-        ?stop_from_pos prop:schema_has_position_latitude ?stop_from_lat;
-                       prop:schema_has_position_longitude ?stop_from_lon.
-        BIND (omgeo:distance(?shift_pos_from_lat, ?shift_pos_from_lon, ?stop_from_lat, ?stop_from_lon) as ?walk_from)
-        FILTER (?walk_from <= ?max_stop_dist)
+        {
+            ?stop_from a prop:bus_stop_GID-45937.
+            ?stop_from prop:localize_GID-113623 ?stop_from_pos.
+            ?stop_from_pos prop:schema_has_position_latitude ?stop_from_lat;
+                           prop:schema_has_position_longitude ?stop_from_lon.
+            BIND (omgeo:distance(?shift_pos_from_lat, ?shift_pos_from_lon, ?stop_from_lat, ?stop_from_lon) as ?walk_from)
+            FILTER (?walk_from <= ?max_stop_dist)
+        }
+        UNION
+        {
+            ?stop_from a prop:train_stop_GID-16010.
+            ?stop_from prop:localize_GID-113623 ?stop_from_pos.
+            ?stop_from_pos prop:schema_has_position_latitude ?stop_from_lat;
+                           prop:schema_has_position_longitude ?stop_from_lon.
+            BIND (omgeo:distance(?shift_pos_from_lat, ?shift_pos_from_lon, ?stop_from_lat, ?stop_from_lon) as ?walk_from)
+            FILTER (?walk_from <= ?max_stop_dist)
+        }
     }
-    # TODO eventual UNION with train stops
     
     { ## Find "to" nearest stops
         ?shift_pos_to prop:schema_has_position_latitude ?shift_pos_to_lat;
                       prop:schema_has_position_longitude ?shift_pos_to_lon.
 
         # TODO use nearest stops if possible
-        ?stop_to a prop:bus_stop_GID-45937.
-        ?stop_to prop:localize_GID-113623 ?stop_to_pos.
-        ?stop_to_pos prop:schema_has_position_latitude ?stop_to_lat;
-                     prop:schema_has_position_longitude ?stop_to_lon.
-        BIND (omgeo:distance(?shift_pos_to_lat, ?shift_pos_to_lon, ?stop_to_lat, ?stop_to_lon) as ?walk_to)
-        FILTER (?walk_to <= ?max_stop_dist)
+        {
+            ?stop_to a prop:bus_stop_GID-45937.
+            ?stop_to prop:localize_GID-113623 ?stop_to_pos.
+            ?stop_to_pos prop:schema_has_position_latitude ?stop_to_lat;
+                         prop:schema_has_position_longitude ?stop_to_lon.
+            BIND (omgeo:distance(?shift_pos_to_lat, ?shift_pos_to_lon, ?stop_to_lat, ?stop_to_lon) as ?walk_to)
+            FILTER (?walk_to <= ?max_stop_dist)
+        }
+        UNION
+        {
+            ?stop_to a prop:train_stop_GID-16010.
+            ?stop_to prop:localize_GID-113623 ?stop_to_pos.
+            ?stop_to_pos prop:schema_has_position_latitude ?stop_to_lat;
+                         prop:schema_has_position_longitude ?stop_to_lon.
+            BIND (omgeo:distance(?shift_pos_to_lat, ?shift_pos_to_lon, ?stop_to_lat, ?stop_to_lon) as ?walk_to)
+            FILTER (?walk_to <= ?max_stop_dist)
+        }
     }
-    # TODO eventual UNION with train stops
     
     ## Filter to have more control over results
     FILTER (IF(BOUND(?stops_filter), REGEX(STR(?stop_from), ?stops_filter) && REGEX(STR(?stop_to), ?stops_filter), "true"^^xsd:boolean))
@@ -190,15 +211,25 @@ WHERE {
     # Exclude if wait time is more than the limit
     FILTER (?wait_time <= ?max_wait_time)
     
+    # Filter on accessibility: ?wheelchair_need => ?accessibility = "1"
+    FILTER (!?wheelchair_need || ?accessibility = "1")
+    
     ## Projection variables
     ?stop_from prop:has_stop_name_GID-16039 ?stop_from_name.
     ?stop_to prop:has_stop_name_GID-16039 ?stop_to_name.
-    ?j prop:characterized_GID-16013 ?route.
+    ?j prop:characterized_GID-16013 ?route;
+       prop:has_journey_accessibility_GID-16037 ?accessibility.
     ?route prop:has_route_short_name_GID-16032 ?route_name.
     
     BIND (xsd:int(?walk_from * 100) as ?walk_from_m)
     BIND (xsd:int(?walk_to * 100) as ?walk_to_m)
     BIND (ofn:minutesBetween(?arrival_date, ?departure_date) as ?j_duration)
-    BIND ((?wait_time + ?j_duration + "0.5"^^xsd:float * ?walk_from_m + "0.5"^^xsd:float * ?walk_to_m) as ?score)
+    BIND ((
+            ?wait_time
+            + ?j_duration
+            + "0.5"^^xsd:float * ?walk_from_m
+            + "0.5"^^xsd:float * ?walk_to_m
+        ) as ?score
+    )
     
 } ORDER BY ASC(?score)
