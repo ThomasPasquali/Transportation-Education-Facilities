@@ -139,7 +139,7 @@ print('\n\n\n\n\n\n STOP TIMES\n', stop_times)
 
 def find_trip_route_and_direction (row):
   name = row['trip_id']
-  print(row)
+  # print(row)
   tmp = stop_times_m.loc[stop_times_m.isnull().any(axis=1)]
   tmp = tmp.loc[stop_times_m['trip_id'] == name]
 
@@ -150,7 +150,7 @@ def find_trip_route_and_direction (row):
     print(f'Missing trip for {name}!')
   else:
     dep, dest = (tmp.iloc[0].values[1].lower(), tmp.iloc[1].values[1].lower())
-    print(tmp, '\n', dep, '\n', dest, '\n\n')
+    # print(tmp, '\n', dep, '\n', dest, '\n\n')
     
     vr_bz = ['muenchen', 'napoli', 'roma', 'bologna', 'brennero', 'milano']
     if any(v in dep for v in vr_bz):
@@ -181,9 +181,9 @@ def find_trip_route_and_direction (row):
       direction = '1' if 'trento' in dep and 'ala' in dest else '0'
     else:
       pass
-      print(dep, '\n', dest, '\n\n')
+      # print(dep, '\n', dest, '\n\n')
   
-  print(route, direction)
+  # print(route, direction)
   return pd.Series({'route_id': route, 'direction': direction})
 
 trips[['route_id', 'direction']] = trips.apply(find_trip_route_and_direction, axis=1)

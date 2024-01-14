@@ -5,8 +5,8 @@ bus route_GID-45936,the route regularly followed by a passenger bus
 train route_GID-16009,the route regularly followed by a passenger train
 bus stop_GID-45937,a place on a bus route where buses stop to discharge and take on passengers
 train stop_GID-16010,a place on a train route where trains stop to discharge and take on passengers
-journey stop_GID-16003,programmed action of stopping during a journey with a duration
-journey_GID-1560,the act of traveling from one place to another
+trip stop_GID-16003,programmed action of stopping during a journey with a duration
+trip_GID-1570,a journey for some purpose (usually including the return)
 shift_GID-1704,the act of moving from one place to another
 end user_GID-53816,the ultimate user for which something is intended
 weekly schedule_GID-16001,a weekly organized plan with a start date and an end date
@@ -16,7 +16,7 @@ residence_GID-46085,any address at which you dwell more than temporarily
 operated_GID-16011,the action of functioning or carrying out tasks within an organization
 of_GID-16041,a partion of
 characterized_GID-16013,"the state of being distinctly identified or marked by specific qualities, features, or attributes"
-localize_GID-113623,identify the position or place of
+localized_GID-89701,confined or restricted to a particular location
 at_GID-16040,"a spatial point of reference, indicating a specific position, in relation to which an action, state, or event occurs"
 from_GID-16044,the point of origin or source position
 to_GID-16045,the destination or target position
