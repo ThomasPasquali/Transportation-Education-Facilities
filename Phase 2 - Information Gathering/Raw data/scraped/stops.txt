@@ -839,7 +839,7 @@ stop_id,stop_name,stop_lat,stop_lon
 838,migliarino,,
 839,miggiano,,
 840,mezzovico,,
-841,mezzolombardo,,
+841,mezzolombardo,46.213432,11.09334
 842,mezzolara,,
 843,mezzocorona borgata,46.21419,11.118815
 844,milano domodossola,45.481199,9.162045
@@ -2589,7 +2589,7 @@ stop_id,stop_name,stop_lat,stop_lon
 2588,san candido/innichen,46.732728,12.271917
 2589,san bonifacio,45.40276,11.27406
 2590,san bernardo,,
-2591,san bartolameo,46.0539,11.1358
+2591,san bartolameo,46.047577,11.135125
 2592,samolaco,46.246436,9.423582
 2593,samoggia,44.567307,11.146221
 2594,sammichele,,
@@ -2674,7 +2674,7 @@ stop_id,stop_name,stop_lat,stop_lon
 2673,s.croce del lago,46.094795,12.324068
 2674,s.cristoforo al lago-ischia,46.039743,11.23375
 2675,s.claudio,43.287357,13.532751
-2676,s.chiara,46.05533,11.11758
+2676,s.chiara,46.05442,11.135436
 2677,s.caterina dell`jonio,38.530452,16.571093
 2678,s.cassiano,44.143684,11.687503
 2679,s.biagio di callalta,45.686134,12.374316

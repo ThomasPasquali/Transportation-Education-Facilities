@@ -5,12 +5,12 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1hha6rkdrx1 a km-dev:R2RMLMapping ;
+_:node1hk8snalax1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "educational_facilities.csv" ;
-	km-dev:modelPublicationTime "1702223532475"^^xsd:long ;
+	km-dev:modelPublicationTime "1705400576683"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"legal_name\"}],[{\"columnName\":\"localize\"}],[{\"columnName\":\"type\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"nearest_stops_split\"},{\"columnName\":\"Values\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"legal_name\"}],[{\"columnName\":\"localize\"}],[{\"columnName\":\"type\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"nearest_stops_split\"},{\"columnName\":\"Values\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"localize\"}],[{\"columnName\":\"legal_name\"}],[{\"columnName\":\"nearest_stops_split\"},{\"columnName\":\"Values\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"type\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"localize\"}],[{\"columnName\":\"legal_name\"}],[{\"columnName\":\"nearest_stops_split\"},{\"columnName\":\"Values\"}],[{\"columnName\":\"id\"}],[{\"columnName\":\"type\"}]]" ;
 	km-dev:hasModelLabel "educational_facilities.csv" ;
 	km-dev:hasBaseURI "http://localhost:8080/source/" ;
 	km-dev:hasWorksheetHistory """[
@@ -418,7 +418,7 @@ _:node1hha6rkdrx1 a km-dev:R2RMLMapping ;
                 \"type\": \"other\",
                 \"value\": {
                     \"edgeTargetId\": \"http://knowdive.disi.unitn.it/etype#position_GID-279901\",
-                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#localize_GID-113623\",
+                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#localized_GID-89701\",
                     \"edgeTargetUri\": \"http://knowdive.disi.unitn.it/etype#position_GID-27990\",
                     \"edgeSourceId\": \"http://knowdive.disi.unitn.it/etype#educational_facility_GID-1180221\",
                     \"edgeSourceUri\": \"http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022\"
@@ -472,139 +472,139 @@ _:node1hha6rkdrx1 a km-dev:R2RMLMapping ;
     }
 ]""" .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a a rr:TriplesMap .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 a rr:TriplesMap .
 
-_:node1hha6rkdrx1 km-dev:hasTriplesMap km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a .
+_:node1hk8snalax1 km-dev:hasTriplesMap km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx2 rr:tableName "educational_facilities.csv" ;
+_:node1hk8snalax2 rr:tableName "educational_facilities.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasLogicalTable _:node1hha6rkdrx2 .
+_:node1hk8snalax1 km-dev:hasLogicalTable _:node1hk8snalax2 .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a rr:logicalTable _:node1hha6rkdrx2 ;
-	rr:subjectMap _:node1hha6rkdrx3 .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 rr:logicalTable _:node1hk8snalax2 ;
+	rr:subjectMap _:node1hk8snalax3 .
 
-_:node1hha6rkdrx1 km-dev:hasSubjectMap _:node1hha6rkdrx3 .
+_:node1hk8snalax1 km-dev:hasSubjectMap _:node1hk8snalax3 .
 
-_:node1hha6rkdrx3 km-dev:isPartOfMapping _:node1hha6rkdrx1 ;
+_:node1hk8snalax3 km-dev:isPartOfMapping _:node1hk8snalax1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#educational_facility_GID-1180221" ;
 	rr:class <http://knowdive.disi.unitn.it/etype#educational_facility_GID-118022> ;
 	rr:template "{id}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_a26068a8-2fa0-4747-8747-6376ddd9ab7f rr:predicate <http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name> .
+km-dev:PredicateObjectMap_c38349c8-d481-46d5-a8e6-3537ebdde106 rr:predicate <http://knowdive.disi.unitn.it/etype#localized_GID-89701> .
 
-_:node1hha6rkdrx4 rr:column "legal_name" ;
+km-dev:RefObjectMap_77b29ba9-68bd-439f-ab6e-00ca98454521 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_25bb628b-9547-40f4-af7c-f97e164483c1 ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
+
+_:node1hk8snalax1 km-dev:hasObjectMap km-dev:RefObjectMap_77b29ba9-68bd-439f-ab6e-00ca98454521 .
+
+km-dev:PredicateObjectMap_c38349c8-d481-46d5-a8e6-3537ebdde106 rr:objectMap km-dev:RefObjectMap_77b29ba9-68bd-439f-ab6e-00ca98454521 .
+
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 rr:predicateObjectMap km-dev:PredicateObjectMap_c38349c8-d481-46d5-a8e6-3537ebdde106 .
+
+km-dev:PredicateObjectMap_c38349c8-d481-46d5-a8e6-3537ebdde106 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
+
+_:node1hk8snalax1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c38349c8-d481-46d5-a8e6-3537ebdde106 .
+
+km-dev:PredicateObjectMap_98deaeb6-9fa4-4ec1-879d-dd49263d56ae rr:predicate <http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834> .
+
+_:node1hk8snalax4 rr:column "type" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasObjectMap _:node1hha6rkdrx4 .
+_:node1hk8snalax1 km-dev:hasObjectMap _:node1hk8snalax4 .
 
-km-dev:PredicateObjectMap_a26068a8-2fa0-4747-8747-6376ddd9ab7f rr:objectMap _:node1hha6rkdrx4 .
+km-dev:PredicateObjectMap_98deaeb6-9fa4-4ec1-879d-dd49263d56ae rr:objectMap _:node1hk8snalax4 .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a rr:predicateObjectMap km-dev:PredicateObjectMap_a26068a8-2fa0-4747-8747-6376ddd9ab7f .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 rr:predicateObjectMap km-dev:PredicateObjectMap_98deaeb6-9fa4-4ec1-879d-dd49263d56ae .
 
-km-dev:PredicateObjectMap_a26068a8-2fa0-4747-8747-6376ddd9ab7f a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:PredicateObjectMap_98deaeb6-9fa4-4ec1-879d-dd49263d56ae a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a26068a8-2fa0-4747-8747-6376ddd9ab7f .
+_:node1hk8snalax1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_98deaeb6-9fa4-4ec1-879d-dd49263d56ae .
 
-km-dev:PredicateObjectMap_aefdcad9-63ab-4aa9-86cd-9639ff744f9f rr:predicate <http://knowdive.disi.unitn.it/etype#has_educational_facility_type_GID-31834> .
+km-dev:PredicateObjectMap_e4555b79-1290-494f-855b-5bb9830a702a rr:predicate <http://knowdive.disi.unitn.it/etype#schema_has_educational_facility_legal_name> .
 
-_:node1hha6rkdrx5 rr:column "type" ;
+_:node1hk8snalax5 rr:column "legal_name" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasObjectMap _:node1hha6rkdrx5 .
+_:node1hk8snalax1 km-dev:hasObjectMap _:node1hk8snalax5 .
 
-km-dev:PredicateObjectMap_aefdcad9-63ab-4aa9-86cd-9639ff744f9f rr:objectMap _:node1hha6rkdrx5 .
+km-dev:PredicateObjectMap_e4555b79-1290-494f-855b-5bb9830a702a rr:objectMap _:node1hk8snalax5 .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a rr:predicateObjectMap km-dev:PredicateObjectMap_aefdcad9-63ab-4aa9-86cd-9639ff744f9f .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 rr:predicateObjectMap km-dev:PredicateObjectMap_e4555b79-1290-494f-855b-5bb9830a702a .
 
-km-dev:PredicateObjectMap_aefdcad9-63ab-4aa9-86cd-9639ff744f9f a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:PredicateObjectMap_e4555b79-1290-494f-855b-5bb9830a702a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_aefdcad9-63ab-4aa9-86cd-9639ff744f9f .
+_:node1hk8snalax1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e4555b79-1290-494f-855b-5bb9830a702a .
 
-km-dev:PredicateObjectMap_ca042f21-0052-4293-8c6b-d4f4950a085b rr:predicate <http://knowdive.disi.unitn.it/etype#localize_GID-113623> .
+km-dev:PredicateObjectMap_33c965c1-dca7-44da-bc04-7618f15f6ac4 rr:predicate <http://knowdive.disi.unitn.it/etype#nearest_GID-116831> .
 
-km-dev:RefObjectMap_257948aa-ed9e-4d71-92af-41486d4dbc28 a rr:RefObjectMap , rr:ObjectMap ;
-	rr:parentTriplesMap km-dev:TriplesMap_44b7267e-d0fc-4699-acdb-c5beda6f5317 ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:RefObjectMap_3282425f-0f19-4d1b-bd85-ba93603c1d60 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_b62ee5f0-8563-49f4-8216-049aa1d023cb ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasObjectMap km-dev:RefObjectMap_257948aa-ed9e-4d71-92af-41486d4dbc28 .
+_:node1hk8snalax1 km-dev:hasObjectMap km-dev:RefObjectMap_3282425f-0f19-4d1b-bd85-ba93603c1d60 .
 
-km-dev:PredicateObjectMap_ca042f21-0052-4293-8c6b-d4f4950a085b rr:objectMap km-dev:RefObjectMap_257948aa-ed9e-4d71-92af-41486d4dbc28 .
+km-dev:PredicateObjectMap_33c965c1-dca7-44da-bc04-7618f15f6ac4 rr:objectMap km-dev:RefObjectMap_3282425f-0f19-4d1b-bd85-ba93603c1d60 .
 
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a rr:predicateObjectMap km-dev:PredicateObjectMap_ca042f21-0052-4293-8c6b-d4f4950a085b .
+km-dev:TriplesMap_a3685362-1657-4aac-861d-84844b7c95b1 rr:predicateObjectMap km-dev:PredicateObjectMap_33c965c1-dca7-44da-bc04-7618f15f6ac4 .
 
-km-dev:PredicateObjectMap_ca042f21-0052-4293-8c6b-d4f4950a085b a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:PredicateObjectMap_33c965c1-dca7-44da-bc04-7618f15f6ac4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_ca042f21-0052-4293-8c6b-d4f4950a085b .
+_:node1hk8snalax1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_33c965c1-dca7-44da-bc04-7618f15f6ac4 .
 
-km-dev:PredicateObjectMap_acd21ca9-d866-48f6-a8f4-3ce26a1082d4 rr:predicate <http://knowdive.disi.unitn.it/etype#nearest_GID-116831> .
+km-dev:TriplesMap_25bb628b-9547-40f4-af7c-f97e164483c1 a rr:TriplesMap .
 
-km-dev:RefObjectMap_7192310f-3383-4e22-ae66-acccaf9ad912 a rr:RefObjectMap , rr:ObjectMap ;
-	rr:parentTriplesMap km-dev:TriplesMap_65170d05-2786-4c5f-9c7d-9884eee50e53 ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+_:node1hk8snalax1 km-dev:hasTriplesMap km-dev:TriplesMap_25bb628b-9547-40f4-af7c-f97e164483c1 .
 
-_:node1hha6rkdrx1 km-dev:hasObjectMap km-dev:RefObjectMap_7192310f-3383-4e22-ae66-acccaf9ad912 .
+km-dev:TriplesMap_25bb628b-9547-40f4-af7c-f97e164483c1 km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-km-dev:PredicateObjectMap_acd21ca9-d866-48f6-a8f4-3ce26a1082d4 rr:objectMap km-dev:RefObjectMap_7192310f-3383-4e22-ae66-acccaf9ad912 .
-
-km-dev:TriplesMap_cf381beb-0ae8-4134-8ebd-99ecb0fd043a rr:predicateObjectMap km-dev:PredicateObjectMap_acd21ca9-d866-48f6-a8f4-3ce26a1082d4 .
-
-km-dev:PredicateObjectMap_acd21ca9-d866-48f6-a8f4-3ce26a1082d4 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
-
-_:node1hha6rkdrx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_acd21ca9-d866-48f6-a8f4-3ce26a1082d4 .
-
-km-dev:TriplesMap_44b7267e-d0fc-4699-acdb-c5beda6f5317 a rr:TriplesMap .
-
-_:node1hha6rkdrx1 km-dev:hasTriplesMap km-dev:TriplesMap_44b7267e-d0fc-4699-acdb-c5beda6f5317 .
-
-km-dev:TriplesMap_44b7267e-d0fc-4699-acdb-c5beda6f5317 km-dev:isPartOfMapping _:node1hha6rkdrx1 .
-
-_:node1hha6rkdrx6 rr:tableName "educational_facilities.csv" ;
+_:node1hk8snalax6 rr:tableName "educational_facilities.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasLogicalTable _:node1hha6rkdrx6 .
+_:node1hk8snalax1 km-dev:hasLogicalTable _:node1hk8snalax6 .
 
-km-dev:TriplesMap_44b7267e-d0fc-4699-acdb-c5beda6f5317 rr:logicalTable _:node1hha6rkdrx6 ;
-	rr:subjectMap _:node1hha6rkdrx7 .
+km-dev:TriplesMap_25bb628b-9547-40f4-af7c-f97e164483c1 rr:logicalTable _:node1hk8snalax6 ;
+	rr:subjectMap _:node1hk8snalax7 .
 
-_:node1hha6rkdrx1 km-dev:hasSubjectMap _:node1hha6rkdrx7 .
+_:node1hk8snalax1 km-dev:hasSubjectMap _:node1hk8snalax7 .
 
-_:node1hha6rkdrx7 km-dev:isPartOfMapping _:node1hha6rkdrx1 ;
+_:node1hk8snalax7 km-dev:isPartOfMapping _:node1hk8snalax1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#position_GID-279901" ;
 	rr:class <http://knowdive.disi.unitn.it/etype#position_GID-27990> ;
 	rr:template "{localize}" .
 
-km-dev:TriplesMap_65170d05-2786-4c5f-9c7d-9884eee50e53 a rr:TriplesMap .
+km-dev:TriplesMap_b62ee5f0-8563-49f4-8216-049aa1d023cb a rr:TriplesMap .
 
-_:node1hha6rkdrx1 km-dev:hasTriplesMap km-dev:TriplesMap_65170d05-2786-4c5f-9c7d-9884eee50e53 .
+_:node1hk8snalax1 km-dev:hasTriplesMap km-dev:TriplesMap_b62ee5f0-8563-49f4-8216-049aa1d023cb .
 
-km-dev:TriplesMap_65170d05-2786-4c5f-9c7d-9884eee50e53 km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+km-dev:TriplesMap_b62ee5f0-8563-49f4-8216-049aa1d023cb km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx8 rr:tableName "educational_facilities.csv" ;
+_:node1hk8snalax8 rr:tableName "educational_facilities.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1hha6rkdrx1 .
+	km-dev:isPartOfMapping _:node1hk8snalax1 .
 
-_:node1hha6rkdrx1 km-dev:hasLogicalTable _:node1hha6rkdrx8 .
+_:node1hk8snalax1 km-dev:hasLogicalTable _:node1hk8snalax8 .
 
-km-dev:TriplesMap_65170d05-2786-4c5f-9c7d-9884eee50e53 rr:logicalTable _:node1hha6rkdrx8 ;
-	rr:subjectMap _:node1hha6rkdrx9 .
+km-dev:TriplesMap_b62ee5f0-8563-49f4-8216-049aa1d023cb rr:logicalTable _:node1hk8snalax8 ;
+	rr:subjectMap _:node1hk8snalax9 .
 
-_:node1hha6rkdrx1 km-dev:hasSubjectMap _:node1hha6rkdrx9 .
+_:node1hk8snalax1 km-dev:hasSubjectMap _:node1hk8snalax9 .
 
-_:node1hha6rkdrx9 km-dev:isPartOfMapping _:node1hha6rkdrx1 ;
+_:node1hk8snalax9 km-dev:isPartOfMapping _:node1hk8snalax1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#position_GID-279902" ;
 	rr:class <http://knowdive.disi.unitn.it/etype#position_GID-27990> ;

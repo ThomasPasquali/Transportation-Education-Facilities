@@ -235,7 +235,7 @@ _:node1hhaf06nax1 a km-dev:R2RMLMapping ;
                 \"type\": \"other\",
                 \"value\": {
                     \"edgeTargetId\": \"http://knowdive.disi.unitn.it/etype#position_GID-279901\",
-                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#localize_GID-113623\",
+                    \"edgeId\": \"http://knowdive.disi.unitn.it/etype#localized_GID-89701\",
                     \"edgeTargetUri\": \"http://knowdive.disi.unitn.it/etype#position_GID-27990\",
                     \"edgeSourceId\": \"http://knowdive.disi.unitn.it/etype#train_stop_GID-160101\",
                     \"edgeSourceUri\": \"http://knowdive.disi.unitn.it/etype#train_stop_GID-16010\"
@@ -320,7 +320,7 @@ km-dev:PredicateObjectMap_bb34b7a0-5cda-483a-b7ad-e5fe3535a8f4 a rr:PredicateObj
 
 _:node1hhaf06nax1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bb34b7a0-5cda-483a-b7ad-e5fe3535a8f4 .
 
-km-dev:PredicateObjectMap_6637e91d-7a1d-4397-abe6-24594a93d813 rr:predicate <http://knowdive.disi.unitn.it/etype#localize_GID-113623> .
+km-dev:PredicateObjectMap_6637e91d-7a1d-4397-abe6-24594a93d813 rr:predicate <http://knowdive.disi.unitn.it/etype#localized_GID-89701> .
 
 km-dev:RefObjectMap_29560dc4-99e9-49cf-95a7-16336b01daa7 a rr:RefObjectMap , rr:ObjectMap ;
 	rr:parentTriplesMap km-dev:TriplesMap_26ada7c4-8b74-4e9e-ad5d-6568b37209ac ;
