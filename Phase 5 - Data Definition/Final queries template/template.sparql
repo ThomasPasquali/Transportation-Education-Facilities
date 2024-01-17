@@ -6,19 +6,18 @@ PREFIX spif: <http://spinrdf.org/spif#>
 
 SELECT DISTINCT ?shift ?stop_from_name ?stop_to_name ?route_name  ?departure_time ?arrival_time ?wait_time ?walk_from_m ?walk_to_m ?trip_duration ?score ?accessibility
 WHERE {
-    ## Hyperparams
+    ### 1. Hyperparams
     BIND ("false"^^xsd:boolean as ?wheelchair_need)
     BIND ("30"^^xsd:long as ?max_wait_time)
-    # BIND ("0.5"^^xsd:float as ?max_stop_dist)			# Can be commented
+    BIND ("0.5"^^xsd:float as ?max_stop_dist)			# Can be commented
     BIND ("_urban" as ?stops_filter) 					# Can be commented
     BIND ("1" as ?direction)							# Comodity
     
-    {
+    { ### 3. Shift identification
         SELECT ?user ?shift ?arrive_before ?leave_after ?curr_datetime ?curr_weekday
         WHERE {
-            ## Parameters (these are here because of SPARQL subqueries evaluation order)
+            ### 2. Parameters (these are here because of SPARQL subqueries evaluation order)
             BIND ("2024-01-29T06:00:00"^^xsd:dateTime as ?curr_datetime)
-            # BIND ("2023-12-25T07:00:00"^^xsd:dateTime as ?curr_datetime)
             BIND ("Jessica" as ?username)
 
             ## Select only one user
@@ -74,8 +73,10 @@ WHERE {
         }
         ORDER BY DESC(?ex) ?time_diff 	# Get the "closest" shift as first result
         LIMIT 1							# Get only one shift
-    }
+    } ### 3. Shift identification END
     
+    ### 4. Possible stops from/to identification
+
     ## Shift positions from / to
     ?shift prop:from_GID-16044 ?shift_pos_from;
            prop:to_GID-16045 ?shift_pos_to.
@@ -137,6 +138,9 @@ WHERE {
     ## Filter to have more control over results (could be moved above...)
     FILTER (IF(BOUND(?stops_filter), REGEX(STR(?stop_from), ?stops_filter) && REGEX(STR(?stop_to), ?stops_filter), "true"^^xsd:boolean))
     
+    ### 4. Possible stops from/to identification END
+    ### 6. Keep only Trips that stop at both from and to stops
+
     { ## Find trips that stop at stop_from
         ?trip_stop_from prop:at_GID-16040 ?stop_from.
         ?trip_stop_from prop:of_GID-16041 ?trip.
@@ -149,9 +153,11 @@ WHERE {
         ?trip_stop_to prop:of_GID-16041 ?trip.
     	?trip_stop_to prop:at_GID-16040 ?stop_to.
     }
+
+    ### 6. Keep only Trips that stop at both from and to stops END
+    ### 5. Filter Trips depending on their weekly schedule and exceptions
     
     # Filter by trip schedules and exceptions
-    ## TODO optimize (no cartesian product with exceptions)
     OPTIONAL {
         ?trip prop:avaiability_schedule_GID-16042 ?trip_ws.
         ?trip_ws prop:has_weekly_schedule_monday_GID-80758 ?monday;
@@ -194,6 +200,9 @@ WHERE {
             )
         )
     )
+
+    ### 5. Filter Trips depending on their weekly schedule and exceptions END
+    ### 7. Filter Trips depending on arrive before and/or leave after
     
    	## Extract times
     ?trip_stop_from prop:has_trip_stop_departure_time_GID-80846 ?departure_time.
@@ -223,6 +232,8 @@ WHERE {
     
     # Filter on accessibility: ?wheelchair_need => ?accessibility = "1"
     FILTER (!?wheelchair_need || ?accessibility = "1")
+
+    ### 7. Filter Trips depending on arrive before and/or leave after END
     
     ## Projection variables
     ?stop_from prop:has_stop_name_GID-16039 ?stop_from_name.
@@ -231,6 +242,7 @@ WHERE {
        prop:has_trip_accessibility_GID-16037 ?accessibility.
     ?route prop:has_route_short_name_GID-16032 ?route_name.
     
+    ### 8. Score computation
     BIND (xsd:int(?walk_from * 100) as ?walk_from_m)
     BIND (xsd:int(?walk_to * 100) as ?walk_to_m)
     BIND (ofn:minutesBetween(?arrival_date, ?departure_date) as ?trip_duration)
@@ -241,5 +253,6 @@ WHERE {
             + "0.5"^^xsd:float * ?walk_to_m
         ) as ?score
     )
-    
-} ORDER BY ASC(?score)
+    ### 8. Score computation END
+
+} ORDER BY ASC(?score) ### 9. Ordering by score
