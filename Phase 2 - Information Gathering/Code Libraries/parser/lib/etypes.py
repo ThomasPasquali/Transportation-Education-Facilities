@@ -57,7 +57,7 @@ class ETYPE(Enum):
     'filename': 'users/users',
     'columns': ['name', 'occupation', 'special_needs'],
     'relations': ['domiciled', 'reside', 'work', 'nearest_stops_domiciled', 'nearest_stops_reside'],
-    'relations_etype': ['position', 'position', 'position']
+    'relations_etype': ['position', 'position', 'position', 'position', 'position']
   }
   SHIFT = {
     'name': 'shift',
@@ -73,7 +73,7 @@ class ETYPE(Enum):
     'filename': 'edu/educational_facilities',
     'columns': ['type', 'legal_name'],
     'relations': ['localize', 'nearest_stops'],
-    'relations_etype': ['position']
+    'relations_etype': ['position', 'position']
   }
 
   # Common

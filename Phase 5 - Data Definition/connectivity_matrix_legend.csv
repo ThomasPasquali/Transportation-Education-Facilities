@@ -62,7 +62,7 @@ user - journey_stop,
 user - user,name | occupation | special_needs
 user - shift,
 user - educational_facility,
-user - position,domiciled | reside | work
+user - position,domiciled | reside | work | nearest_stops_domiciled | nearest_stops_reside
 user - weekly_schedule,
 user - schedule_exception,
 shift - provider,
@@ -84,7 +84,7 @@ educational_facility - journey_stop,
 educational_facility - user,
 educational_facility - shift,
 educational_facility - educational_facility,type | legal_name
-educational_facility - position,localize
+educational_facility - position,localize | nearest_stops
 educational_facility - weekly_schedule,
 educational_facility - schedule_exception,
 position - provider,
