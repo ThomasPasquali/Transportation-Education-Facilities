@@ -24,7 +24,7 @@ WHERE {
             ?user prop:has_end_user_name_GID-16021 ?username.
 
             ## Compute weekday
-            BIND (ofn:daysBetween(?curr_datetime, "1967-01-01T10:00:00+01:00"^^xsd:dateTime) AS ?days)
+            BIND (ofn:daysBetween(?curr_datetime, "1967-01-01T10:00:00"^^xsd:dateTime) AS ?days)
             BIND (floor(?days - (7 * floor(?days / 7))) AS ?curr_weekday)
 
             ## Join user shifts, schedules and related data properties
@@ -86,7 +86,7 @@ WHERE {
                         prop:schema_has_position_longitude ?shift_pos_from_lon.
         
         ## Using "nearest"
-		?edu_res_dom_from prop:localized_GID-89701|prop:localize_GID-113623 ?shift_pos_from.
+		?edu_res_dom_from prop:localized_GID-89701 ?shift_pos_from.
         ?edu_res_dom_from prop:nearest_GID-116831 ?stop_pos_from.
         
 #        { ## OR using geo distance
@@ -113,7 +113,7 @@ WHERE {
                       prop:schema_has_position_longitude ?shift_pos_to_lon.
 
         ## Using "nearest"
-		?edu_res_dom_to prop:localized_GID-89701|prop:localize_GID-113623 ?shift_pos_to.
+		?edu_res_dom_to prop:localized_GID-89701 ?shift_pos_to.
         ?edu_res_dom_to prop:nearest_GID-116831 ?stop_pos_to.
         
 #        { ## OR using geo distance

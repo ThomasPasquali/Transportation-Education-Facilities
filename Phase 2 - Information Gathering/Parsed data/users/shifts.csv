@@ -16,7 +16,6 @@ shift_14,pos_edu_fac_133,pos_user_dom_4,,10:30:00,user_ws_6,,user_5
 shift_15,pos_user_dom_4,pos_edu_fac_133,12:30:00,,,user_ws_ex_1,user_5
 shift_16,pos_edu_fac_133,pos_user_dom_4,,14:30:00,,user_ws_ex_1,user_5
 shift_17,pos_user_dom_5,pos_user_res_5,,13:00:00,user_ws_7,,user_6
-shift_18,pos_user_res_6,pos_stop_train_trenitalia/lombardia_3025,,6:00:00,,user_ws_ex_2,user_7
+shift_18,pos_user_res_6,pos_stop_train_trenitalia/lombardia_3025,,06:00:00,,user_ws_ex_2,user_7
 shift_19,pos_stop_train_trenitalia/lombardia_3025,pos_edu_fac_134,10:30:00,,,user_ws_ex_2,user_7
-shift_20,pos_user_res_7,pos_edu_fac_125,08:30:00,,user_ws_8,,user_8
-shift_21,pos_edu_fac_125,pos_user_res_7,,13:30:00,user_ws_8,,user_8
+
