@@ -34,6 +34,12 @@ scrapy crawl Stops -O stops.json
 
 ## Common transportation data parser
 
-`parser.ipynb` is a Jupiter Notebook that parser and cleans data from GTFS compliant files. These files can be found in the directory `Raw data` and are divided in subfolders depending on the provider, region and urban/extraurban.
+`0_scraped_transport.py` is a Python script that transformed the `json` results of the scraping into GTFS datasets.
+
+`1_transport.py` is a Python script that parser and cleans data from GTFS compliant files. These files can be found in the directory `Raw data` and are divided in subfolders depending on the provider, region and urban/extraurban.
 
 The idea is that the GTFS notebook will be responsible to merge all datasets, therefore, running all the code cells inside will populate the folder `Persed data` with the final datasets obtained by processing and merging different sources data.
+
+`2_edu.py` is a Python script that completes, parses and unifies data regarding educational facilities.
+
+`3_users.py` is a Python script that transforms the "raw" end users info into datasets compatible with the knowledge layer.
