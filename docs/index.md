@@ -1,7 +1,6 @@
-# KGE 2023 - Trentino Transportation and Education Facilities
+<link rel="stylesheet" type="text/css" href="style.css">
 
-## KGE project - Transportation & Education Facilities
-
+## KGE project 
 This project is developed in the academic year 2023/24 for the course Knowledge Graph Engineering. 
 In this page, there is the description of the work done by our team, Pasquali Thomas, and Peiretti Riccardo. Furthermore, there are links to all the resources used for this project. 
 
