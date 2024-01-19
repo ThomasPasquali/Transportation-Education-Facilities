@@ -1,0 +1,191 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1hkgsu5ecx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "users.csv" ;
+	km-dev:modelPublicationTime "1705669236172"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"name\"}],[{\"columnName\":\"id\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"name\"}],[{\"columnName\":\"id\"}]]" ;
+	km-dev:hasModelLabel "users.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#end_user\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#end_user1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#end_user\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#end_user1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#end_user/end_user1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"name\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#end_user\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#end_user1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_end_user_name\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#end_user/end_user1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_21940496-9146-4daa-bcf5-b8f35d669860 a rr:TriplesMap .
+
+_:node1hkgsu5ecx1 km-dev:hasTriplesMap km-dev:TriplesMap_21940496-9146-4daa-bcf5-b8f35d669860 .
+
+km-dev:TriplesMap_21940496-9146-4daa-bcf5-b8f35d669860 km-dev:isPartOfMapping _:node1hkgsu5ecx1 .
+
+_:node1hkgsu5ecx2 rr:tableName "users.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hkgsu5ecx1 .
+
+_:node1hkgsu5ecx1 km-dev:hasLogicalTable _:node1hkgsu5ecx2 .
+
+km-dev:TriplesMap_21940496-9146-4daa-bcf5-b8f35d669860 rr:logicalTable _:node1hkgsu5ecx2 ;
+	rr:subjectMap _:node1hkgsu5ecx3 .
+
+_:node1hkgsu5ecx1 km-dev:hasSubjectMap _:node1hkgsu5ecx3 .
+
+_:node1hkgsu5ecx3 km-dev:isPartOfMapping _:node1hkgsu5ecx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#end_user1" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#end_user> ;
+	rr:template "{id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_0e37b2ba-6ae6-4493-87f6-48dc9f30b9b9 rr:predicate <http://knowdive.disi.unitn.it/etype#has_end_user_name> .
+
+_:node1hkgsu5ecx4 rr:column "name" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgsu5ecx1 .
+
+_:node1hkgsu5ecx1 km-dev:hasObjectMap _:node1hkgsu5ecx4 .
+
+km-dev:PredicateObjectMap_0e37b2ba-6ae6-4493-87f6-48dc9f30b9b9 rr:objectMap _:node1hkgsu5ecx4 .
+
+km-dev:TriplesMap_21940496-9146-4daa-bcf5-b8f35d669860 rr:predicateObjectMap km-dev:PredicateObjectMap_0e37b2ba-6ae6-4493-87f6-48dc9f30b9b9 .
+
+km-dev:PredicateObjectMap_0e37b2ba-6ae6-4493-87f6-48dc9f30b9b9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgsu5ecx1 .
+
+_:node1hkgsu5ecx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0e37b2ba-6ae6-4493-87f6-48dc9f30b9b9 .

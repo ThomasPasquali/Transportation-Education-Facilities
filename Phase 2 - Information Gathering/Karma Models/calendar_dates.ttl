@@ -1,0 +1,267 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1hkgt9j80x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "calendar_dates.csv" ;
+	km-dev:modelPublicationTime "1705669610758"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"date\"}],[{\"columnName\":\"type\"}],[{\"columnName\":\"id\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"date\"}],[{\"columnName\":\"type\"}],[{\"columnName\":\"id\"}]]" ;
+	km-dev:hasModelLabel "calendar_dates.csv" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#schedule_exception\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://knowdive.disi.unitn.it/etype#schedule_exception1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#schedule_exception\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#schedule_exception1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#schedule_exception/schedule_exception1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"id\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#schedule_exception\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#schedule_exception1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_schedule_exception_date\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#schedule_exception/schedule_exception1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"type\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://knowdive.disi.unitn.it/etype#schedule_exception\",
+                    \"DomainId\": \"http://knowdive.disi.unitn.it/etype#schedule_exception1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://knowdive.disi.unitn.it/etype#has_schedule_exception_type\",
+                    \"DomainLabel\": \"http://knowdive.disi.unitn.it/etype#schedule_exception/schedule_exception1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"type\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"type\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f a rr:TriplesMap .
+
+_:node1hkgt9j80x1 km-dev:hasTriplesMap km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f .
+
+km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x2 rr:tableName "calendar_dates.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x1 km-dev:hasLogicalTable _:node1hkgt9j80x2 .
+
+km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f rr:logicalTable _:node1hkgt9j80x2 ;
+	rr:subjectMap _:node1hkgt9j80x3 .
+
+_:node1hkgt9j80x1 km-dev:hasSubjectMap _:node1hkgt9j80x3 .
+
+_:node1hkgt9j80x3 km-dev:isPartOfMapping _:node1hkgt9j80x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://knowdive.disi.unitn.it/etype#schedule_exception1" ;
+	rr:class <http://knowdive.disi.unitn.it/etype#schedule_exception> ;
+	rr:template "{id}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_442d19c5-c261-45fb-892d-63ebbc17f23d rr:predicate <http://knowdive.disi.unitn.it/etype#has_schedule_exception_date> .
+
+_:node1hkgt9j80x4 rr:column "date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x1 km-dev:hasObjectMap _:node1hkgt9j80x4 .
+
+km-dev:PredicateObjectMap_442d19c5-c261-45fb-892d-63ebbc17f23d rr:objectMap _:node1hkgt9j80x4 .
+
+km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f rr:predicateObjectMap km-dev:PredicateObjectMap_442d19c5-c261-45fb-892d-63ebbc17f23d .
+
+km-dev:PredicateObjectMap_442d19c5-c261-45fb-892d-63ebbc17f23d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_442d19c5-c261-45fb-892d-63ebbc17f23d .
+
+km-dev:PredicateObjectMap_2c0cb092-6afd-4695-858e-6829504dcdab rr:predicate <http://knowdive.disi.unitn.it/etype#has_schedule_exception_type> .
+
+_:node1hkgt9j80x5 rr:column "type" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x1 km-dev:hasObjectMap _:node1hkgt9j80x5 .
+
+km-dev:PredicateObjectMap_2c0cb092-6afd-4695-858e-6829504dcdab rr:objectMap _:node1hkgt9j80x5 .
+
+km-dev:TriplesMap_6639022c-b493-4ed3-8944-80421f97236f rr:predicateObjectMap km-dev:PredicateObjectMap_2c0cb092-6afd-4695-858e-6829504dcdab .
+
+km-dev:PredicateObjectMap_2c0cb092-6afd-4695-858e-6829504dcdab a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1hkgt9j80x1 .
+
+_:node1hkgt9j80x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2c0cb092-6afd-4695-858e-6829504dcdab .
