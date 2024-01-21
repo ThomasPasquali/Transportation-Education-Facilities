@@ -1,1 +1,0 @@
-# KGE 2023 - Trentino Transportation and Education Facilities
