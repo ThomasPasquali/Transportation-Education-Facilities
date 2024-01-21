@@ -29,6 +29,10 @@ The ER-model, at the beginning is composed by certain entities, but during the w
 
 ![ER Model](imgs/ER_model.png) 
 
+Below, an intuitive schema of the workflow of the project. 
+
+![Process flow intuition](imgs/flow.png)
+
 
 ### 4. Information gathering 
 This section aims at reporting the execution of the activities involved in the Information Gathering iTelos phase. In the table below there is an explanation of where are taken the data. 
@@ -122,5 +126,6 @@ At the conclusion of this process, we successfully build the final Knowledge Gra
 ### 8. Useful Links
 For more information please check the following links:
 - the complete [GitHub repository](https://github.com/ThomasPasquali/TransportationAndEducationFacilities_KGE2023)
-- the full [report]()
+- the full [report](https://github.com/ThomasPasquali/TransportationAndEducationFacilities_KGE2023/blob/main/Documentation/Report_Trentino_Transportation_and_Education_Facilities.pdf)
+- the [presentation](https://github.com/ThomasPasquali/TransportationAndEducationFacilities_KGE2023/blob/main/Documentation/Presentation_Trentino_Transportation_and_Education_Facilities.pdf) of the project
 - the [Google Drive](https://drive.google.com/drive/folders/1PUmhXYnM5fd-TqePUDAumem9luqa6qcv?usp=sharing) 
