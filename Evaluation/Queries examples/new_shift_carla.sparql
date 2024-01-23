@@ -1,0 +1,23 @@
+PREFIX prop: <http://knowdive.disi.unitn.it/etype#>
+PREFIX data: <http://localhost:8080/source/>
+
+# INSERT DELETE
+DELETE DATA {
+    # New shift
+    data:shift_100 a prop:shift_GID-1704.
+    # Shift data props
+    data:shift_100 prop:has_shift_arrive_before_GID-16022 "10:00:00".
+    # Shift object props
+    data:shift_100 prop:from_GID-16044 data:pos_user_dom_5.
+    data:shift_100 prop:to_GID-16045 data:pos_edu_fac_124.
+    data:shift_100 prop:involvement_GID-16019 data:user_6.
+    data:shift_100 prop:occurence_schedule_GID-16046 data:user_ws_7.
+    
+    # Nearest
+    data:dom_pos_user_dom_5 prop:nearest_GID-116831 data:pos_stop_bus_tt_urban_407.
+    data:dom_pos_user_dom_5 prop:nearest_GID-116831 data:pos_stop_bus_tt_urban_446.
+    
+    data:edu_fac_124 prop:nearest_GID-116831 data:pos_stop_bus_tt_urban_189.
+    data:edu_fac_124 prop:nearest_GID-116831 data:pos_stop_bus_tt_urban_2682.
+    data:edu_fac_124 prop:nearest_GID-116831 data:pos_stop_bus_tt_urban_183.
+}

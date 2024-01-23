@@ -1,0 +1,258 @@
+PREFIX prop: <http://knowdive.disi.unitn.it/etype#>
+PREFIX omgeo: <http://www.ontotext.com/owlim/geo#>
+PREFIX ofn: <http://www.ontotext.com/sparql/functions/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX spif: <http://spinrdf.org/spif#>
+
+SELECT DISTINCT ?shift ?stop_from_name ?stop_to_name ?route_name ?departure_time ?arrival_time ?wait_time ?walk_from_m ?walk_to_m ?trip_duration ?score ?accessibility
+WHERE {
+    ### 1. Hyperparams
+    BIND ("false"^^xsd:boolean as ?wheelchair_need)
+    BIND ("27"^^xsd:long as ?max_wait_time) # comment for flix
+    BIND ("1.37"^^xsd:float as ?max_stop_dist)
+    # BIND ("_urban" as ?stops_filter)
+    BIND ("0" as ?direction) # 1 for flix
+    
+    { ### 3. Shift identification
+        SELECT ?user ?shift ?arrive_before ?leave_after ?curr_datetime ?curr_weekday
+        WHERE {
+            ### 2. Parameters (these are here because of SPARQL subqueries evaluation order)
+            BIND ("2023-11-03T06:00:00"^^xsd:dateTime as ?curr_datetime)
+            BIND ("Carla" as ?username)
+
+            ## Select only one user
+            ?user prop:has_end_user_name_GID-16021 ?username.
+
+            ## Compute weekday
+            BIND (ofn:daysBetween(?curr_datetime, "1967-01-01T10:00:00"^^xsd:dateTime) AS ?days)
+            BIND (floor(?days - (7 * floor(?days / 7))) AS ?curr_weekday)
+
+            ## Join user shifts, schedules and related data properties
+            ?shift prop:involvement_GID-16019 ?user.
+             OPTIONAL { 
+                ?shift prop:occurence_schedule_GID-16046 ?ws.
+                ?ws prop:has_weekly_schedule_monday_GID-80758 ?monday;
+                    prop:has_weekly_schedule_tuesday_GID-80759 ?tuesday;
+                    prop:has_weekly_schedule_wednesday_GID-80760 ?wednesday;
+                    prop:has_weekly_schedule_thursday_GID-80761 ?thursday;
+                    prop:has_weekly_schedule_friday_GID-80762 ?friday;
+                    prop:has_weekly_schedule_saturday_GID-80763 ?saturday;
+                    prop:has_weekly_schedule_sunday_GID-80757 ?sunday.
+            }.
+            OPTIONAL { 	
+                ?shift prop:occurence_schedule_exception_GID-16047 ?ex. 
+                ?ex prop:has_schedule_exception_date_GID-16027 ?date_ex;
+                    prop:has_schedule_exception_type_GID-31834 ?type_ex.
+            }.
+            OPTIONAL { ?shift prop:has_shift_arrive_before_GID-16022 ?arrive_before }.
+            OPTIONAL { ?shift prop:has_shift_leave_after_GID-16023 ?leave_after }.
+
+            ## Compute time difference between shift and current time
+            BIND (xsd:dateTime(CONCAT(spif:dateFormat(?curr_datetime, "yyyy-MM-dd"), "T", IF(BOUND(?arrive_before),?arrive_before,?leave_after))) as ?arr_leave_datetime)
+            BIND (ofn:minutesBetween(?arr_leave_datetime, ?curr_datetime) as ?time_diff)
+    		
+    		## Exclude already passed shifts
+    		FILTER (IF(BOUND(?arr_leave_datetime), ?curr_datetime <= ?arr_leave_datetime, "true"^^xsd:boolean))
+
+            ## Filter based on schedule exception (higher priority) or weekly schedule
+            FILTER (IF(BOUND(?ex),
+                    ## Exception is present
+                    ?type_ex = "1" && ?date_ex = spif:dateFormat(?curr_datetime, "yyyyMMdd"),
+                    # NOTICE that here ?type_ex = "0" is not handle because we did not face this case
+                    # please, refer to the transportation section for the handling of the analogous problem
+                    ## Exception is NOT present
+                    (?curr_weekday = "0"^^xsd:decimal && ?monday = "1") || 
+                    (?curr_weekday = "1"^^xsd:decimal && ?tuesday = "1") || 
+                    (?curr_weekday = "2"^^xsd:decimal && ?wednesday = "1") || 
+                    (?curr_weekday = "3"^^xsd:decimal && ?thursday = "1") || 
+                    (?curr_weekday = "4"^^xsd:decimal && ?friday = "1") || 
+                    (?curr_weekday = "5"^^xsd:decimal && ?saturday = "1") || 
+                    (?curr_weekday = "6"^^xsd:decimal && ?sunday = "1")
+                )
+            )
+        }
+        ORDER BY DESC(?ex) ?time_diff 	# Get the "closest" shift as first result
+        LIMIT 1							# Get only one shift
+    } ### 3. Shift identification END
+    
+    ### 4. Possible stops from/to identification
+
+    ## Shift positions from / to
+    ?shift prop:from_GID-16044 ?shift_pos_from;
+           prop:to_GID-16045 ?shift_pos_to.
+    
+    { ## Find "from" nearest stops
+        ?shift_pos_from prop:schema_has_position_latitude ?shift_pos_from_lat;
+                        prop:schema_has_position_longitude ?shift_pos_from_lon.
+        
+        ## Using "nearest"
+		?edu_res_dom_from prop:localized_GID-89701 ?shift_pos_from.
+        ?edu_res_dom_from prop:nearest_GID-116831 ?stop_pos_from.
+        
+#        { ## OR using geo distance
+#            {
+#                { ?stop_from a prop:bus_stop_GID-45937. }
+#            	UNION
+#                { ?stop_from a prop:train_stop_GID-16010. }
+#            }
+#        }
+        
+        ?stop_from prop:localized_GID-89701 ?stop_pos_from.
+        
+        ## Compute distance anyay (for score)
+        ?stop_pos_from prop:schema_has_position_latitude ?stop_from_lat;
+                       prop:schema_has_position_longitude ?stop_from_lon.
+        BIND (omgeo:distance(?shift_pos_from_lat, ?shift_pos_from_lon, ?stop_from_lat, ?stop_from_lon) as ?walk_from)
+        
+        ## Eventual filter on max walk distance
+        FILTER (IF(BOUND(?max_stop_dist), ?walk_from <= ?max_stop_dist, "true"^^xsd:boolean))
+    }
+    
+    { ## Find "to" nearest stops
+        ?shift_pos_to prop:schema_has_position_latitude ?shift_pos_to_lat;
+                      prop:schema_has_position_longitude ?shift_pos_to_lon.
+
+        ## Using "nearest"
+		?edu_res_dom_to prop:localized_GID-89701 ?shift_pos_to.
+        ?edu_res_dom_to prop:nearest_GID-116831 ?stop_pos_to.
+        
+#        { ## OR using geo distance
+#            {
+#                { ?stop_to a prop:bus_stop_GID-45937. }
+#            	UNION
+#                { ?stop_to a prop:train_stop_GID-16010. }
+#            }
+#        }
+        
+        ?stop_to prop:localized_GID-89701 ?stop_pos_to.
+        
+        ## Compute distance anyay (for score)
+        ?stop_pos_to prop:schema_has_position_latitude ?stop_to_lat;
+                     prop:schema_has_position_longitude ?stop_to_lon.
+        BIND (omgeo:distance(?shift_pos_to_lat, ?shift_pos_to_lon, ?stop_to_lat, ?stop_to_lon) as ?walk_to)
+        
+        ## Eventual filter on max walk distance
+        FILTER (IF(BOUND(?max_stop_dist), ?walk_to <= ?max_stop_dist, "true"^^xsd:boolean))
+    }
+    
+    ## Filter to have more control over results (could be moved above...)
+    FILTER (IF(BOUND(?stops_filter), REGEX(STR(?stop_from), ?stops_filter) && REGEX(STR(?stop_to), ?stops_filter), "true"^^xsd:boolean))
+    
+    ### 4. Possible stops from/to identification END
+    ### 6. Keep only Trips that stop at both from and to stops
+
+    { ## Find trips that stop at stop_from
+        ?trip_stop_from prop:at_GID-16040 ?stop_from.
+        ?trip_stop_from prop:of_GID-16041 ?trip.
+
+        ?trip prop:has_trip_direction_GID-16036 ?trip_direction.
+        FILTER (?trip_direction = ?direction)
+    }
+    
+    { ## Filter trips that stop at stop_from only to those that also stop at stop_to
+        ?trip_stop_to prop:of_GID-16041 ?trip.
+    	?trip_stop_to prop:at_GID-16040 ?stop_to.
+    }
+
+    ### 6. Keep only Trips that stop at both from and to stops END
+    ### 5. Filter Trips depending on their weekly schedule and exceptions
+    
+    # Filter by trip schedules and exceptions
+    OPTIONAL {
+        ?trip prop:avaiability_schedule_GID-16042 ?trip_ws.
+        ?trip_ws prop:has_weekly_schedule_monday_GID-80758 ?monday;
+            prop:has_weekly_schedule_tuesday_GID-80759 ?tuesday;
+            prop:has_weekly_schedule_wednesday_GID-80760 ?wednesday;
+            prop:has_weekly_schedule_thursday_GID-80761 ?thursday;
+            prop:has_weekly_schedule_friday_GID-80762 ?friday;
+            prop:has_weekly_schedule_saturday_GID-80763 ?saturday;
+            prop:has_weekly_schedule_sunday_GID-80757 ?sunday;
+            prop:has_weekly_schedule_start_date_GID-16024 ?trip_ws_start_date;
+            prop:has_weekly_schedule_end_date_GID-16025 ?trip_ws_end_date.
+    }.
+    OPTIONAL { 
+        ?trip prop:avaiability_schedule_exception_GID-16043 ?trip_ex.
+        ?trip_ex prop:has_schedule_exception_date_GID-16027 ?trip_ex_date;
+                 prop:has_schedule_exception_type_GID-31834 ?trip_ex_type.
+        FILTER (?trip_ex_date = spif:dateFormat(?curr_datetime, "yyyyMMdd"))
+    }.
+    
+    ## Check schedule exceptions
+    FILTER (IF(BOUND(?trip_ex),
+            ## Exception is present
+            (?trip_ex_type = "1") || !(?trip_ex_type = "2"),
+            ## Exception is NOT present
+            IF(BOUND(?trip_ws),
+    			## Check weekly schedule validity
+                (xsd:date(?curr_datetime) >= spif:parseDate(?trip_ws_start_date, "yyyyMMdd"))
+                && (xsd:date(?curr_datetime) <= spif:parseDate(?trip_ws_end_date, "yyyyMMdd"))
+                ## Check weekdays
+                && (
+                    (?curr_weekday = "0"^^xsd:decimal && ?monday = "1") || 
+                    (?curr_weekday = "1"^^xsd:decimal && ?tuesday = "1") || 
+                    (?curr_weekday = "2"^^xsd:decimal && ?wednesday = "1") || 
+                    (?curr_weekday = "3"^^xsd:decimal && ?thursday = "1") || 
+                    (?curr_weekday = "4"^^xsd:decimal && ?friday = "1") || 
+                    (?curr_weekday = "5"^^xsd:decimal && ?saturday = "1") || 
+                    (?curr_weekday = "6"^^xsd:decimal && ?sunday = "1")
+                ),
+                "false"^^xsd:boolean # Neither schedule or exception available
+            )
+        )
+    )
+
+    ### 5. Filter Trips depending on their weekly schedule and exceptions END
+    ### 7. Filter Trips depending on arrive before and/or leave after
+    
+   	## Extract times
+    ?trip_stop_from prop:has_trip_stop_departure_time_GID-80846 ?departure_time.
+    ?trip_stop_to prop:has_trip_stop_arrival_time_GID-80845 ?arrival_time.
+    
+    ## Support variables 
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?departure_time)) as ?departure_date).
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?leave_after)) as ?leave_after_date).
+    
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?arrival_time)) as ?arrival_date).
+    BIND (xsd:dateTime(CONCAT("2000-01-01T", ?arrive_before)) as ?arrive_before_date).
+    
+    # IF BOUND arrive_before 	=> wait time = diff(arrival, arrive_before)
+    # ELSE						=> wait time = diff(departure, leave_after)
+    BIND (IF(BOUND(?arrive_before),
+            ofn:minutesBetween(?arrival_date, ?arrive_before_date),
+            ofn:minutesBetween(?departure_date, ?leave_after_date)
+        ) as ?wait_time)
+    
+    # BOUND arrive_before => trip_arrival BEFORE arrive_before
+    FILTER (!BOUND(?arrive_before) || (?arrival_date <= ?arrive_before_date))
+    # BOUND leave_after => trip_departure AFTER leave_after
+    FILTER (!BOUND(?leave_after) || (?departure_date >= ?leave_after_date))
+    
+    # Exclude if wait time is more than the limit
+    FILTER (IF(BOUND(?max_wait_time), ?wait_time <= ?max_wait_time, "true"^^xsd:boolean))
+    
+    # Filter on accessibility: ?wheelchair_need => ?accessibility = "1"
+    FILTER (!?wheelchair_need || ?accessibility = "1")
+
+    ### 7. Filter Trips depending on arrive before and/or leave after END
+    
+    ## Projection variables
+    ?stop_from prop:has_stop_name_GID-16039 ?stop_from_name.
+    ?stop_to prop:has_stop_name_GID-16039 ?stop_to_name.
+    ?trip prop:characterized_GID-16013 ?route;
+       prop:has_trip_accessibility_GID-16037 ?accessibility.
+    ?route prop:has_route_short_name_GID-16032 ?route_name.
+    
+    ### 8. Score computation
+    BIND (xsd:int(?walk_from * 100) as ?walk_from_m)
+    BIND (xsd:int(?walk_to * 100) as ?walk_to_m)
+    BIND (ofn:minutesBetween(?arrival_date, ?departure_date) as ?trip_duration)
+    BIND ((
+            ?wait_time
+            + ?trip_duration
+            + "0.5"^^xsd:float * ?walk_from_m
+            + "0.5"^^xsd:float * ?walk_to_m
+        ) as ?score
+    )
+    ### 8. Score computation END
+
+} ORDER BY ASC(?score) ### 9. Ordering by score
